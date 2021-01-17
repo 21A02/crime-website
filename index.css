@@ -1,5 +1,6 @@
   body {
     font-family: "Lato", sans-serif;
+    
   }
   
   .sidenav {
@@ -40,3 +41,14 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+#container{
+  display: flex;
+  height: 500px;
+  width: 500px;
+  padding: 0%;
+  margin-left: auto;
+
+
+}
+  
