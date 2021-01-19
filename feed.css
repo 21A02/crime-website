@@ -1,6 +1,5 @@
 body {
     font-family: "Lato", sans-serif;
-    
   }
   
   .sidenav {
@@ -110,6 +109,11 @@ h1{
 	animation-delay: 10s;
 	-ms-animation-delay: 10s;
 	-webkit-animation-delay: 10s;
+}
+.slidingVertical span:nth-child(6){
+	animation-delay: 12s;
+	-ms-animation-delay: 12s;
+	-webkit-animation-delay: 12s;
 }
 
 /*topToBottom Animation*/
