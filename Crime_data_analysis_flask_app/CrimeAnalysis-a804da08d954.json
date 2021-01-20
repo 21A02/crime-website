@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "crimeanalysis-1599671899517",
+  "private_key_id": "a804da08d954de75b52a140e8f4462d93d9b8f59",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCzS3bDaYWzF5oI\n4jHAufxw1P2Vn6/MfDjQnASMrv7bs2N5DDXUShc5fL08whOGj00z0wzvceqlUo7m\n20MlHHGcWF2hP1W7zDOx5b+7QjLQXopWSd9z6mkzk7hnpIHIL7iHLdoRZvGFr1wd\nSVdwI/DmzYxnbUwPkhor7WSEio7kob5+HM2ZGU29VZOUvxwlq5hFm30TvZWNhLkL\nZ6sWf9H6rr7n3wqEXs0oIqoidO8pVriAsdBHLscFBDFlHfwPtqMcVycRWsRrTAKq\ntlL1M3kSVIKKpnS+ZHnDT0px30oD0RDHhNlhn7XsLKgI3B9eHPRuCbzvJz5saHMt\nY5OTeQJjAgMBAAECggEANSkJYBw/+59iWQL0HIAopK3KOFxeDAPC9rtjr/DM+QhB\n1Ki1pymGpFFjbIngrzN7AQQxICfHGliVrUZSrMS3vNMIg+BbA7EinLsRs6yHk3eM\njdQecGiO46+HbBd/MYNQs6f5MdKzht89MSPHTKUjbtOAL0RdWnqHzwF2ncPVZV09\nd8inB82zy2XFdosBAgLiHBij6FunwkMoMbo0e/3zKDDu8fBRhMrPKtgb+0iJQIZK\nD8+K3/3TJUdYG0SI04x/txmzWx4pkZvRxFN7w0EtEqutZqDOL2+i2pqMOkGbLmTm\n7pyiqHXLd3Eq1Bbx5B6B/S1Jig+xybRgzZjy+AyD5QKBgQD1tpg7XFqf2axNovbn\nD+KKwb+FqZXYdiGSVYrwccfRz073vqDflWHxjxsyn7UQL6mJwHT3tP0+PGvhYGkO\nHmwZyB5fWP8nqfKOOZIhbRi5nxN0Pl8/Mp0pT9CCTdS74gVwDqfmNIjJc7gMO05j\nDh+0o9aN9CEvAjytPSTIu9Q1FQKBgQC6zQlQLlXhq5ipeupru4+z4fsmgcNY92M5\naBF2uEOTZiahwPuriOoBci/ogMyoB8Js4xbjSb6PC/Mc1YOOjTT3YXhIIK4F2eUc\n1GhnOJxGaxHI7HbI4TKcKxidqzhge3/YCPaLXCSRHZN+HGEsU+I2tc8MSZzsWHgI\nmgczpTmnlwKBgEn9tTPS6LtQGhG67CzCXM6570l5utTXJd7iAZfMO4bTrYzvC5So\ncDkEhgUlkKmSILSJju90wfm2yimxFZGZ2aWd3H+L1jIEfDUV4wpLxvFGlN4hVh86\nx5bEIR7L/y6grlCDKU4qLbK0NQ0B4uXzP9rup1JR3JhCTTFBw0zrOsjNAoGAbXXm\nZjCwrIuD6pQXN8fxniPmqprRYJmecC42RY4WMxJhwtk14D9beDt0LVcEFdZuLKYp\nbEhzPJlw/U10SJ0gE3HvLLzRnKYhJnKlNw8qK+1jv4wo0u97W525T/LcF1VnBa3C\n4si8uLhPDFAO9Q22ef6xc+7S4H+63rd7Tt0b2sMCgYEAgdXc1ydXjD/VckvGmXQV\njXUU7Yub0zFOpq06hK1UIE/VAUKwoICxttg4yB2lEQqotOVlmvr2w5HR7r8NFQou\neLv3HKU7+7AvNWtze+Jgv/gwlND6zGKblJaY0hUlNZds6dWti29aYq7kDn69KPwW\naOvwnPbGmfIlWEB/nvsKIrE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ashu-17@crimeanalysis-1599671899517.iam.gserviceaccount.com",
+  "client_id": "110431860511651339058",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ashu-17%40crimeanalysis-1599671899517.iam.gserviceaccount.com"
+}

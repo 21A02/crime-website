@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-map.min.js" type="text/javascript"></script>
+    <!--<script src="C:\Users\hp\Music\Crime_data_analysis\anychart-installation-package-8.8.0\geodata\countries\india\india.js" type="text/javascript"></script>
+	-->
+		<script src="https://cdn.anychart.com/geodata/2.0.0/countries/india/india.js"></script>
+		
+	<style>
+      html, body, #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+	<h3>This is test1 file</h3>
+	<div id="container"></div>
+	<script>
+
+		anychart.onDocumentReady(function () {
+		
+		var datas='{{dataz}}'
+		var find='&#39;'
+		var data=datas.replaceAll('&#39;','"')
+		var data1=data.replace('[','')
+		var data1=data1.replace(']','')	
+		var data1=data1.replaceAll('},','}#')
+		var data2=data1.split('#')
+		console.log('-->',datas)
+		console.log('----->',data)
+		console.log("test")
+
+
+		console.log('------->',data1)
+		console.log('------------>',data2)
+		var i;
+		var values=[]
+		for (i = 0; i < data2.length; i++) {
+				  values.push(JSON.parse(data2[i]));
+		}
+		console.log('--->',values)
+		//console.log('------->',dataSet)
+
+
+
+		var map = anychart.map();
+		map.geoData(anychart.maps.india);
+
+		// set the series
+		var series = map.choropleth(values);
+		
+		  // disable labels
+		series.labels(false);
+
+		// set the container
+		map.container('container');
+		map.draw();
+	  });
+	</script>
+
+    
+	<h3>{{dataz}}</h3>
+  </body>
+</html>
