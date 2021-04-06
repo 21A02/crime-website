@@ -1,6 +1,6 @@
   body {
     font-family: "Lato", sans-serif;
-    
+    background: #d7dadd;
   }
   
   .sidenav {
@@ -42,7 +42,7 @@
     .sidenav a {font-size: 18px;}
   }
 
-#container{
+#container,#dynamic-graph{
   display: flex;
 
   height: 500px;
@@ -59,7 +59,7 @@
   0 100px 80px rgba(0, 0, 0, 0.12)
 ;
 
-  
+
   
   min-height: 200px;
   width: 50vw;
@@ -70,4 +70,24 @@
 }
   
 
+.graph-panel{
+  display: flex;
+  justify-content: space-evenly;
+}
 
+
+
+/* footer CSS */
+
+.footer {
+  
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+  background-color: #373a40;
+  color: white;
+  text-align: center;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+}
