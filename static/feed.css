@@ -119,6 +119,27 @@ h1{
 	animation-delay: 12s;
 	-ms-animation-delay: 12s;
 	-webkit-animation-delay: 12s;
+}.slidingVertical span:nth-child(7){
+	animation-delay: 15s;
+	-ms-animation-delay: 15s;
+	-webkit-animation-delay: 15s;
+}
+.slidingVertical span:nth-child(8){
+	animation-delay: 17.5s;
+	-ms-animation-delay: 17.5s;
+	-webkit-animation-delay: 17.5s;
+}
+
+.slidingVertical span:nth-child(9){
+	animation-delay: 20s;
+	-ms-animation-delay: 20s;
+	-webkit-animation-delay: 20s;
+}
+
+.slidingVertical span:nth-child(10){
+	animation-delay: 22.5s;
+	-ms-animation-delay: 22.5s;
+	-webkit-animation-delay: 22.5s;
 }
 
 /*topToBottom Animation*/
