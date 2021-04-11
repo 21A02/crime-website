@@ -105,6 +105,39 @@
 
     </section>
 
+    <script>
+
+		anychart.onDocumentReady(function () {
+		
+		var datas='{{dataz}}'
+		var find='&#39;'
+		var data=datas.replaceAll('&#39;','"')
+        var data0=data.replaceAll('&#34;','"')
+		var data1=data0.replace('[','')
+		var data1=data1.replace(']','')	
+		var data1=data1.replaceAll('},','}#')
+		var data2=data1.split('#')
+
+        //var x=JSON.parse(data2)
+		//console.log('xvar------->',x)
+
+
+		console.log('datas-->',datas)
+		console.log('data----->',data)
+		console.log("test")
+
+
+		console.log('data1------->',data1)
+		console.log('data2------------>',data2)
+		var i;
+		var values=[]
+		for (i = 0; i < data2.length; i++) {
+				  values.push((data2[i].slice(4,)));
+		}
+		console.log('values--->',values)
+        });
+        </script>
+    <h3>{{dataz}}</h3>
 
 </body>
 
