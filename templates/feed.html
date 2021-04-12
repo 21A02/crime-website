@@ -95,12 +95,21 @@
 
         <h2 class="sentence">
             <div class="slidingVertical">
-                <span>Iran Woman Arrested For Allegedly Looting</span>
+                <!-- <span>Iran Woman Arrested For Allegedly Looting</span>
                 <span>Rs. 140 Crore Robbed From UP Jewellery </span>
                 <span>Pre-activated SIM cards racket busted in Kanpur</span>
                 <span>Man shot dead in Kanpur, allegedly by chain snatchers</span>
-                <span>Drug Dealer Learns Big Lesson on Where Not to Hide Bitcoin Codes</span>
-                <span id ='xyz'></span>
+                <span>Drug Dealer Learns Big Lesson on Where Not to Hide Bitcoin Codes</span> -->
+                <span id ='sp0'></span>
+                <span id ='sp1'></span>
+                <span id ='sp2'></span>
+                <span id ='sp3'></span>
+                <span id ='sp4'></span>
+                <span id ='sp5'></span>
+                <span id ='sp6'></span>
+                <span id ='sp7'></span>
+                <span id ='sp8'></span>
+                <span id ='sp9'></span>
             </div>
         </h2>
 
@@ -111,7 +120,7 @@
 		anychart.onDocumentReady(function () {
 		
 		var datas='{{dataz}}'
-		var find='&#39;'
+		//var find='&#39;'
 		var data=datas.replaceAll('&#39;','"')
         var data0=data.replaceAll('&#34;','"')
 		var data1=data0.replace('[','')
@@ -132,18 +141,30 @@
 		console.log('data2------------>',data2)
 		var i;
 		var values=[]
-		for (i = 0; i < data2.length; i++) {
-				  values.push((data2[i].slice(4,)));
+		for (i = 0; i <= 9; i++) {
+            x=(data2[i].slice(29,));
+            y=x.indexOf('"link"');  
+            x=x.slice(1,y-3);  
+            values.push(x);
                   
 		}
 		console.log('values--->',values)
-        document.getElementById("xyz").innerHTML=values;
+        document.getElementById("sp0").innerHTML=values[0];
+        document.getElementById("sp1").innerHTML=values[1];
+        document.getElementById("sp2").innerHTML=values[2];
+        document.getElementById("sp3").innerHTML=values[3];
+        document.getElementById("sp4").innerHTML=values[4];
+        document.getElementById("sp5").innerHTML=values[5];
+        document.getElementById("sp6").innerHTML=values[6];
+        document.getElementById("sp7").innerHTML=values[7];
+        document.getElementById("sp8").innerHTML=values[8];
+        document.getElementById("sp9").innerHTML=values[9];
         
         });
         
 
         </script>
-    <h3>{{dataz}}</h3>
+    <!-- <h3>{{dataz}}</h3> -->
 
 </body>
 
