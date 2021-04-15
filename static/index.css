@@ -1,6 +1,7 @@
   body {
     font-family: "Lato", sans-serif;
-    background: #d7dadd;
+    background-image: url("static\img\Background4.jpg");
+    background-size: contain;
   }
   
   .sidenav {
