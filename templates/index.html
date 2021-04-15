@@ -34,8 +34,30 @@
     #container1 {
       width: 100%;
       height: 500px;
-      margin: 0;
-      padding: 0;
+  
+      display: flex;
+
+    height: 500px;
+    width: 100%;
+    padding: 0;
+    margin-left: auto;
+
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+
+
+
+  min-height: 200px;
+  width: 95vw;
+  margin: 100px auto;
+  background: white;
+  border-radius: 5px;
+
     }
 
   </style>
@@ -444,7 +466,7 @@
 <div class="col-lg-6 col-12">
   <div id="container">
   
-  <div id="anychart-embed-countries-india" class="anychart-embed anychart-embed-countries-india">
+  <div id="anychart-embed-countries-india" class="anychart-embed anychart-embed-countries-india" style="height: 1000px; width: 10px;">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
@@ -669,7 +691,7 @@
   <!-- dynamic graph -->
 
   <div id="dynamic-graph">
-    <div id="chartContainer" style="height: 400px; width: 500px;"></div>
+    <div id="chartContainer" style="height: 500px; width: 700px;"></div>
     <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
     <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
   </div>
@@ -752,8 +774,6 @@ anychart.theme('lightBlue');
 </script>
 <!--check2-->
   
-
-
   <!-- Footer of the page -->
   <div class="footer">
     <i class="fas fa-chart-bar"></i> Crime Data Analytics © 2020. All rights reserved
