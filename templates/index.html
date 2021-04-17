@@ -7,6 +7,7 @@
   <title>Crime Data Analysis</title>
   <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
   <link rel="stylesheet" href="{{url_for('static',filename='index.js')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='graph-panel.css')}}">
   <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <!-- bootstrap css script -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,7 +18,7 @@
   <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js" type="text/javascript"></script>
   <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js" type="text/javascript"></script>
   <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-map.min.js" type="text/javascript"></script>
-  
+
   <!--Stick Graph-->
 
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
@@ -27,39 +28,39 @@
   <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
   <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
   <style>
-    body{
+    body {
       background-image: url("static/img/Background4.jpg");
       background-size: contain;
     }
+
     #container1 {
       width: 100%;
       height: 500px;
-  
+
       display: flex;
 
-    height: 500px;
-    width: 100%;
-    padding: 0;
-    margin-left: auto;
+      height: 500px;
+      width: 100%;
+      padding: 0;
+      margin-left: auto;
 
-  box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12);
+      box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
 
 
 
-  min-height: 200px;
-  width: 95vw;
-  margin: 100px auto;
-  background: white;
-  border-radius: 5px;
+      min-height: 200px;
+      width: 95vw;
+      margin: 100px auto;
+      background: white;
+      border-radius: 5px;
 
     }
-
   </style>
 
   <!-- dynamic map script  -->
@@ -120,7 +121,7 @@
     }
   </script>
 
- 
+
 
 
 
@@ -167,14 +168,16 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <li class="nav-item">
-            <a class="navbar-brand" href="#"> <img src="{{ url_for('static',filename='img/website-icon.png')}}" alt="home" height="40px"></a>
+            <a class="navbar-brand" href="#"> <img src="{{ url_for('static',filename='img/website-icon.png')}}"
+                alt="home" height="40px"></a>
           </li>
           <li class="nav-item">
             <a class="btn btn-light" href="#" role="button">Home</a>
             <!--PUT link here-->
           </li>
           <li class="nav-item">
-            <a class="btn btn-light" href="{{url_for('static',filename='heatmap_final.html')}}" target="_blank">CrimeMap</a>
+            <a class="btn btn-light" href="{{url_for('static',filename='heatmap_final.html')}}"
+              target="_blank">CrimeMap</a>
             <!--PUT link here-->
           </li>
           <li class="nav-item">
@@ -210,574 +213,659 @@
   <!--check-->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-6 col-12">  
-  <div>
-    <table class="table table-hover" class="table table-bordered" width="35%">
-      <thead>
-        <tr>
-          <th scope="col">Serial Number</th>
-          <th scope="col">States/UTs</th>
-          <th scope="col">Crime Precentage</th>
-          <th scope="col">Crime Rate</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-        <tr>
-          <th scope="col">1</th>
-          <th scope="col">ANDHRA PRADESH</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">2</th>
-          <th scope="col">ARUNACHAL PRADESH</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">3</th>
-          <th scope="col">BIHAR
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">4</th>
-          <th scope="col">CHHATTISGARH
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">5</th>
-          <th scope="col">GOA
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">6</th>
-          <th scope="col">GUJARAT
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">7</th>
-          <th scope="col">HARYANA
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">8</th>
-          <th scope="col">HIMACHAL PRADESH
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">9</th>
-          <th scope="col">JAMMU & KASHMIR
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">10</th>
-          <th scope="col">JHARKHAND
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">11</th>
-          <th scope="col">KARNATAKA
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">12</th>
-          <th scope="col">KERALA
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">13</th>
-          <th scope="col">MADHYA PRADESH
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">14</th>
-          <th scope="col">PUDUCHERRY</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">15</th>
-          <th scope="col">MAHARASHTRA
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">16</th>
-          <th scope="col">MANIPUR
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">17</th>
-          <th scope="col">MEGHALAYA
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">18</th>
-          <th scope="col">MIZORAM
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">19</th>
-          <th scope="col">NAGALAND
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">20</th>
-          <th scope="col">ODISHA
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">21</th>
-          <th scope="col">PUNJAB
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">22</th>
-          <th scope="col">RAJASTHAN
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">23</th>
-          <th scope="col">SIKKIM
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">24</th>
-          <th scope="col">TAMIL NADU
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">25</th>
-          <th scope="col">TRIPURA
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">26</th>
-          <th scope="col">UTTAR PRADESH
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">27</th>
-          <th scope="col">UTTARAKHAND
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">28</th>
-          <th scope="col">WEST BENGAL
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">29</th>
-          <th scope="col">ANDAMAN AND NICOBAR ISLANDS
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">30</th>
-          <th scope="col">CHANDIGARH
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">31</th>
-          <th scope="col">D & N HAVELI
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">32</th>
-          <th scope="col">DAMAN & DIU
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">35</th>
-          <th scope="col">DELHI UT
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-        <tr>
-          <th scope="col">36</th>
-          <th scope="col">LAKSHADWEEP
-    </th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-        </tr>
-    
-      </tbody>
-    </table>
-  </div>
-</div>
-<div class="col-lg-6 col-12">
-  <div id="container">
-  
-  <div id="anychart-embed-countries-india" class="anychart-embed anychart-embed-countries-india" style="height: 1000px; width: 10px;">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
-    <script src="https://cdn.anychart.com/geodata/2.1.0/countries/india/india.js"></script>
-    <div id="ac_style_countries-india" style="display:none;">
+      <div class="col-lg-6 col-12">
+        <div class="overflow-auto" style="height: 700px;">
+          <table class="table table-hover" class="table table-bordered" width="35%">
+            <thead>
+              <tr>
+                <th scope="col">Serial Number</th>
+                <th scope="col">States/UTs</th>
+                <th scope="col">Crime Precentage</th>
+                <th scope="col">Crime Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+              <tr>
+                <th scope="col">1</th>
+                <th scope="col">ANDHRA PRADESH</th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">2</th>
+                <th scope="col">ARUNACHAL PRADESH</th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">3</th>
+                <th scope="col">BIHAR
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">4</th>
+                <th scope="col">CHHATTISGARH
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">5</th>
+                <th scope="col">GOA
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">6</th>
+                <th scope="col">GUJARAT
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">7</th>
+                <th scope="col">HARYANA
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">8</th>
+                <th scope="col">HIMACHAL PRADESH
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">9</th>
+                <th scope="col">JAMMU & KASHMIR
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">10</th>
+                <th scope="col">JHARKHAND
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">11</th>
+                <th scope="col">KARNATAKA
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">12</th>
+                <th scope="col">KERALA
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">13</th>
+                <th scope="col">MADHYA PRADESH
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">14</th>
+                <th scope="col">PUDUCHERRY</th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">15</th>
+                <th scope="col">MAHARASHTRA
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">16</th>
+                <th scope="col">MANIPUR
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">17</th>
+                <th scope="col">MEGHALAYA
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">18</th>
+                <th scope="col">MIZORAM
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">19</th>
+                <th scope="col">NAGALAND
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">20</th>
+                <th scope="col">ODISHA
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">21</th>
+                <th scope="col">PUNJAB
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">22</th>
+                <th scope="col">RAJASTHAN
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">23</th>
+                <th scope="col">SIKKIM
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">24</th>
+                <th scope="col">TAMIL NADU
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">25</th>
+                <th scope="col">TRIPURA
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">26</th>
+                <th scope="col">UTTAR PRADESH
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">27</th>
+                <th scope="col">UTTARAKHAND
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">28</th>
+                <th scope="col">WEST BENGAL
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">29</th>
+                <th scope="col">ANDAMAN AND NICOBAR ISLANDS
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">30</th>
+                <th scope="col">CHANDIGARH
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">31</th>
+                <th scope="col">D & N HAVELI
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">32</th>
+                <th scope="col">DAMAN & DIU
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">35</th>
+                <th scope="col">DELHI UT
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+              <tr>
+                <th scope="col">36</th>
+                <th scope="col">LAKSHADWEEP
+                </th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12">
+        <div id="container" style="
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 600px;
+  height: 600px;">
+
+          <div id="anychart-embed-countries-india" class="anychart-embed anychart-embed-countries-india"
+            style="height: 1000px; width: 10px;">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+            <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+            <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
+            <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+            <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+            <script src="https://cdn.anychart.com/geodata/2.1.0/countries/india/india.js"></script>
+            <div id="ac_style_countries-india" style="display:none;">
+            </div>
+            <script>
+              (function () {
+                function ac_add_to_head(el) {
+                  var head = document.getElementsByTagName('head')[0];
+                  head.insertBefore(el, head.firstChild);
+                }
+
+                function ac_add_link(url) {
+                  var el = document.createElement('link');
+                  el.rel = 'stylesheet';
+                  el.type = 'text/css';
+                  el.media = 'all';
+                  el.href = url;
+                  ac_add_to_head(el);
+                }
+
+                function ac_add_style(css) {
+                  var ac_style = document.createElement('style');
+                  if (ac_style.styleSheet) ac_style.styleSheet.cssText = css;
+                  else ac_style.appendChild(document.createTextNode(css));
+                  ac_add_to_head(ac_style);
+                }
+                ac_add_link('https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css');
+                ac_add_style(document.getElementById("ac_style_countries-india").innerHTML);
+                ac_add_style(".anychart-embed-countries-india{width:600px;height:450px;}");
+              })();
+            </script>
+
+            <script>
+              anychart.onDocumentReady(function () {
+                // create map
+                var map = anychart.map();
+
+                // create data set
+                var dataSet = anychart.data.set(
+                  [{
+                      "id": "IN.AN",
+                      "value": 0
+                    },
+                    {
+                      "id": "IN.AP",
+                      "value": 1
+                    },
+                    {
+                      "id": "IN.AR",
+                      "value": 2
+                    },
+                    {
+                      "id": "IN.AS",
+                      "value": 3
+                    },
+                    {
+                      "id": "IN.BR",
+                      "value": 4
+                    },
+                    {
+                      "id": "IN.CH",
+                      "value": 5
+                    },
+                    {
+                      "id": "IN.CT",
+                      "value": 6
+                    },
+                    {
+                      "id": "IN.DN",
+                      "value": 7
+                    },
+                    {
+                      "id": "IN.DD",
+                      "value": 8
+                    },
+                    {
+                      "id": "IN.DL",
+                      "value": 9
+                    },
+                    {
+                      "id": "IN.GA",
+                      "value": 10
+                    },
+                    {
+                      "id": "IN.GJ",
+                      "value": 11
+                    },
+                    {
+                      "id": "IN.HR",
+                      "value": 12
+                    },
+                    {
+                      "id": "IN.HP",
+                      "value": 13
+                    },
+                    {
+                      "id": "IN.JH",
+                      "value": 14
+                    },
+                    {
+                      "id": "IN.KA",
+                      "value": 15
+                    },
+                    {
+                      "id": "IN.KL",
+                      "value": 16
+                    },
+                    {
+                      "id": "IN.LD",
+                      "value": 17
+                    },
+                    {
+                      "id": "IN.MP",
+                      "value": 18
+                    },
+                    {
+                      "id": "IN.MH",
+                      "value": 19
+                    },
+                    {
+                      "id": "IN.MNL",
+                      "value": 20
+                    },
+                    {
+                      "id": "IN.ML",
+                      "value": 21
+                    },
+                    {
+                      "id": "IN.MZ",
+                      "value": 22
+                    },
+                    {
+                      "id": "IN.NL",
+                      "value": 23
+                    },
+                    {
+                      "id": "IN.OR",
+                      "value": 24
+                    },
+                    {
+                      "id": "IN.PY",
+                      "value": 25
+                    },
+                    {
+                      "id": "IN.PB",
+                      "value": 26
+                    },
+                    {
+                      "id": "IN.RJ",
+                      "value": 27
+                    },
+                    {
+                      "id": "IN.SK",
+                      "value": 28
+                    },
+                    {
+                      "id": "IN.TN",
+                      "value": 29
+                    },
+                    {
+                      "id": "IN.TR",
+                      "value": 30
+                    },
+                    {
+                      "id": "IN.UP",
+                      "value": 31
+                    },
+                    {
+                      "id": "IN.UT",
+                      "value": 32
+                    },
+                    {
+                      "id": "IN.WB",
+                      "value": 33
+                    },
+                    {
+                      "id": "IN.TG",
+                      "value": 34
+                    },
+                    {
+                      "id": "IN.JK",
+                      "value": 35
+                    },
+                    {
+                      "id": "IN.LA",
+                      "value": 36
+                    }
+                  ]
+                );
+
+
+                series = map.choropleth(dataSet);
+
+                series.geoIdField('id');
+
+
+                series.colorScale(anychart.scales.linearColor('#deebf7', '#3182bd'));
+                series.hovered().fill('#addd8e');
+
+                // https://cdn.anychart.com/#maps-collection
+                map.geoData(anychart.maps['india']);
+
+
+                map.container('container');
+
+
+                map.draw();
+              });
+            </script>
+          </div>
+        </div>
+      </div>
     </div>
-    <script>
-      (function () {
-        function ac_add_to_head(el) {
-          var head = document.getElementsByTagName('head')[0];
-          head.insertBefore(el, head.firstChild);
-        }
+    <!--check-->
 
-        function ac_add_link(url) {
-          var el = document.createElement('link');
-          el.rel = 'stylesheet';
-          el.type = 'text/css';
-          el.media = 'all';
-          el.href = url;
-          ac_add_to_head(el);
-        }
 
-        function ac_add_style(css) {
-          var ac_style = document.createElement('style');
-          if (ac_style.styleSheet) ac_style.styleSheet.cssText = css;
-          else ac_style.appendChild(document.createTextNode(css));
-          ac_add_to_head(ac_style);
-        }
-        ac_add_link('https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css');
-        ac_add_style(document.getElementById("ac_style_countries-india").innerHTML);
-        ac_add_style(".anychart-embed-countries-india{width:600px;height:450px;}");
-      })();
-    </script>
+    <div class="graph-panel">
+      <!-- dynamic graph -->
+
+      <div id="dynamic-graph">
+        <div id="chartContainer" style="height: 500px; width: 700px;"></div>
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+      </div>
+    </div>
+
+
+    <!--check2-->
+    <div id="container1"></div>
+
+    <div class="graph-panel">
+
+      <div class="card">
+        <div class="card-image"></div>
+        <div class="card-text">
+          <span class="date">4 days ago</span>
+          <h2>Post One</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt
+            eligendi dolor</p>
+        </div>
+        <div class="card-stats">
+          <div class="stat">
+            <div class="value">4<sup>m</sup></div>
+            <div class="type">read</div>
+          </div>
+          <div class="stat border">
+            <div class="value">5123</div>
+            <div class="type">views</div>
+          </div>
+          <div class="stat">
+            <div class="value">32</div>
+            <div class="type">comments</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image card2"></div>
+        <div class="card-text card2">
+          <span class="date">1 week ago</span>
+          <h2>Post Two</h2>
+          <p>Adipisicing elit. Ducimus, repudiandae corrupti amet temporibus omnis provident illum maxime quod. Lorem
+            ipsum dolor</p>
+        </div>
+        <div class="card-stats card2">
+          <div class="stat">
+            <div class="value">7<sup>m</sup></div>
+            <div class="type">read</div>
+          </div>
+          <div class="stat border">
+            <div class="value">7152</div>
+            <div class="type">views</div>
+          </div>
+          <div class="stat">
+            <div class="value">21</div>
+            <div class="type">comments</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image card3"></div>
+        <div class="card-text card3">
+          <span class="date">3 week ago</span>
+          <h2>Post Three</h2>
+          <p>Repudiandae corrupti amet temporibus omnis provident illum maxime. Ducimus, lorem ipsum dolor adipisicing
+            elit</p>
+        </div>
+        <div class="card-stats card3">
+          <div class="stat">
+            <div class="value">5<sup>m</sup></div>
+            <div class="type">read</div>
+          </div>
+          <div class="stat border">
+            <div class="value">3021</div>
+            <div class="type">views</div>
+          </div>
+          <div class="stat">
+            <div class="value">15</div>
+            <div class="type">comments</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
 
     <script>
       anychart.onDocumentReady(function () {
-        // create map
-        var map = anychart.map();
+        // set chart theme
+        anychart.theme('lightBlue');
+        // create column chart
+        var chart = anychart.column();
+        // turn on chart animation
+        chart.animation(true);
+        // set chart title text settings
+        chart.title('Crime Rates of States and UTs');
 
-        // create data set
-        var dataSet = anychart.data.set(
-          [{
-              "id": "IN.AN",
-              "value": 0
-            },
-            {
-              "id": "IN.AP",
-              "value": 1
-            },
-            {
-              "id": "IN.AR",
-              "value": 2
-            },
-            {
-              "id": "IN.AS",
-              "value": 3
-            },
-            {
-              "id": "IN.BR",
-              "value": 4
-            },
-            {
-              "id": "IN.CH",
-              "value": 5
-            },
-            {
-              "id": "IN.CT",
-              "value": 6
-            },
-            {
-              "id": "IN.DN",
-              "value": 7
-            },
-            {
-              "id": "IN.DD",
-              "value": 8
-            },
-            {
-              "id": "IN.DL",
-              "value": 9
-            },
-            {
-              "id": "IN.GA",
-              "value": 10
-            },
-            {
-              "id": "IN.GJ",
-              "value": 11
-            },
-            {
-              "id": "IN.HR",
-              "value": 12
-            },
-            {
-              "id": "IN.HP",
-              "value": 13
-            },
-            {
-              "id": "IN.JH",
-              "value": 14
-            },
-            {
-              "id": "IN.KA",
-              "value": 15
-            },
-            {
-              "id": "IN.KL",
-              "value": 16
-            },
-            {
-              "id": "IN.LD",
-              "value": 17
-            },
-            {
-              "id": "IN.MP",
-              "value": 18
-            },
-            {
-              "id": "IN.MH",
-              "value": 19
-            },
-            {
-              "id": "IN.MNL",
-              "value": 20
-            },
-            {
-              "id": "IN.ML",
-              "value": 21
-            },
-            {
-              "id": "IN.MZ",
-              "value": 22
-            },
-            {
-              "id": "IN.NL",
-              "value": 23
-            },
-            {
-              "id": "IN.OR",
-              "value": 24
-            },
-            {
-              "id": "IN.PY",
-              "value": 25
-            },
-            {
-              "id": "IN.PB",
-              "value": 26
-            },
-            {
-              "id": "IN.RJ",
-              "value": 27
-            },
-            {
-              "id": "IN.SK",
-              "value": 28
-            },
-            {
-              "id": "IN.TN",
-              "value": 29
-            },
-            {
-              "id": "IN.TR",
-              "value": 30
-            },
-            {
-              "id": "IN.UP",
-              "value": 31
-            },
-            {
-              "id": "IN.UT",
-              "value": 32
-            },
-            {
-              "id": "IN.WB",
-              "value": 33
-            },
-            {
-              "id": "IN.TG",
-              "value": 34
-            },
-            {
-              "id": "IN.JK",
-              "value": 35
-            },
-            {
-              "id": "IN.LA",
-              "value": 36
-            }
-          ]
-        );
+        // create area series with passed data
+        chart.stick(getData());
 
+        // set scale minimum
+        chart.yScale().minimum(0).ticks({
+          interval: 5
+        });
 
-        series = map.choropleth(dataSet);
+        // tooltips position and interactivity settings
+        chart.interactivity().hoverMode('by-x');
 
-        series.geoIdField('id');
-
-
-        series.colorScale(anychart.scales.linearColor('#deebf7', '#3182bd'));
-        series.hovered().fill('#addd8e');
-
-        // https://cdn.anychart.com/#maps-collection
-        map.geoData(anychart.maps['india']);
-
-
-        map.container('container');
-
-
-        map.draw();
+        // axes titles
+        chart.yAxis().title('Crime Rate');
+        chart.xAxis().labels().rotation(-90);
+        // set container id for the chart
+        chart.container('container1');
+        // initiate chart drawing
+        chart.draw();
       });
+
+      function getData() {
+        return [
+          ['ANDHRA PRADESH', 64],
+          ['ARUNACHAL PRADESH', 55],
+          ['BIHAR', 78],
+          ['CHHATTISGARH', 45],
+          ['GOA', 22],
+          ['GUJARAT', 35],
+          ['HARYANA', 75],
+          ['HIMACHAL PRADESH', 32],
+          ['JAMMU & KASHMIR', 76],
+          ['JHARKHAND', 65],
+          ['KARNATAKA', 42],
+          ['KERALA', 37],
+          ['MADHYA PRADESH', 65],
+          ['PUDUCHERRY', 26],
+          ['MAHARASHTRA', 30],
+          ['MEGHALAYA', 27],
+          ['MIZORAM', 26],
+          ['NAGALAND', 24],
+          ['ODISHA', 35],
+          ['PUNJAB', 60],
+          ['RAJASTHAN', 50],
+          ['SIKKIM', 35],
+          ['TAMIL NADU', 55],
+          ['TRIPURA', 35],
+          ['UTTAR PRADESH', 80],
+          ['UTTARAKHAND', 65],
+          ['WEST BENGAL', 72],
+          ['ANDAMAN AND NICOBAR ISLANDS', 21],
+          ['CHANDIGARH', 39],
+          ['D & N HAVELI', 27],
+          ['DELHI UT', 81],
+          ['LAKSHADWEEP', 23]
+        ];
+      }
     </script>
-  </div>
-</div>
-  </div>
-</div>
-<!--check-->
+    <!--check2-->
 
 
-<div class="graph-panel">
-  <!-- dynamic graph -->
-
-  <div id="dynamic-graph">
-    <div id="chartContainer" style="height: 500px; width: 700px;"></div>
-    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-  </div>
-</div>
 
 
-<!--check2-->
-<div id="container1"></div>
-  
 
-<script>
 
-  anychart.onDocumentReady(function () {
-// set chart theme
-anychart.theme('lightBlue');
-    // create column chart
-    var chart = anychart.column();
-    // turn on chart animation
-    chart.animation(true);
-    // set chart title text settings
-    chart.title('Crime Rates of States and UTs');
-
-    // create area series with passed data
-    chart.stick(getData());
-
-    // set scale minimum
-    chart.yScale().minimum(0).ticks({
-      interval: 5
-    });
-
-    // tooltips position and interactivity settings
-    chart.interactivity().hoverMode('by-x');
-
-    // axes titles
-    chart.yAxis().title('Crime Rate');
-    chart.xAxis().labels().rotation(-90);
-    // set container id for the chart
-    chart.container('container1');
-    // initiate chart drawing
-    chart.draw();
-  });
-
-  function getData() {
-    return [ 
-['ANDHRA PRADESH', 64],
-['ARUNACHAL PRADESH',55],
-['BIHAR', 78],
-['CHHATTISGARH', 45],
-['GOA', 22],
-['GUJARAT', 35],
-['HARYANA', 75],
-['HIMACHAL PRADESH', 32],
-['JAMMU & KASHMIR', 76],
-['JHARKHAND', 65],
-['KARNATAKA', 42],
-['KERALA', 37],
-['MADHYA PRADESH', 65],
-['PUDUCHERRY', 26],
-['MAHARASHTRA', 30],
-['MEGHALAYA', 27],
-['MIZORAM', 26],
-['NAGALAND', 24],
-['ODISHA',35],
-['PUNJAB', 60],
-['RAJASTHAN', 50],
-['SIKKIM', 35],
-['TAMIL NADU', 55],
-['TRIPURA', 35],
-['UTTAR PRADESH', 80],
-['UTTARAKHAND', 65],
-['WEST BENGAL', 72],
-['ANDAMAN AND NICOBAR ISLANDS', 21],
-['CHANDIGARH', 39],
-['D & N HAVELI', 27],
-['DELHI UT', 81],
-['LAKSHADWEEP',23]      
-];
-}
-
-</script>
-<!--check2-->
-  
-  <!-- Footer of the page -->
-  <div class="footer">
-    <i class="fas fa-chart-bar"></i> Crime Data Analytics © 2020. All rights reserved.
-  </div>
+    <!-- Footer of the page -->
+    <div class="footer">
+      <i class="fas fa-chart-bar"></i> Crime Data Analytics © 2020. All rights reserved.
+    </div>
 </body>
 
 </html>
