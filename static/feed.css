@@ -116,9 +116,9 @@ h1{
 	-webkit-animation-delay: 10s;
 }
 .slidingVertical span:nth-child(6){
-	animation-delay: 12s;
-	-ms-animation-delay: 12s;
-	-webkit-animation-delay: 12s;
+	animation-delay: 12.5s;
+	-ms-animation-delay: 12.5s;
+	-webkit-animation-delay: 12.5s;
 }.slidingVertical span:nth-child(7){
 	animation-delay: 15s;
 	-ms-animation-delay: 15s;

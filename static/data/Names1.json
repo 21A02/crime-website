@@ -78,21 +78,6 @@
         "date": "2021-04-04",
         "city": " New Delhi",
         "lat": "(28.6138954, 77.2090057)"
-    },
-    "10": {
-        "index": "10",
-        "news": "UP\u2019s Banda district jail turns into fortress over Mukhtar Ansari's transfer",
-        "link": "https://www.indiatoday.in/crime/story/up-s-banda-district-jail-turns-into-fortress-over-mukhtar-ansari-s-transfer-1787106-2021-04-04",
-        "date": "2021-04-04",
-        "city": " Lucknow",
-        "lat": "(26.8381, 80.9346001)"
-    },
-    "11": {
-        "index": "11",
-        "news": "Lured on pretext of marriage by boyfriend, Dalit girl gang-raped by 8 in Jalandhar",
-        "link": "https://www.indiatoday.in/crime/story/lured-pretext-marriage-boyfriend-dalit-girl-gang-raped-jalandhar-1786911-2021-04-04",
-        "date": "2021-04-04",
-        "city": " Chandigarh",
-        "lat": "(30.7334421, 76.7797143)"
     }
+   
 }
