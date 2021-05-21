@@ -14,11 +14,17 @@
   <!-- bootstrap css script -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  
+
   <!-- bootstrap js script -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
 
   <!-- anychart CSS script -->
@@ -140,108 +146,104 @@
   <!-- font awsome script -->
   <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
 
-  <!-- table creation scrippt-->    
+  <!-- table creation scrippt-->
   <script>
-              
-        function datafillfun(n)
-        {       
 
-        console.log("testing run...");
-                    var s="{{url_for('static',filename='data/table_data2002.json')}}";
-                    if(n==1)
-                    {
-                      document.getElementById('dropdownMenuButton').innerHTML ='2001';
-                      s = "{{url_for('static',filename='data/table_data2001.json')}}";
-                    } 
-                    else if(n==2){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2002';
-                      s = "{{url_for('static',filename='data/table_data2002.json')}}";
-                    }
-                    else if(n==3){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2003';
-                      s = "{{url_for('static',filename='data/table_data2003.json')}}";
-                    }
-                    else if(n==4){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2004';
-                      s = "{{url_for('static',filename='data/table_data2004.json')}}";
-                    }
-                    else if(n==5){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2005';
-                      s = "{{url_for('static',filename='data/table_data2005.json')}}";
-                    }
-                    else if(n==6){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2006';
-                      s = "{{url_for('static',filename='data/table_data2006.json')}}";
-                    }
-                    else if(n==7){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2007';
-                      s = "{{url_for('static',filename='data/table_data2007.json')}}";
-                    }
-                    else if(n==8){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2008';
-                      s = "{{url_for('static',filename='data/table_data2008.json')}}";
-                    }
-                    else if(n==9){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2009';
-                      s = "{{url_for('static',filename='data/table_data2009.json')}}";
-                    }
-                    else if(n==10){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2010';
-                      s = "{{url_for('static',filename='data/table_data2010.json')}}";
-                    }
-                    else if(n==11){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2011';
-                      s = "{{url_for('static',filename='data/table_data2011.json')}}";
-                    }
-                    else if(n==12){
-                      document.getElementById('dropdownMenuButton').innerHTML ='2012';
-                      s = "{{url_for('static',filename='data/table_data2012.json')}}";
-                    }
-                    else
-                    {
-                      s = "{{url_for('static',filename='data/table_data2011.json')}}";
-                    } 
-                    
-                    console.log(n,s);
+    function datafillfun(n) {
 
-                    
-                    document.getElementById('myGrid').innerHTML ='';
-                    
+      console.log("testing run...");
+      var s = "{{url_for('static',filename='data/table_data2002.json')}}";
+      if (n == 1) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2001';
+        s = "{{url_for('static',filename='data/table_data2001.json')}}";
+      }
+      else if (n == 2) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2002';
+        s = "{{url_for('static',filename='data/table_data2002.json')}}";
+      }
+      else if (n == 3) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2003';
+        s = "{{url_for('static',filename='data/table_data2003.json')}}";
+      }
+      else if (n == 4) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2004';
+        s = "{{url_for('static',filename='data/table_data2004.json')}}";
+      }
+      else if (n == 5) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2005';
+        s = "{{url_for('static',filename='data/table_data2005.json')}}";
+      }
+      else if (n == 6) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2006';
+        s = "{{url_for('static',filename='data/table_data2006.json')}}";
+      }
+      else if (n == 7) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2007';
+        s = "{{url_for('static',filename='data/table_data2007.json')}}";
+      }
+      else if (n == 8) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2008';
+        s = "{{url_for('static',filename='data/table_data2008.json')}}";
+      }
+      else if (n == 9) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2009';
+        s = "{{url_for('static',filename='data/table_data2009.json')}}";
+      }
+      else if (n == 10) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2010';
+        s = "{{url_for('static',filename='data/table_data2010.json')}}";
+      }
+      else if (n == 11) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2011';
+        s = "{{url_for('static',filename='data/table_data2011.json')}}";
+      }
+      else if (n == 12) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2012';
+        s = "{{url_for('static',filename='data/table_data2012.json')}}";
+      }
+      else {
+        s = "{{url_for('static',filename='data/table_data2011.json')}}";
+      }
 
-              // function for reading json file
-              function readTextFile(file, callback) {
-                var rawFile = new XMLHttpRequest();
-                rawFile.overrideMimeType("application/json");
-                rawFile.open("GET", file, true);
-                rawFile.onreadystatechange = function () {
-                  if (rawFile.readyState === 4 && rawFile.status == "200") {
-                    callback(rawFile.responseText);
-                  }
-                }
-                rawFile.send(null);
-              }
+      console.log(n, s);
 
-                readTextFile(s, function (text) {
-                var data = JSON.parse(text);
-                console.log(data);
 
-                  
+      document.getElementById('myGrid').innerHTML = '';
 
-                var tableBody = '<table class="table table-bordered table-hover"><thead><tr class="table-active"><th scope="col">STATE\/UT</th><th>TOTAL IPC CRIMES</th scope="col"></tr></thead><tbody>';
-                  
-                  data.forEach(function(d)
-                  {
-                      tableBody += '<tr><th scope="row">'+d.STATE_UT+'</th><td>'+d.TOTAL_IPC_CRIMES+'</td></tr>';   
-                  });
-                      tableBody += '<tbody><table>';
-              
-                  // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-                    
-                    var divContainer = document.getElementById("myGrid");
-                        divContainer.innerHTML = tableBody;
-                    });
-            }
-          </script>
+
+      // function for reading json file
+      function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function () {
+          if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+          }
+        }
+        rawFile.send(null);
+      }
+
+      readTextFile(s, function (text) {
+        var data = JSON.parse(text);
+        console.log(data);
+
+
+
+        var tableBody = '<table class="table table-bordered table-hover"><thead><tr class="table-active"><th scope="col">STATE\/UT</th><th>TOTAL IPC CRIMES</th scope="col"></tr></thead><tbody>';
+
+        data.forEach(function (d) {
+          tableBody += '<tr><th scope="row">' + d.STATE_UT + '</th><td>' + d.TOTAL_IPC_CRIMES + '</td></tr>';
+        });
+        tableBody += '<tbody><table>';
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+
+        var divContainer = document.getElementById("myGrid");
+        divContainer.innerHTML = tableBody;
+      });
+    }
+  </script>
 
 
 
@@ -325,14 +327,15 @@
     </div>
   </nav>
 
-  
+
 
   <!--check-->
   <div class="container-fluid">
 
     <!-- dropdown to select year-->
-      <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
         Select Year
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -354,11 +357,11 @@
 
     <div class="row">
       <div class="col-lg-6 col-12">
-        <div class="overflow-auto" >
+        <div class="overflow-auto">
 
           <!-- Table -->
-          <div id="myGrid"></div>        
-        
+          <div id="myGrid"></div>
+
         </div>
       </div>
 
