@@ -140,6 +140,113 @@
   <!-- font awsome script -->
   <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
 
+  <!-- table creation scrippt-->    
+  <script>
+              
+        function datafillfun(n)
+        {       
+
+        console.log("testing run...");
+                    var s="{{url_for('static',filename='data/table_data2002.json')}}";
+                    if(n==1)
+                    {
+                      document.getElementById('dropdownMenuButton').innerHTML ='2001';
+                      s = "{{url_for('static',filename='data/table_data2001.json')}}";
+                    } 
+                    else if(n==2){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2002';
+                      s = "{{url_for('static',filename='data/table_data2002.json')}}";
+                    }
+                    else if(n==3){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2003';
+                      s = "{{url_for('static',filename='data/table_data2003.json')}}";
+                    }
+                    else if(n==4){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2004';
+                      s = "{{url_for('static',filename='data/table_data2004.json')}}";
+                    }
+                    else if(n==5){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2005';
+                      s = "{{url_for('static',filename='data/table_data2005.json')}}";
+                    }
+                    else if(n==6){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2006';
+                      s = "{{url_for('static',filename='data/table_data2006.json')}}";
+                    }
+                    else if(n==7){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2007';
+                      s = "{{url_for('static',filename='data/table_data2007.json')}}";
+                    }
+                    else if(n==8){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2008';
+                      s = "{{url_for('static',filename='data/table_data2008.json')}}";
+                    }
+                    else if(n==9){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2009';
+                      s = "{{url_for('static',filename='data/table_data2009.json')}}";
+                    }
+                    else if(n==10){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2010';
+                      s = "{{url_for('static',filename='data/table_data2010.json')}}";
+                    }
+                    else if(n==11){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2011';
+                      s = "{{url_for('static',filename='data/table_data2011.json')}}";
+                    }
+                    else if(n==12){
+                      document.getElementById('dropdownMenuButton').innerHTML ='2012';
+                      s = "{{url_for('static',filename='data/table_data2012.json')}}";
+                    }
+                    else
+                    {
+                      s = "{{url_for('static',filename='data/table_data2011.json')}}";
+                    } 
+                    
+                    console.log(n,s);
+
+                    
+                    document.getElementById('myGrid').innerHTML ='';
+                    
+
+              // function for reading json file
+              function readTextFile(file, callback) {
+                var rawFile = new XMLHttpRequest();
+                rawFile.overrideMimeType("application/json");
+                rawFile.open("GET", file, true);
+                rawFile.onreadystatechange = function () {
+                  if (rawFile.readyState === 4 && rawFile.status == "200") {
+                    callback(rawFile.responseText);
+                  }
+                }
+                rawFile.send(null);
+              }
+
+                readTextFile(s, function (text) {
+                var data = JSON.parse(text);
+                console.log(data);
+
+                  
+
+                var tableBody = '<table class="table table-bordered table-hover"><thead><tr class="table-active"><th scope="col">STATE\/UT</th><th>TOTAL IPC CRIMES</th scope="col"></tr></thead><tbody>';
+                  
+                  data.forEach(function(d)
+                  {
+                      tableBody += '<tr><th scope="row">'+d.STATE_UT+'</th><td>'+d.TOTAL_IPC_CRIMES+'</td></tr>';   
+                  });
+                      tableBody += '<tbody><table>';
+              
+                  // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+                    
+                    var divContainer = document.getElementById("myGrid");
+                        divContainer.innerHTML = tableBody;
+                    });
+            }
+          </script>
+
+
+
+
+
 </head>
 
 <body>
@@ -223,8 +330,8 @@
   <!--check-->
   <div class="container-fluid">
 
-
-    <div class="dropdown">
+    <!-- dropdown to select year-->
+      <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Select Year
       </button>
@@ -244,376 +351,14 @@
       </div>
     </div>
 
-  
-
 
     <div class="row">
       <div class="col-lg-6 col-12">
-        <div class="overflow-auto" style="height: 700px;">
+        <div class="overflow-auto" >
 
-          <!-- code for table start-->
-          <div id="myGrid" style="height: 600px;width:500px;" class="ag-theme-alpine"></div>
-
-          <script type="text/javascript" charset="utf-8">
-
-            // specify the columns
-            const columnDefs = [
-              { field: "STATE\/UT" },
-              { field: "TOTAL IPC CRIMES" , sortable: true }
-            ];
-
-            // function for reading json file
-            function readTextFile(file, callback) {
-              var rawFile = new XMLHttpRequest();
-              rawFile.overrideMimeType("application/json");
-              rawFile.open("GET", file, true);
-              rawFile.onreadystatechange = function () {
-                if (rawFile.readyState === 4 && rawFile.status == "200") {
-                  callback(rawFile.responseText);
-                }
-              }
-              rawFile.send(null);
-            }
-
-            function datafillfun(n) {
-              console.log("testing run...");
-              var s="{{url_for('static',filename='data/table_data2002.json')}}";
-              if(n==1)
-              {
-                document.getElementById('dropdownMenuButton').innerHTML ='2001';
-                s = "{{url_for('static',filename='data/table_data2001.json')}}";
-              } 
-              else if(n==2){
-                document.getElementById('dropdownMenuButton').innerHTML ='2002';
-                s = "{{url_for('static',filename='data/table_data2002.json')}}";
-              }
-              else if(n==3){
-                document.getElementById('dropdownMenuButton').innerHTML ='2003';
-                s = "{{url_for('static',filename='data/table_data2003.json')}}";
-              }
-              else if(n==4){
-                document.getElementById('dropdownMenuButton').innerHTML ='2004';
-                s = "{{url_for('static',filename='data/table_data2004.json')}}";
-              }
-              else if(n==5){
-                document.getElementById('dropdownMenuButton').innerHTML ='2005';
-                s = "{{url_for('static',filename='data/table_data2005.json')}}";
-              }
-              else if(n==6){
-                document.getElementById('dropdownMenuButton').innerHTML ='2006';
-                s = "{{url_for('static',filename='data/table_data2006.json')}}";
-              }
-              else if(n==7){
-                document.getElementById('dropdownMenuButton').innerHTML ='2007';
-                s = "{{url_for('static',filename='data/table_data2007.json')}}";
-              }
-              else if(n==8){
-                document.getElementById('dropdownMenuButton').innerHTML ='2008';
-                s = "{{url_for('static',filename='data/table_data2008.json')}}";
-              }
-              else if(n==9){
-                document.getElementById('dropdownMenuButton').innerHTML ='2009';
-                s = "{{url_for('static',filename='data/table_data2009.json')}}";
-              }
-              else if(n==10){
-                document.getElementById('dropdownMenuButton').innerHTML ='2010';
-                s = "{{url_for('static',filename='data/table_data2010.json')}}";
-              }
-              else if(n==11){
-                document.getElementById('dropdownMenuButton').innerHTML ='2011';
-                s = "{{url_for('static',filename='data/table_data2011.json')}}";
-              }
-              else if(n==12){
-                document.getElementById('dropdownMenuButton').innerHTML ='2012';
-                s = "{{url_for('static',filename='data/table_data2012.json')}}";
-              }
-              else
-              {
-                s = "{{url_for('static',filename='data/table_data2011.json')}}";
-              } 
-              
-              //console.log(s);
-
-              
-              document.getElementById('myGrid').innerHTML ='';
-              readTextFile(s, function (text) {
-              var data = JSON.parse(text);
-              //console.log(data);
-              const rowData = data;
-              // let the grid know which columns and what data to use
-              const gridOptions = {
-                columnDefs: columnDefs,
-                rowData: rowData
-              };
-
-              // lookup the container we want the Grid to use
-              const eGridDiv = document.querySelector('#myGrid');
-
-              // create the grid passing in the div to use together with the columns & data we want to use
-              new agGrid.Grid(eGridDiv, gridOptions);
-
-            });
-          
-          }  
-          
-
-
-
-          </script>
-          <!-- code for table end-->
-
-
-          <!--
-          <table class="table table-hover" class="table table-bordered" width="35%">
-            <thead>
-              <tr>
-                <th scope="col">Serial Number</th>
-                <th scope="col">States/UTs</th>
-                <th scope="col">Crime Precentage</th>
-                <th scope="col">Crime Rate</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-              <tr>
-                <th scope="col">1</th>
-                <th scope="col">ANDHRA PRADESH</th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">2</th>
-                <th scope="col">ARUNACHAL PRADESH</th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">3</th>
-                <th scope="col">BIHAR
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">4</th>
-                <th scope="col">CHHATTISGARH
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">5</th>
-                <th scope="col">GOA
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">6</th>
-                <th scope="col">GUJARAT
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">7</th>
-                <th scope="col">HARYANA
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">8</th>
-                <th scope="col">HIMACHAL PRADESH
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">9</th>
-                <th scope="col">JAMMU & KASHMIR
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">10</th>
-                <th scope="col">JHARKHAND
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">11</th>
-                <th scope="col">KARNATAKA
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">12</th>
-                <th scope="col">KERALA
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">13</th>
-                <th scope="col">MADHYA PRADESH
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">14</th>
-                <th scope="col">PUDUCHERRY</th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">15</th>
-                <th scope="col">MAHARASHTRA
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">16</th>
-                <th scope="col">MANIPUR
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">17</th>
-                <th scope="col">MEGHALAYA
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">18</th>
-                <th scope="col">MIZORAM
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">19</th>
-                <th scope="col">NAGALAND
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">20</th>
-                <th scope="col">ODISHA
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">21</th>
-                <th scope="col">PUNJAB
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">22</th>
-                <th scope="col">RAJASTHAN
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">23</th>
-                <th scope="col">SIKKIM
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">24</th>
-                <th scope="col">TAMIL NADU
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">25</th>
-                <th scope="col">TRIPURA
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">26</th>
-                <th scope="col">UTTAR PRADESH
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">27</th>
-                <th scope="col">UTTARAKHAND
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">28</th>
-                <th scope="col">WEST BENGAL
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">29</th>
-                <th scope="col">ANDAMAN AND NICOBAR ISLANDS
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">30</th>
-                <th scope="col">CHANDIGARH
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">31</th>
-                <th scope="col">D & N HAVELI
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">32</th>
-                <th scope="col">DAMAN & DIU
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">35</th>
-                <th scope="col">DELHI UT
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-              <tr>
-                <th scope="col">36</th>
-                <th scope="col">LAKSHADWEEP
-                </th>
-                <th scope="col">#</th>
-                <th scope="col">#</th>
-              </tr>
-
-            </tbody>
-          </table>
-          -->
+          <!-- Table -->
+          <div id="myGrid"></div>        
+        
         </div>
       </div>
 

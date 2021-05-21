@@ -11,6 +11,16 @@ def test():
     z=gsheet.get_all_records()
     return render_template('test1.html',dataz=z)
 
+
+@app.route('/tabletest')
+def tabletest():
+    #x=str(gsheet.get_all_records())
+    #z=gsheet.get_all_records()
+    return render_template('table_test.html')
+
+
+
+
 @app.route('/feed.html')
 def feed():
     #return render_template('feed.html')
