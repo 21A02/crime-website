@@ -11,6 +11,12 @@
   <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 
+<!-- neumorphic ui css-->
+<link rel="stylesheet" href="{{url_for('static',filename='neumorphism-ui-v1.0.0/html&css/css/neumorphism.css')}}">
+
+
+
+
   <!-- bootstrap css script -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -230,7 +236,7 @@
 
 
 
-        var tableBody = '<table class="table table-bordered table-hover"><thead><tr class="table-active"><th scope="col">STATE\/UT</th><th>TOTAL IPC CRIMES</th scope="col"></tr></thead><tbody>';
+        var tableBody = '<table class="table shadow-soft rounded"><tr class="table-active"><th scope="col">STATE\/UT</th><th>TOTAL IPC CRIMES</th scope="col"></tr>';
 
         data.forEach(function (d) {
           tableBody += '<tr><th scope="row">' + d.STATE_UT + '</th><td>' + d.TOTAL_IPC_CRIMES + '</td></tr>';
@@ -250,6 +256,7 @@
 
 
 </head>
+
 
 <body onload="datafillfun(1)" >
 
