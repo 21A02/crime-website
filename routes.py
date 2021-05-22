@@ -16,7 +16,7 @@ def test():
 def tabletest():
     #x=str(gsheet.get_all_records())
     #z=gsheet.get_all_records()
-    return render_template('table_test.html')
+    return render_template('index2.html')
 
 
 
