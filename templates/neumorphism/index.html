@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" constent="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/neumorphism.css">
+  <link rel="stylesheet" href="/index.css">
+  <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+  <script>
+    function startTime() {
+      var time = new Date();
+      document.getElementById('txt').innerHTML = time.toLocaleString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+      });
+    }
+  </script>
+  <script>
+    var audio = new Audio("click-sound.mp3");
+    document.onclick = function() {
+      audio.play();
+    }
+</script>
+
+
+</head>
+
+<body onload="startTime()">
+  <header class="navbar navbar-nav navbar-expand navbar-light navbar-theme-primary">
+    <div class="container-fluid px-3 px-md-4">
+      <!-- -----------------website name and icon-------------- -->
+
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-xl-4" href="#">
+
+          <span class="ml-2 text-dark" style="font-size: large;"><i class="fas fa-chart-pie"></i>&nbsp &nbsp Crime Data
+            Analytics</span>
+        </a>
+      </div>
+
+      <!----------------------time------------------------------------ -->
+      <!-- 
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-xl-4" href="#">
+          
+          <div id="txt"><span class="ml-2 text-dark" style="font-size:xx-large;"></span> </div> 
+        </a>
+      </div> -->
+      <!-- ---------------------nav-bar-items---------------------------- -->
+      <div class="d-flex align-items-center">
+        <div class="d-none d-lg-block">
+          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-home"></i>&nbsp Home</a>
+          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-globe-asia"></i>&nbsp CrimeMap</a>
+          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-map-marker-alt"></i> &nbsp
+            CrimeLocator</a>
+          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-newspaper"></i>&nbsp CrimeFeed</a>
+          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-user-secret"></i>&nbsp About Us</a>
+          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-info-circle"></i>&nbsp Help</a>
+        </div>
+      </div>
+
+
+      <button class="btn btn-icon-only btn-primary btn-pill text-danger" onclick="audio()" type="button" aria-label="love button" title="love button">
+        <span aria-hidden="true" class="far fa-heart"></span>
+    </button>
+
+      <div id="txt"> </div>
+
+    </div>
+  </header>
+  <!-- table and map -->
+ 
+
+  <div id="table-map" class="row">
+
+    <div class="col-4">
+      <div class="nav-wrapper position-relative">
+        <ul class="nav nav-pills nav-fill flex-column flex-sm-row">
+          <li class="nav-item">
+            <a class="nav-link mb-sm-3 mb-md-0 " data-toggle="tab" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mb-sm-3 mb-md-0" data-toggle="tab" href="#">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mb-sm-3 mb-md-0" data-toggle="tab" href="#">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mb-sm-3 mb-md-0" data-toggle="tab" href="#">Messages</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-8">
+      <span>
+        &nbsp;
+
+      </span>
+    </div>
+  </div>
+  <div class="row">
+
+    <!--table  -->
+
+    <div class="col-4">
+      <table class="table shadow-soft rounded">
+        <tr>
+
+          <th class="border-0" scope="col" id="teacher">Teacher</th>
+          <th class="border-0" scope="col" id="males">Males</th>
+          <th class="border-0" scope="col" id="females">Females</th>
+        </tr>
+        <tr>
+
+          <th scope="row" id="Bolter" headers="firstyear teacher">D. Bolter</th>
+          <td headers="firstyear Bolter males">5</td>
+          <td headers="firstyear Bolter females">4</td>
+        </tr>
+        <tr>
+          <th scope="row" id="Cheetham" headers="firstyear teacher">A. Cheetham</th>
+          <td headers="firstyear Cheetham males">7</td>
+          <td headers="firstyear Cheetham females">9</td>
+        </tr>
+        <tr>
+
+          <th scope="row" id="Lam" headers="secondyear teacher">M. Lam</th>
+          <td headers="secondyear Lam males">3</td>
+          <td headers="secondyear Lam females">9</td>
+        </tr>
+        <tr>
+          <th scope="row" id="Crossy" headers="secondyear teacher">S. Crossy</th>
+          <td headers="secondyear Crossy males">4</td>
+          <td headers="secondyear Crossy females">3</td>
+        </tr>
+        <tr>
+          <th scope="row" id="Forsyth" headers="secondyear teacher">A. Forsyth</th>
+          <td headers="secondyear Forsyth males">6</td>
+          <td headers="secondyear Forsyth females">9</td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div class="col-7">
+
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

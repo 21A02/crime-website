@@ -1,0 +1,21 @@
+.body{
+    color: black;
+}
+
+.container{
+ border: 8x solid black;   
+}
+
+
+.fa {
+	color: black;
+}
+
+#table-map{
+    
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 15px;
+    margin-left: 15px;
+
+}
