@@ -2,29 +2,31 @@
 <html lang="en">
 
 <head>
-  
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" constent="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/templates/neumorphism/neumorphism.css">
-  <link rel="stylesheet" href="/templates/neumorphism/index.css">
-  <script src="/templates/neumorphism/index.js"></script>
+  <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
+  <link rel="stylesheet" href="/templates/neumorphism/assets/css/index.css">
+  <script src="/templates/neumorphism/assets/javascript/index.js"></script>
 
-  
+
 
 
   <script src="/index.php"></script>
   <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
 
-  
 
-<!-- pixi.min.js -->
-<script src="/templates/neumorphism/assets/javascript/pixi.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+
+  <!-- pixi.min.js -->
+  <script src="/templates/neumorphism/assets/javascript/pixi.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
 
 
   <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+
+  <!-- live time -->
   <script>
     function startTime() {
       var time = new Date();
@@ -35,191 +37,122 @@
       });
     }
   </script>
+  <!-- sound script -->
   <script>
     function audio() {
-      var audio = new Audio("/templates/neumorphism/click-sound.mp3");
+      var audio = new Audio("/templates/neumorphism/assets/sound/click-sound.mp3");
       audio.play();
 
     }
-
-    
   </script>
 
-
+  <!-- header footer script -->
+  <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
 
 </head>
 
 <body onload="startTime()">
-  <header class="navbar navbar-nav navbar-expand navbar-light navbar-theme-primary">
-    <div class="container-fluid px-3 px-md-4">
 
-
-      <!-- -----------------website name and icon-------------- -->
-
-      <div class="d-flex align-items-center">
-        <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-xl-4" href="#">
-
-          <span class="ml-2 text-dark" style="font-size: large;"><i class="fas fa-chart-pie"></i>&nbsp &nbsp Crime Data
-            Analytics</span>
-        </a>
-      </div>
-
-      <!----------------------time------------------------------------ -->
-      <!-- 
-      <div class="d-flex align-items-center">
-        <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-xl-4" href="#">
-          
-          <div id="txt"><span class="ml-2 text-dark" style="font-size:xx-large;"></span> </div> 
-        </a>
-      </div> -->
-
-
-      <!-- ---------------------nav-bar-items---------------------------- -->
-      <div class="d-flex align-items-center">
-        <div class="d-none d-lg-block">
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-home"></i>&nbsp Home</a>
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-globe-asia"></i>&nbsp CrimeMap</a>
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-map-marker-alt"></i> &nbsp
-            CrimeLocator</a>
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-newspaper"></i>&nbsp CrimeFeed</a>
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-user-secret"></i>&nbsp About Us</a>
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-info-circle"></i>&nbsp Help</a>
-        </div>
-      </div>
-
-
-      <!-- <button class="btn btn-icon-only " type="button" aria-label="love button" title="love button"  onclick="audio()">
-        <span aria-hidden="true" class="far fa-heart"></span>
-      </button> -->
-
-
-
-      <a href="#" class="btn-emoji" onclick="audio()">
-        <i class="far fa-grin-tongue"></i>
-      </a>
-
-
-      <div id="txt"> </div>
-
-    </div>
-  </header>
-
+  <my-header></my-header>
 
   <script type="text/javascript">
     $('.datepicker')[0] && $('.datepicker').each(function () {
       $('.datepicker').datepicker({
-          disableTouchKeyboard: true,
-          autoclose: false
+        disableTouchKeyboard: true,
+        autoclose: false
       });
-  });
+    });
   </script>
 
-  <!-- table and map -->
+  <!----------------------------------------- table and map ------------------------------------------->
 
 
   <div id="table-buttons" class="row">
+    <!-- dropdown button-1 [Data Set] -->
+    <div id="item-1" class="table-buttons-item">
+      <div class="drop-1">
+        <div class="dropdown1">
+          <button class="dropdown1-button outset-neomo">
+            Data Set
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown1-content">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                <a href="#">Past Data </a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+              <label class="form-check-label" for="defaultCheck2">
+                <a href="#">Webscrapped Data </a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+              <label class="form-check-label" for="defaultCheck3">
+                <a href="#">Predicted Data </a>
+              </label>
+            </div>
+          </div>
 
-    <!-- drop-down -->
-    <div class="drop-1">
-      <div class="dropdown1">
-        <button class="dropdown1-button outset-neomo">
-          Data Set
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown1-content">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-              <a href="#">Past Data </a>
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
-            <label class="form-check-label" for="defaultCheck2">
-              <a href="#">Webscrapped Data </a>
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck3" >
-            <label class="form-check-label" for="defaultCheck3">
-              <a href="#">Predicted Data </a>
-            </label>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-
-    <div class="drop-1">
-      <div class="dropdown1">
-        <button class="dropdown1-button outset-neomo ">
-          Select Data Items &nbsp;  
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown1-content">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-            <label class="form-check-label" for="defaultCheck4">
-              <a href="#">Accidents</a>
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck5" >
-            <label class="form-check-label" for="defaultCheck5">
-              <a href="#">Murder</a>
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" >
-            <label class="form-check-label" for="defaultCheck6">
-              <a href="#">Kidnapping</a>
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck7" >
-            <label class="form-check-label" for="defaultCheck7">
-              <a href="#">Robbery</a>
-            </label>
-          </div>
-          
-          
         </div>
       </div>
     </div>
-    
-    <!-- <div class="input-daterange datepicker row align-items-center">
-      <div class="col">
-          <div class="form-group">
-              <div class="input-group input-group-border">
-                  <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                  </div>
-                  <input class="form-control" placeholder="Start date" type="text" value="06/18/2018">
-              </div>
+    <!-- dropdown button-2 [Select Data Items] -->
+    <div id="item-2" class="table-buttons-item">
+      <div class="drop-1">
+        <div class="dropdown1">
+          <button class="dropdown1-button outset-neomo ">
+            Select Data Items &nbsp;
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown1-content">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+              <label class="form-check-label" for="defaultCheck4">
+                <a href="#">Accidents</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+              <label class="form-check-label" for="defaultCheck5">
+                <a href="#">Murder</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+              <label class="form-check-label" for="defaultCheck6">
+                <a href="#">Kidnapping</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+              <label class="form-check-label" for="defaultCheck7">
+                <a href="#">Robbery</a>
+              </label>
+            </div>
+
+
           </div>
-      </div> -->
-      <!-- <div class="col">
-          <div class="form-group">
-              <div class="input-group input-group-border">
-                  <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                  </div>
-                  <input class="form-control" placeholder="End date" type="text" value="06/22/2018">
-              </div>
-          </div>
-      </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- date selector [Calendar Icon]-->
+    <div id="item-3" class="table-buttons-item">
+      <button class="btn btn-primary btn-pill text-success mr-2 mb-2 mb-4 mt-4 ml-3" type="button"><i
+          class="far fa-calendar-alt"></i></i></button>
+    </div>
+    <!-- Search Button [Search Icon]-->
+    <div id="item-4" class="table-buttons-item">
+      <button class="btn btn-primary btn-pill text-success mr-2 mb-2 mb-4 mt-4 ml-3" type="button"> <i
+          class="fas fa-search"></i></button>
+    </div>
 
-<button class="btn btn-primary btn-pill text-success mr-2 mb-2 mb-4 mt-4 ml-3" type="button"><i class="far fa-calendar-alt"></i></i></button>
-    <button class="btn btn-primary btn-pill text-success mr-2 mb-2 mb-4 mt-4 ml-3" type="button"> <i class="fas fa-search"></i></button>
-  </div>
+    <div id="item-5" class="table-buttons-item">
 
-  </div>
-  <div class="col-8">
-    <span>
-      &nbsp;
-
-    </span>
-  </div>
+    </div>
   </div>
 
 
@@ -323,7 +256,7 @@
   </div>
   </div>
 
-
+  <my-footer></my-footer>
 
 
 
