@@ -1,97 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
     <link rel="stylesheet" href="/templates/neumorphism/assets/css/about.css">
     <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
 
-  <!-- live time -->
-  <script>
-    function startTime() {
-      var time = new Date();
-      document.getElementById('txt').innerHTML = time.toLocaleString('en-US', {
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true
-      });
-    }
-  </script>
-  <!-- sound script -->
-  <script>
-    function audio() {
-      var audio = new Audio("/templates/neumorphism/assets/sound/click-sound.mp3");
-      audio.play();
+    <!-- live time -->
+    <script>
+        function startTime() {
+            var time = new Date();
+            document.getElementById('txt').innerHTML = time.toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            });
+        }
+    </script>
+    <!-- sound script -->
+    <script>
+        function audio() {
+            var audio = new Audio("/templates/neumorphism/assets/sound/click-sound.mp3");
+            audio.play();
 
-    }
-  </script>
-  
-  
-  <!-- header footer  script -->
-  <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
+        }
+    </script>
+
+
+    <!-- header footer  script -->
+    <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
 
 </head>
-<body onload="startTime()" >
-    
+
+<body onload="startTime()">
+
     <my-header></my-header>
-    
-      <script type="text/javascript">
+
+    <script type="text/javascript">
         $('.datepicker')[0] && $('.datepicker').each(function () {
-          $('.datepicker').datepicker({
-            disableTouchKeyboard: true,
-            autoclose: false
-          });
+            $('.datepicker').datepicker({
+                disableTouchKeyboard: true,
+                autoclose: false
+            });
         });
-      </script>
-    
+    </script>
 
-      <!-- card starts -->
 
-      <div class="row pl-5 pt-5">
+    <!-- card starts -->
+
+    <div class="row pl-5 pt-5">
         <div class="col-1">
             <!-- Tab Nav -->
 
             <div class="nav-wrapper position-relative mb-4">
                 <ul class="nav nav-pills flex-column flex-sm-row" id="tabs-text" role="tablist">
                     <li class="nav-item pb-2 pr-2 mr-sm-3 mr-md-0">
-                        <a class="nav-link mb-sm-3 mb-md-0 " id="tabs-text-1-tab" data-toggle="tab" href="#tabs-text-1" role="tab" aria-controls="tabs-text-1" aria-selected="true">set-title </a>
+                        <a class="nav-link mb-sm-3 mb-md-0 " id="tabs-text-1-tab" data-toggle="tab" href="#tabs-text-1"
+                            role="tab" aria-controls="tabs-text-1" aria-selected="true">set-title </a>
                     </li>
                     <li class="nav-item pt-2 pb-2 pr-2 mr-sm-3 mr-md-0">
-                        <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab" data-toggle="tab" href="#tabs-text-2" role="tab" aria-controls="tabs-text-2" aria-selected="false">set-title </a>
+                        <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab" data-toggle="tab" href="#tabs-text-2"
+                            role="tab" aria-controls="tabs-text-2" aria-selected="false">set-title </a>
                     </li>
                     <li class="nav-item pt-2 pb-2  pr-2 mr-sm-3 mr-md-0">
-                        <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab" data-toggle="tab" href="#tabs-text-3" role="tab" aria-controls="tabs-text-3" aria-selected="false">set-title </a>
+                        <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab" data-toggle="tab" href="#tabs-text-3"
+                            role="tab" aria-controls="tabs-text-3" aria-selected="false">set-title </a>
                     </li>
                 </ul>
             </div>
-          </div>
+        </div>
         <div class="col-6">
 
-       
+
             <!-- End of Tab Nav -->
             <!-- Tab Content -->
             <div class="card shadow-inset bg-primary border-light p-4 rounded">
                 <div class="card-body p-0">
                     <div class="tab-content" id="tabcontent1">
-                        <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
-                            <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus,
+                        <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel"
+                            aria-labelledby="tabs-text-1-tab">
+                            <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft
+                                beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v
+                                laborum. Aliquip veniam delectus,
                                 Marfa eiusmod Pinterest in do umami readymade swag.</p>
-                            <p>Day handsome addition horrible sensible goodness two contem pt-2 pb-2 pr-2pt. Evening for married his account removal. Estimable me disposing of be moonlight cordially curiosity.</p>
+                            <p>Day handsome addition horrible sensible goodness two contem pt-2 pb-2 pr-2pt. Evening for
+                                married his account removal. Estimable me disposing of be moonlight cordially curiosity.
+                            </p>
                         </div>
                         <div class="tab-pane fade" id="tabs-text-2" role="tabpanel" aria-labelledby="tabs-text-2-tab">
-                            <p>Photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod
+                            <p>Photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit
+                                seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum.
+                                Aliquip veniam delectus, Marfa eiusmod
                                 Pinterest in do umami readymade swag.</p>
-                            <p>Day handsome addition horrible sensible goodness two contem pt-2 pb-2 pr-2pt. Evening for married his account removal. Estimable me disposing of be moonlight cordially curiosity.</p>
+                            <p>Day handsome addition horrible sensible goodness two contem pt-2 pb-2 pr-2pt. Evening for
+                                married his account removal. Estimable me disposing of be moonlight cordially curiosity.
+                            </p>
                         </div>
                         <div class="tab-pane fade" id="tabs-text-3" role="tabpanel" aria-labelledby="tabs-text-3-tab">
-                            <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus,
+                            <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft
+                                beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v
+                                laborum. Aliquip veniam delectus,
                                 Marfa eiusmod Pinterest in do umami readymade swag.</p>
-                            <p>Day handsome addition horrible sensible goodness two contem pt-2 pb-2 pr-2pt. Evening for married his account removal. Estimable me disposing of be moonlight cordially curiosity.</p>
+                            <p>Day handsome addition horrible sensible goodness two contem pt-2 pb-2 pr-2pt. Evening for
+                                married his account removal. Estimable me disposing of be moonlight cordially curiosity.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -104,183 +123,208 @@
 
     <!-- profile -->
     <div class="row pl-5 pr-5">
-      <div class="col-3">
-        <div class="profile-card mb-5 pl-2 pt-7">
-          <div class="card bg-primary shadow-inset border-light text-center">
-              <div class="card-header">
-                  <div class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
-                      <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" class="card-img-top rounded" alt="Leos Portrait">
-                  </div>
-              </div>
-              <div class="card-body pb-5">
-                  <h3 class="h5 mb-2">Jose Leos</h3>
-                  <span class="h6 font-weight-normal text-gray mb-3">Co-Founder</span>
-                  <ul class="list-unstyled d-flex justify-content-center mt-3 mb-4">
-                      <li>
-                          <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
-                              <span class="fab fa-facebook-f"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
-                              <span class="fab fa-twitter"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
-                              <span class="fab fa-slack-hash"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="dribbble social link" class="icon icon-xs icon-dribbble mr-3">
-                              <span class="fab fa-dribbble"></span>
-                          </a>
-                      </li>
-                  </ul>
-                  <a class="btn btn-sm btn-primary mr-3" href="#">
-                      <span class="fas fa-user-plus mr-1"></span> Follow
-                  </a>
-                  <a class="btn btn-sm btn-primary" href="#">
-                      Message
-                  </a>                                
-              </div>
-          </div>
-      </div>
-        
-      </div>
-      <div class="col-3">
-        <div class="profile-card mb-5 pl-2 pt-7">
-          <div class="card bg-primary shadow-inset border-light text-center">
-              <div class="card-header">
-                  <div class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
-                      <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" class="card-img-top rounded" alt="Leos Portrait">
-                  </div>
-              </div>
-              <div class="card-body pb-5">
-                  <h3 class="h5 mb-2">Jose Leos</h3>
-                  <span class="h6 font-weight-normal text-gray mb-3">Co-Founder</span>
-                  <ul class="list-unstyled d-flex justify-content-center mt-3 mb-4">
-                      <li>
-                          <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
-                              <span class="fab fa-facebook-f"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
-                              <span class="fab fa-twitter"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
-                              <span class="fab fa-slack-hash"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="dribbble social link" class="icon icon-xs icon-dribbble mr-3">
-                              <span class="fab fa-dribbble"></span>
-                          </a>
-                      </li>
-                  </ul>
-                  <a class="btn btn-sm btn-primary mr-3" href="#">
-                      <span class="fas fa-user-plus mr-1"></span> Follow
-                  </a>
-                  <a class="btn btn-sm btn-primary" href="#">
-                      Message
-                  </a>                                
-              </div>
-          </div>
-      </div>
-      </div>
-      <div class="col-3">
-        <div class="profile-card mb-5 pl-2 pt-7">
-          <div class="card bg-primary shadow-inset border-light text-center">
-              <div class="card-header">
-                  <div class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
-                      <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" class="card-img-top rounded" alt="Leos Portrait">
-                  </div>
-              </div>
-              <div class="card-body pb-5">
-                  <h3 class="h5 mb-2">Jose Leos</h3>
-                  <span class="h6 font-weight-normal text-gray mb-3">Co-Founder</span>
-                  <ul class="list-unstyled d-flex justify-content-center mt-3 mb-4">
-                      <li>
-                          <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
-                              <span class="fab fa-facebook-f"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
-                              <span class="fab fa-twitter"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
-                              <span class="fab fa-slack-hash"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="dribbble social link" class="icon icon-xs icon-dribbble mr-3">
-                              <span class="fab fa-dribbble"></span>
-                          </a>
-                      </li>
-                  </ul>
-                  <a class="btn btn-sm btn-primary mr-3" href="#">
-                      <span class="fas fa-user-plus mr-1"></span> Follow
-                  </a>
-                  <a class="btn btn-sm btn-primary" href="#">
-                      Message
-                  </a>                                
-              </div>
-          </div>
-      </div>
-      </div>
-      <div class="col-3">
-        <div class="profile-card mb-5 pl-2 pt-7">
-          <div class="card bg-primary shadow-inset border-light text-center">
-              <div class="card-header">
-                  <div class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
-                      <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" class="card-img-top rounded" alt="Leos Portrait">
-                  </div>
-              </div>
-              <div class="card-body pb-5">
-                  <h3 class="h5 mb-2">Jose Leos</h3>
-                  <span class="h6 font-weight-normal text-gray mb-3">Co-Founder</span>
-                  <ul class="list-unstyled d-flex justify-content-center mt-3 mb-4">
-                      <li>
-                          <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
-                              <span class="fab fa-facebook-f"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
-                              <span class="fab fa-twitter"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
-                              <span class="fab fa-slack-hash"></span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" target="_blank" aria-label="dribbble social link" class="icon icon-xs icon-dribbble mr-3">
-                              <span class="fab fa-dribbble"></span>
-                          </a>
-                      </li>
-                  </ul>
-                  <a class="btn btn-sm btn-primary mr-3" href="#">
-                      <span class="fas fa-user-plus mr-1"></span> Follow
-                  </a>
-                  <a class="btn btn-sm btn-primary" href="#">
-                      Message
-                  </a>                                
-              </div>
-          </div>
-      </div>
-      </div>
+        <div class="col-3">
+            <div class="profile-card mb-5 pl-2 pt-7">
+                <div class="card bg-primary shadow-inset border-light text-center">
+                    <div class="card-header">
+                        <div
+                            class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
+                            <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                                class="card-img-top rounded" alt="Leos Portrait">
+                        </div>
+                    </div>
+                    <div class="card-body pb-5">
+                        <h3 class="h5 mb-2">Jose Leos</h3>
+                        <span class="h6 font-weight-normal text-gray mb-3">Co-Founder</span>
+                        <ul class="list-unstyled d-flex justify-content-center mt-3 mb-4">
+                            <li>
+                                <a href="#" target="_blank" aria-label="facebook social link"
+                                    class="icon icon-xs icon-facebook mr-3">
+                                    <span class="fab fa-facebook-f"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="twitter social link"
+                                    class="icon icon-xs icon-twitter mr-3">
+                                    <span class="fab fa-twitter"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="slack social link"
+                                    class="icon icon-xs icon-slack mr-3">
+                                    <span class="fab fa-slack-hash"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="dribbble social link"
+                                    class="icon icon-xs icon-dribbble mr-3">
+                                    <span class="fab fa-dribbble"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="btn btn-sm btn-primary mr-3" href="#">
+                            <span class="fas fa-user-plus mr-1"></span> Follow
+                        </a>
+                        <a class="btn btn-sm btn-primary" href="#">
+                            Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-3">
+            <div class="profile-card mb-5 pl-2 pt-7">
+                <div class="card bg-primary shadow-inset border-light text-center">
+                    <div class="card-header">
+                        <div
+                            class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
+                            <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                                class="card-img-top rounded" alt="Leos Portrait">
+                        </div>
+                    </div>
+                    <div class="card-body pb-5">
+                        <h3 class="h5 mb-2">Jose Leos</h3>
+                        <span class="h6 font-weight-normal text-gray mb-3">Co-Founder</span>
+                        <ul class="list-unstyled d-flex justify-content-center mt-3 mb-4">
+                            <li>
+                                <a href="#" target="_blank" aria-label="facebook social link"
+                                    class="icon icon-xs icon-facebook mr-3">
+                                    <span class="fab fa-facebook-f"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="twitter social link"
+                                    class="icon icon-xs icon-twitter mr-3">
+                                    <span class="fab fa-twitter"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="slack social link"
+                                    class="icon icon-xs icon-slack mr-3">
+                                    <span class="fab fa-slack-hash"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="dribbble social link"
+                                    class="icon icon-xs icon-dribbble mr-3">
+                                    <span class="fab fa-dribbble"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="btn btn-sm btn-primary mr-3" href="#">
+                            <span class="fas fa-user-plus mr-1"></span> Follow
+                        </a>
+                        <a class="btn btn-sm btn-primary" href="#">
+                            Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="profile-card mb-5 pl-2 pt-7">
+                <div class="card bg-primary shadow-inset border-light text-center">
+                    <div class="card-header">
+                        <div
+                            class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
+                            <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                                class="card-img-top rounded" alt="Leos Portrait">
+                        </div>
+                    </div>
+                    <div class="card-body pb-5">
+                        <h3 class="h5 mb-2">Jose Leos</h3>
+                        <span class="h6 font-weight-normal text-gray mb-3">Co-Founder</span>
+                        <ul class="list-unstyled d-flex justify-content-center mt-3 mb-4">
+                            <li>
+                                <a href="#" target="_blank" aria-label="facebook social link"
+                                    class="icon icon-xs icon-facebook mr-3">
+                                    <span class="fab fa-facebook-f"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="twitter social link"
+                                    class="icon icon-xs icon-twitter mr-3">
+                                    <span class="fab fa-twitter"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="slack social link"
+                                    class="icon icon-xs icon-slack mr-3">
+                                    <span class="fab fa-slack-hash"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="dribbble social link"
+                                    class="icon icon-xs icon-dribbble mr-3">
+                                    <span class="fab fa-dribbble"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="btn btn-sm btn-primary mr-3" href="#">
+                            <span class="fas fa-user-plus mr-1"></span> Follow
+                        </a>
+                        <a class="btn btn-sm btn-primary" href="#">
+                            Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="profile-card mb-5 pl-2 pt-7">
+                <div class="card bg-primary shadow-inset border-light text-center">
+                    <div class="card-header">
+                        <div
+                            class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
+                            <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                                class="card-img-top rounded" alt="Leos Portrait">
+                        </div>
+                    </div>
+                    <div class="card-body pb-5">
+                        <h3 class="h5 mb-2">Jose Leos</h3>
+                        <span class="h6 font-weight-normal text-gray mb-3">Co-Founder</span>
+                        <ul class="list-unstyled d-flex justify-content-center mt-3 mb-4">
+                            <li>
+                                <a href="#" target="_blank" aria-label="facebook social link"
+                                    class="icon icon-xs icon-facebook mr-3">
+                                    <span class="fab fa-facebook-f"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="twitter social link"
+                                    class="icon icon-xs icon-twitter mr-3">
+                                    <span class="fab fa-twitter"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="slack social link"
+                                    class="icon icon-xs icon-slack mr-3">
+                                    <span class="fab fa-slack-hash"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="dribbble social link"
+                                    class="icon icon-xs icon-dribbble mr-3">
+                                    <span class="fab fa-dribbble"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="btn btn-sm btn-primary mr-3" href="#">
+                            <span class="fas fa-user-plus mr-1"></span> Follow
+                        </a>
+                        <a class="btn btn-sm btn-primary" href="#">
+                            Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-<my-footer></my-footer>
+    <my-footer></my-footer>
 
 </body>
+
 </html>

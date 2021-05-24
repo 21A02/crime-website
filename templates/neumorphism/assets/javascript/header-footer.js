@@ -1,7 +1,7 @@
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML =
-`
+            `
 <header class="navbar navbar-nav navbar-expand navbar-light navbar-theme-primary">
 <div class="container-fluid px-3 px-md-4">
 
@@ -56,18 +56,18 @@ class MyHeader extends HTMLElement {
 </header>
 
 
-`    
-               
+`
+
     }
 }
 
-customElements.define('my-header',MyHeader);
+customElements.define('my-header', MyHeader);
 
 
 class MyFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML =
-`
+            `
 <footer>
 <div class="row">
     <div class="col-3 mx-auto">© 2021 Crime Data Analysis All rights reserved</div>
@@ -75,9 +75,9 @@ class MyFooter extends HTMLElement {
 </footer>
 
 
-`    
-               
+`
+
     }
 }
 
-customElements.define('my-footer',MyFooter);
+customElements.define('my-footer', MyFooter);
