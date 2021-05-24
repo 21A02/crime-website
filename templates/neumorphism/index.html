@@ -46,65 +46,14 @@
     }
   </script>
 
-
+ <!-- header footer script -->
+ <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
 
 </head>
 
 <body onload="startTime()">
-  <header class="navbar navbar-nav navbar-expand navbar-light navbar-theme-primary">
-    <div class="container-fluid px-3 px-md-4">
-
-
-      <!-- -----------------website name and icon-------------- -->
-
-      <div class="d-flex align-items-center">
-        <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-xl-4" href="#">
-
-          <span class="ml-2 text-dark" style="font-size: large;"><i class="fas fa-chart-pie"></i> <span></span> &nbsp &nbsp Crime Data
-            Analytics</span>
-        </a>
-      </div>
-
-      <!----------------------time------------------------------------ -->
-      <!-- 
-      <div class="d-flex align-items-center">
-        <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-xl-4" href="#">
-          
-          <div id="txt"><span class="ml-2 text-dark" style="font-size:xx-large;"></span> </div> 
-        </a>
-      </div> -->
-
-
-      <!-- ---------------------nav-bar-items---------------------------- -->
-      <div class="nav-buttons d-flex align-items-center">
-        <div class="d-none d-lg-block">
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-home"></i> <span>&nbsp Home</span> </a>
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-globe-asia"></i> <span> &nbsp CrimeMap</span></a>
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-map-marker-alt"></i> <span> &nbsp
-            CrimeLocator</span></a>
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-newspaper"></i> <span> &nbsp CrimeFeed</span></a>
-          <a href="/templates/neumorphism/about.html" class="btn btn-primary text-dark mr-3"><i class="fas fa-user-secret"></i> <span> &nbsp About Us</span></a>
-          <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-info-circle"></i> <span> &nbsp Help</span></a>
-        </div>
-      </div>
-
-
-      <!-- <button class="btn btn-icon-only " type="button" aria-label="love button" title="love button"  onclick="audio()">
-        <span aria-hidden="true" class="far fa-heart"></span>
-      </button> -->
-
-
-
-      <a href="#" class="btn-emoji" onclick="audio()">
-        <i class="far fa-grin-tongue"></i>
-      </a>
-
-
-      <div id="txt"> </div>
-
-    </div>
-  </header>
-
+  
+  <my-header></my-header>
 
   <script type="text/javascript">
     $('.datepicker')[0] && $('.datepicker').each(function () {
@@ -307,7 +256,7 @@
   </div>
   </div>
 
-
+<my-footer></my-footer>
 
 
 
