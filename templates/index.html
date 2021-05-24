@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="{{url_for('static',filename='graph-panel.css')}}">
   <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
+<!-- neumorphic ui css-->
+<link rel="stylesheet" href="{{url_for('static',filename='neumorphism-ui-v1.0.0/html&css/css/neumorphism.css')}}">
+
+
+
 
   <!-- bootstrap css script -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -50,7 +55,7 @@
   <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
   <style>
     body {
-      background-image: url("static/img/Background4.jpg");
+      /* background-image: url("static/img/Background4.jpg"); */
       background-size: contain;
     }
 
@@ -230,12 +235,12 @@
 
 
 
-        var tableBody = '<table class="table table-bordered table-hover"><thead><tr class="table-active"><th scope="col">STATE\/UT</th><th>TOTAL IPC CRIMES</th scope="col"></tr></thead><tbody>';
+        var tableBody = '<table class="table shadow-soft rounded"><tr class="table-active"><th scope="col">STATE\/UT</th><th>TOTAL IPC CRIMES</th scope="col"></tr>';
 
         data.forEach(function (d) {
           tableBody += '<tr><th scope="row">' + d.STATE_UT + '</th><td>' + d.TOTAL_IPC_CRIMES + '</td></tr>';
         });
-        tableBody += '<tbody><table>';
+        tableBody += '<table>';
 
         // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
 
@@ -360,6 +365,45 @@
         <div class="overflow-auto">
 
           <!-- Table -->
+
+
+          <table class="table shadow-soft rounded">
+            <tr>
+                <th class="border-0" scope="col" id="class">Class</th>
+                <th class="border-0" scope="col" id="teacher">Teacher</th>
+                <th class="border-0" scope="col" id="males">Males</th>
+                <th class="border-0" scope="col" id="females">Females</th>
+            </tr>
+            <tr>
+                <th scope="row" id="firstyear" rowspan="2">First Year</th>
+                <th scope="row" id="Bolter" headers="firstyear teacher">D. Bolter</th>
+                <td headers="firstyear Bolter males">5</td>
+                <td headers="firstyear Bolter females">4</td>
+            </tr>
+            <tr>
+                <th scope="row" id="Cheetham" headers="firstyear teacher">A. Cheetham</th>
+                <td headers="firstyear Cheetham males">7</td>
+                <td headers="firstyear Cheetham females">9</td>
+            </tr>
+            <tr>
+                <th scope="row" id="secondyear" rowspan="3">Second Year</th>
+                <th scope="row" id="Lam" headers="secondyear teacher">M. Lam</th>
+                <td headers="secondyear Lam males">3</td>
+                <td headers="secondyear Lam females">9</td>
+            </tr>
+            <tr>
+                <th scope="row" id="Crossy" headers="secondyear teacher">S. Crossy</th>
+                <td headers="secondyear Crossy males">4</td>
+                <td headers="secondyear Crossy females">3</td>
+            </tr>
+            <tr>
+                <th scope="row" id="Forsyth" headers="secondyear teacher">A. Forsyth</th>
+                <td headers="secondyear Forsyth males">6</td>
+                <td headers="secondyear Forsyth females">9</td>
+            </tr>
+        </table>
+
+
           <div id="myGrid"></div>
 
         </div>
@@ -681,10 +725,6 @@
         </div>
       </div>
     </div>
-
-
-
-
 
 
     <script>
