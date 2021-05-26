@@ -70,7 +70,7 @@ class MyFooter extends HTMLElement {
             `
 <footer>
 <div class="row">
-    <div class="col-3 mx-auto">© 2021 Crime Data Analysis All rights reserved</div>
+    <div class="col-3 mx-auto"><i class="fas fa-copyright"></i> 2021 Crime Data Analysis All rights reserved </div>
 </div>
 </footer>
 
