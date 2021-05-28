@@ -139,11 +139,56 @@
       console.log(data);
 
 
+          if (document.getElementById('total-check').checked==true){
+           console.log("total-check working");
+          }
+          if (document.getElementById('murder-check').checked==true){
+            console.log("murder-check working");
+          }
+          if (document.getElementById('kidnapping-check').checked==true){
+            console.log("kidnapping-check working");
+          }
+          if (document.getElementById('robbery-check').checked==true){
+            console.log("robbery-check working");
+          }
+        
 
-      var tableBody = '<table class="table shadow-soft rounded" ><th class="border-0" scope="col" id="state">STATE\/UT</th><th class="border-0" scope="col" id="total">TOTAL IPC CRIMES</th></tr>';
+
+      var tableBody = '<table class="table shadow-soft rounded" ><tr><th class="border-0" scope="col" id="state-table-heading">STATE\/UT</th>';
+        
+        
+        if (document.getElementById('total-check').checked==true){
+          tableBody += '<th class="border-0" scope="col" id="total-table-heading">TOTAL IPC CRIMES</th>';
+        }  
+        if (document.getElementById('murder-check').checked==true){
+          tableBody += '<th class="border-0" scope="col" id="total-table-heading">MURDER</th>';
+        }
+        if (document.getElementById('kidnapping-check').checked==true){
+          tableBody += '<th class="border-0" scope="col" id="total-table-heading">KIDNAPPING</th>';
+        }
+        if (document.getElementById('robbery-check').checked==true){
+          tableBody += '<th class="border-0" scope="col" id="total-table-heading">ROBBERY</th>';
+        }
+
+        tableBody += '</tr>';
+
 
       data.forEach(function (d) {
-        tableBody += '<tr><th scope="row">' + d.STATE_UT + '</th><td>' + d.TOTAL_IPC_CRIMES + '</td></tr>';
+        tableBody += '<tr><th scope="row">' + d.STATE_UT;
+        if (document.getElementById('total-check').checked==true){
+          tableBody += '</th><td>' + d.TOTAL_IPC_CRIMES;
+        }  
+        if (document.getElementById('murder-check').checked==true){
+          tableBody += '</th><td>' + d.MURDER;
+        }
+        if (document.getElementById('kidnapping-check').checked==true){
+          tableBody += '</th><td>' + d.KIDNAPPING_AND_ABDUCTION;
+        }
+        if (document.getElementById('robbery-check').checked==true){
+          tableBody += '</th><td>' + d.ROBBERY;
+        }
+        
+          tableBody += '</td></tr>';
       });
       tableBody += '<table>';
 
@@ -225,26 +270,26 @@
           </button>
           <div class="dropdown1-content">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-              <label class="form-check-label" for="defaultCheck4">
-                <a href="#" onclick="datafillfun(0)">Accidents</a>
+              <input class="form-check-input" type="checkbox" value="Total" id="total-check">
+              <label class="form-check-label" for="total-check">
+                <a href="#">Total</a>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
-              <label class="form-check-label" for="defaultCheck5">
+              <input class="form-check-input" type="checkbox" value="Murder" id="murder-check">
+              <label class="form-check-label" for="murder-check">
                 <a href="#">Murder</a>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
-              <label class="form-check-label" for="defaultCheck6">
+              <input class="form-check-input" type="checkbox" value="Kidnapping" id="kidnapping-check">
+              <label class="form-check-label" for="kidnapping-check">
                 <a href="#">Kidnapping</a>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
-              <label class="form-check-label" for="defaultCheck7">
+              <input class="form-check-input" type="checkbox" value="Robbery" id="robbery-check">
+              <label class="form-check-label" for="robbery-check">
                 <a href="#">Robbery</a>
               </label>
             </div>
@@ -261,7 +306,7 @@
     </div>
     <!-- Search Button [Search Icon]-->
     <div id="item-4" class="table-buttons-item">
-      <button class="btn btn-primary btn-pill text-success mr-2 mb-2 mb-4 mt-4 ml-3" type="button"> <i
+      <button class="btn btn-primary btn-pill text-success mr-2 mb-2 mb-4 mt-4 ml-3" type="button" onclick="datafillfun(0)"> <i
           class="fas fa-search"></i></button>
     </div>
 
@@ -275,7 +320,7 @@
 
   <div class="row" id="row-table-map">
 
-    <div class="col-5"  style="height: 836px;">
+    <div class="col-5" >
 
 
       <div id="myGrid"></div>
