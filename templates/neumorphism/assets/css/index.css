@@ -241,22 +241,22 @@ box-shadow:  28px 28px 55px #bebebe,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-weight: 700;
 }
-.active {
+.murder {
   color: #0a1931;
 }
-.confirmed {
+.kidnapping {
   color: #185adb;
 }
-.recod {
+.robbery {
   color: #00adb5;
 }
-.died {
+.total {
   color: #393e46;
 }
-.caseFigActive,
-.caseFigConfirmed,
-.caseFigRecod,
-.caseFigDied {
+.caseFigMurder,
+.caseFigKidnapping,
+.caseFigRobbery,
+.caseFigTotal {
   font-size: 20px;
 }
 svg {
