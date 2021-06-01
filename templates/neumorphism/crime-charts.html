@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimeCharts</title>
+    <link rel="stylesheet" href="/templates/neumorphism/assets/css/crime-charts.css">
+    <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
+ 
+    <script src="/templates/neumorphism/assets/javascript/crime-charts.js"></script>
+
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+
+
+    <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- zingchart -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+
+    <!-- live time -->
+    <script>
+        function startTime() {
+            var time = new Date();
+            document.getElementById('txt').innerHTML = time.toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+    <!-- -------------------google charts scripts starts--------------------------- -->
+
+
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                ['Mushrooms', 3],
+                ['Onions', 1],
+                ['Olives', 1],
+                ['Zucchini', 1],
+                ['Pepperoni', 2]
+            ]);
+
+            // Set chart options
+            var options = {
+                'title': 'How Much Pizza I Ate Last Night',
+                'width': 400,
+                'height': 300
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+
+
+
+
+
+    <!-- -------------------google charts scripts ends--------------------------- -->
+
+
+    <script>
+        function insertMap() {
+            document.getElementById("mapArea").innerHTML = '<div id="chart_div"></div>'
+        }
+    </script>
+
+
+
+
+
+
+
+
+    <!-- sound script -->
+    <script>
+        function audio() {
+            var audio = new Audio("/templates/neumorphism//assets/sound/click-sound.mp3");
+            audio.play();
+
+        }
+    </script>
+
+    <!-- header footer script -->
+
+    <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+
+
+
+<body onload="startTime()">
+
+
+
+    <my-header></my-header>
+
+
+    <div class="row pl-4" >
+        <div id="toolbar" class="col-9">
+            <div class="btn">Select Charts/Maps&nbsp <i class="fas fa-arrow-down"></i> </div>
+            <div>
+                <span><i class="far fa-file-alt"></i></i></span>
+            </div>
+            <div class="tool-item-1">
+                <div class="form-group">
+
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+
+                        <option selected>Data Set</option>
+                        <option value="1">Past Data</option>
+                        <option value="2">Predicted</option>
+                        <option value="3">Webscrapped</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <span><i class="fas fa-filter"></i></span>
+            </div>
+            <div class="tool-item-2">
+                <div class="form-group">
+
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Options</option>
+
+                        <option value="1">All</option>
+                        <option value="2">Murder</option>
+                        <option value="3">Kidnapping</option>
+                        <option value="4">Robbery</option>
+                        <option value="6">Accidents</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <span><i class="far fa-calendar-alt"></i></i></span>
+            </div>
+            <div class="tool-item-3">
+                <div class="form-group">
+
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+
+                        <option selected>Year</option>
+                        <option value="1">2015</option>
+                        <option value="2">2016</option>
+                        <option value="3">2017</option>
+                        <option value="4">2018</option>
+                        <option value="5">2019</option>
+                        <option value="6">2020</option>
+                    </select>
+                </div>
+
+
+            </div>
+            <div class="tool-item-4">
+                <div class="form-group">
+
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+
+                        <option selected>States</option>
+                        <option value="37">All</option>
+                        <option value="1">Andhra Pradesh </option>
+                        <option value="2">Arunachal Pradesh </option>
+                        <option value="3">Assam </option>
+                        <option value="4">Bihar </option>
+                        <option value="5">Chhattisgarh </option>
+                        <option value="6">Goa </option>
+                        <option value="7">Gujarat </option>
+                        <option value="8">Haryana </option>
+                        <option value="9">Himachal Pradesh </option>
+                        <option value="10">Jammu and Kashmir </option>
+                        <option value="11">Jharkhand </option>
+                        <option value="12">Karnataka </option>
+                        <option value="13">Kerala </option>
+                        <option value="14">Madhya Pradesh </option>
+                        <option value="15">Maharashtra </option>
+                        <option value="16">Manipur </option>
+                        <option value="17">Meghalaya </option>
+                        <option value="18">Mizoram </option>
+                        <option value="19">Nagaland </option>
+                        <option value="20">Odisha </option>
+                        <option value="21">Punjab </option>
+                        <option value="22">Rajasthan </option>
+                        <option value="23">Sikkim </option>
+                        <option value="24">Tamil Nadu </option>
+                        <option value="25">Telangana </option>
+                        <option value="26">Tripura </option>
+                        <option value="27">Uttar Pradesh </option>
+                        <option value="28">Uttarakhand </option>
+                        <option value="29">West Bengal </option>
+                        <option value="30">Andaman and Nicobar Islands </option>
+                        <option value="31">Chandigarh </option>
+                        <option value="32">Dadra and Nagar Haveli </option>
+                        <option value="33">Daman and Diu </option>
+                        <option value="34">Lakshadweep </option>
+                        <option value="35">Delhi </option>
+                        <option value="36">Puducherry </option>
+                    </select>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="col-5"></div>
+
+
+    </div>
+    </div>
+    <div class="row pl-4" style="padding-right: 40px;">
+        <div class="col-2 pt-2">
+            <div class="card bg-primary border-light shadow-soft button-grid ">
+
+
+                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical"
+                    style="padding-top: 0px;">
+
+                    <button id="btn-pill" class="mt-3 mb-3 nav-link" id="v-pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                        aria-selected="true">Home</button>
+                    <button id="btn-pill" class="mt-3 mb-3 nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                        aria-selected="false">Profile</button>
+                    <button id="btn-pill" class="mt-3 mb-3 nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                        aria-selected="false">Messages</button>
+                    <button id="btn-pill" class="mt-3 mb-3 nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                        aria-selected="false">Settings</button>
+                    <button id="btn-pill" class="mt-3 mb-3 nav-link" id="v-pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                        aria-selected="true">Home</button>
+                    <button id="btn-pill" class="mt-3 mb-3 nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                        aria-selected="false">Profile</button>
+                    <button id="btn-pill" class="mt-3 mb-3 nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                        aria-selected="false">Messages</button>
+                    <button id="btn-pill" class="mt-3 mb-3 nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                        aria-selected="false">Settings</button>
+                        
+
+
+                </div>
+            </div>
+            <!-- <section id="btn-pill" class="hero-section pt-0 "
+                style="overflow: auto;height: 40rem;padding-left: 2px;padding-right: 2px;margin-left: 11px;">
+                <div class="card-grid">
+                    <a id="item1" class="card" href="#">
+                        <div class="card__background
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Category</p>
+                            <h3 class="card__heading">Pie Chart</h3>
+                        </div>
+                    </a>
+                    <a id="item2" class="card" href="#" onclick="insertMap()">
+                        <div class="card__background"
+>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Category</p>
+                            <h3 class="card__heading">Bar Chart</h3>
+                        </div>
+                    </a>
+                    <a id="item3" class="card" href="#">
+                        <div class="card__background"
+>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Category</p>
+                            <h3 class="card__heading">Bubble Charts</h3>
+                        </div>
+                    </a>
+                    <a id="item4" class="card" href="#">
+                        <div class="card__background"
+
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Category</p>
+                            <h3 class="card__heading">Histogram</h3>
+                        </div>
+                    </a>
+                    <a id="item5" class="card" href="#">
+                        <div class="card__background"
+>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Category</p>
+                            <h3 class="card__heading">Donut Charts</h3>
+                        </div>
+                    </a>
+                    <a id="item6" class="card" href="#">
+                        <div class="card__background"
+>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Category</p>
+                            <h3 class="card__heading">Line Charts</h3>
+                        </div>
+                    </a>
+                    <a id="item7" class="card" href="#">
+                        <div class="card__background"
+>
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Category</p>
+                            <h3 class="card__heading">Vega Charts</h3>
+                        </div>
+                    </a>
+                    <a id="item8" class="card" href="#">
+                        <div class="card__background"
+
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Category</p>
+                            <h3 class="card__heading">Geomap</h3>
+                        </div>
+                    </a>
+                    <div>
+            </section> -->
+
+        </div>
+        <div id="mapArea" class="col-10">
+
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                    aria-labelledby="v-pills-home-tab">
+
+
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    ...</div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <div id="chart_div"></div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+
+
+                    <div id="myChart" class="chart--container">
+                        <a class="zc-ref" href="https://www.zingchart.com/"> </a>
+                    </div>
+                </div>
+            </div>
+            <!--------------------------------------scripts for charts------------------------------------------>
+        </div>
+    </div>
+
+
+    <!-- ----------------------------------------------funciton-------------------------------------------------- -->
+
+
+
+
+    </div>
+    <div class="row">
+        <div class="col-8 mx-auto">
+            <div class="d-flex align-items-start">
+                <!-- buttons of nav -->
+
+                <!-- tab content -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+        var myConfig = {
+            type: 'radar',
+            plot: {
+                aspect: 'area',
+                animation: {
+                    effect: 3,
+                    sequence: 1,
+                    speed: 700
+                }
+            },
+            scaleV: {
+                visible: false
+            },
+            scaleK: {
+                values: '0:5:1',
+                labels: ['Dogs', 'Cats', 'Fish', 'Birds', 'Reptiles', 'Horses'],
+                item: {
+                    fontColor: '#607D8B',
+                    backgroundColor: "white",
+                    borderColor: "#aeaeae",
+                    borderWidth: 1,
+                    padding: '5 10',
+                    borderRadius: 10
+                },
+                refLine: {
+                    lineColor: '#c10000'
+                },
+                tick: {
+                    lineColor: '#59869c',
+                    lineWidth: 2,
+                    lineStyle: 'dotted',
+                    size: 20
+                },
+                guide: {
+                    lineColor: "#607D8B",
+                    lineStyle: 'solid',
+                    alpha: 0.3,
+                    backgroundColor: "#c5c5c5 #718eb4"
+                }
+            },
+            series: [{
+                    values: [59, 39, 38, 19, 21, 35],
+                    text: 'farm'
+                },
+                {
+                    values: [20, 20, 54, 41, 41, 35],
+                    lineColor: '#53a534',
+                    backgroundColor: '#689F38'
+                }
+            ]
+        };
+
+        zingchart.render({
+            id: 'myChart',
+            data: myConfig,
+            height: '100%',
+            width: '100%'
+        });
+    </script>
+
+
+
+
+    <my-footer></my-footer>
+
+</body>
+
+</html>
