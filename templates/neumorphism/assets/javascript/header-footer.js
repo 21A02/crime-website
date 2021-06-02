@@ -33,8 +33,8 @@ class MyHeader extends HTMLElement {
       <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-globe-asia"></i>&nbsp CrimeMap</a>
       <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-map-marker-alt"></i> &nbsp
         CrimeLocator</a>
-      <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-newspaper"></i>&nbsp CrimeFeed</a>
-      <a href="about.html" class="btn btn-primary text-dark mr-3"><i class="fas fa-user-secret"></i>&nbsp About Us</a>
+      <a href="/templates/neumorphism/feed.html" class="btn btn-primary text-dark mr-3"><i class="fas fa-newspaper"></i>&nbsp CrimeFeed</a>
+      <a href="/templates/neumorphism/about.html" class="btn btn-primary text-dark mr-3"><i class="fas fa-user-secret"></i>&nbsp About Us</a>
       <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-info-circle"></i>&nbsp Help</a>
     </div>
   </div>
@@ -69,7 +69,7 @@ class MyFooter extends HTMLElement {
         this.innerHTML =
             `
 <footer>
-<div class="row">
+<div class="row pt-5">
     <div class="col-3 mx-auto"><i class="fas fa-copyright"></i> 2021 Crime Data Analysis All rights reserved </div>
 </div>
 </footer>
