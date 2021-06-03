@@ -57,51 +57,51 @@
       var s = "/templates/neumorphism/assets/data/fulldata2001.json";
 
 
-      if (document.getElementById('2001-check').checked == true) {
+      if (n == 1) {
         document.getElementById('dropdownMenuButton').innerHTML = '2001';
         s = "/templates/neumorphism/assets/data/fulldata2001.json";
       }
-      else if (document.getElementById('2002-check').checked == true) {
+      else if (n == 2) {
         document.getElementById('dropdownMenuButton').innerHTML = '2002';
         s = "/templates/neumorphism/assets/data/fulldata2002.json";
       }
-      else if (document.getElementById('2003-check').checked == true) {
+      else if (n == 3) {
         document.getElementById('dropdownMenuButton').innerHTML = '2003';
         s = "/templates/neumorphism/assets/data/fulldata2003.json";
       }
-      else if (document.getElementById('2004-check').checked == true) {
+      else if (n == 4) {
         document.getElementById('dropdownMenuButton').innerHTML = '2004';
         s = "/templates/neumorphism/assets/data/fulldata2004.json";
       }
-      else if (document.getElementById('2005-check').checked == true) {
+      else if (n == 5) {
         document.getElementById('dropdownMenuButton').innerHTML = '2005';
         s = "/templates/neumorphism/assets/data/fulldata2005.json";
       }
-      else if (document.getElementById('2006-check').checked == true) {
+      else if (n == 6) {
         document.getElementById('dropdownMenuButton').innerHTML = '2006';
         s = "/templates/neumorphism/assets/data/fulldata2006.json";
       }
-      else if (document.getElementById('2007-check').checked == true) {
+      else if (n == 7) {
         document.getElementById('dropdownMenuButton').innerHTML = '2007';
         s = "/templates/neumorphism/assets/data/fulldata2007.json";
       }
-      else if (document.getElementById('2008-check').checked == true) {
+      else if (n == 8) {
         document.getElementById('dropdownMenuButton').innerHTML = '2008';
         s = "/templates/neumorphism/assets/data/fulldata2008.json";
       }
-      else if (document.getElementById('2009-check').checked == true) {
+      else if (n == 9) {
         document.getElementById('dropdownMenuButton').innerHTML = '2009';
         s = "/templates/neumorphism/assets/data/fulldata2009.json";
       }
-      else if (document.getElementById('2010-check').checked == true) {
+      else if (n == 10) {
         document.getElementById('dropdownMenuButton').innerHTML = '2010';
         s = "/templates/neumorphism/assets/data/fulldata2010.json";
       }
-      else if (document.getElementById('2011-check').checked == true) {
+      else if (n == 11) {
         document.getElementById('dropdownMenuButton').innerHTML = '2011';
         s = "/templates/neumorphism/assets/data/fulldata2011.json";
       }
-      else if (document.getElementById('2012-check').checked == true) {
+      else if (n == 12) {
         document.getElementById('dropdownMenuButton').innerHTML = '2012';
         s = "/templates/neumorphism/assets/data/fulldata2012.json";
       }
@@ -649,61 +649,7 @@
       <script>
         showMapData("Total");
         function showMapData(stateName) {
-
-          if (document.getElementById('2001-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2001';
-        s = "/templates/neumorphism/assets/data/fulldata2001.json";
-      }
-      else if (document.getElementById('2002-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2002';
-        s = "/templates/neumorphism/assets/data/fulldata2002.json";
-      }
-      else if (document.getElementById('2003-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2003';
-        s = "/templates/neumorphism/assets/data/fulldata2003.json";
-      }
-      else if (document.getElementById('2004-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2004';
-        s = "/templates/neumorphism/assets/data/fulldata2004.json";
-      }
-      else if (document.getElementById('2005-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2005';
-        s = "/templates/neumorphism/assets/data/fulldata2005.json";
-      }
-      else if (document.getElementById('2006-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2006';
-        s = "/templates/neumorphism/assets/data/fulldata2006.json";
-      }
-      else if (document.getElementById('2007-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2007';
-        s = "/templates/neumorphism/assets/data/fulldata2007.json";
-      }
-      else if (document.getElementById('2008-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2008';
-        s = "/templates/neumorphism/assets/data/fulldata2008.json";
-      }
-      else if (document.getElementById('2009-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2009';
-        s = "/templates/neumorphism/assets/data/fulldata2009.json";
-      }
-      else if (document.getElementById('2010-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2010';
-        s = "/templates/neumorphism/assets/data/fulldata2010.json";
-      }
-      else if (document.getElementById('2011-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2011';
-        s = "/templates/neumorphism/assets/data/fulldata2011.json";
-      }
-      else if (document.getElementById('2012-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2012';
-        s = "/templates/neumorphism/assets/data/fulldata2012.json";
-      }
-      else {
-        s = "/templates/neumorphism/assets/data/fulldata2011.json";
-      }
-
-
-          fetch(s)
+          fetch('/templates/neumorphism/assets/data/fulldata2001.json')
             .then((e) => {
               return e.json();
             })

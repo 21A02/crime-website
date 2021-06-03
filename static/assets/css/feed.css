@@ -1,0 +1,43 @@
+.body{
+    color: black;
+}
+
+
+.container{
+  display: flex;
+  height: 600px; 
+  width: 600px;
+  padding: 0%;
+  margin: 0%;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  min-height: 200px;
+  background: white;
+  border-radius: 5px;
+}
+
+.fa {
+	color: black;
+}
+.fw-preview-button {
+    cursor: pointer;
+    height: 64px;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 1s linear, opacity 1s linear;
+  }
+
+  .fw-preview-button.active {
+    opacity: 0.2;
+    visibility: visible;
+    transition-delay: 1s;
+  }
+
+  .fw-preview-button:hover {
+    opacity: 0.4;
+  }
