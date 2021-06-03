@@ -18,14 +18,8 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 
 
-  <script src="/index.php"></script>
   <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
 
-
-
-  <!-- pixi.min.js -->
-  <script src="/templates/neumorphism/assets/javascript/pixi.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
 
 
   <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
@@ -53,9 +47,166 @@
   <!-- header footer script -->
   <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
 
+
+  <!-- table creation scrippt-->
+  <script>
+
+    function datafillfun(n) {
+
+      //console.log("testing run...");
+      var s = "/templates/neumorphism/assets/data/fulldata2001.json";
+
+
+      if (document.getElementById('2001-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2001';
+        s = "/templates/neumorphism/assets/data/fulldata2001.json";
+      }
+      else if (document.getElementById('2002-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2002';
+        s = "/templates/neumorphism/assets/data/fulldata2002.json";
+      }
+      else if (document.getElementById('2003-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2003';
+        s = "/templates/neumorphism/assets/data/fulldata2003.json";
+      }
+      else if (document.getElementById('2004-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2004';
+        s = "/templates/neumorphism/assets/data/fulldata2004.json";
+      }
+      else if (document.getElementById('2005-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2005';
+        s = "/templates/neumorphism/assets/data/fulldata2005.json";
+      }
+      else if (document.getElementById('2006-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2006';
+        s = "/templates/neumorphism/assets/data/fulldata2006.json";
+      }
+      else if (document.getElementById('2007-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2007';
+        s = "/templates/neumorphism/assets/data/fulldata2007.json";
+      }
+      else if (document.getElementById('2008-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2008';
+        s = "/templates/neumorphism/assets/data/fulldata2008.json";
+      }
+      else if (document.getElementById('2009-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2009';
+        s = "/templates/neumorphism/assets/data/fulldata2009.json";
+      }
+      else if (document.getElementById('2010-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2010';
+        s = "/templates/neumorphism/assets/data/fulldata2010.json";
+      }
+      else if (document.getElementById('2011-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2011';
+        s = "/templates/neumorphism/assets/data/fulldata2011.json";
+      }
+      else if (document.getElementById('2012-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2012';
+        s = "/templates/neumorphism/assets/data/fulldata2012.json";
+      }
+      else {
+        s = "/templates/neumorphism/assets/data/fulldata2011.json";
+      }
+
+      //  console.log(n, s);
+
+
+      document.getElementById('myGrid').innerHTML = '';
+
+
+      // function for reading json file
+      function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function () {
+          if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+          }
+        }
+        rawFile.send(null);
+      }
+
+      readTextFile(s, function (text) {
+        var data = JSON.parse(text);
+        //      console.log(data);
+
+
+        var tableBody = '<table class="table shadow-soft rounded" ><tr><th class="border-0" scope="col" id="state-table-heading">STATE\/UT</th>';
+
+
+        if (document.getElementById('total-check').checked == true) {
+          tableBody += '<th class="border-0" scope="col" id="total-table-heading">TOTAL IPC CRIMES</th>';
+        }
+        if (document.getElementById('murder-check').checked == true) {
+          tableBody += '<th class="border-0" scope="col" id="total-table-heading">MURDER</th>';
+        }
+        if (document.getElementById('kidnapping-check').checked == true) {
+          tableBody += '<th class="border-0" scope="col" id="total-table-heading">KIDNAPPING</th>';
+        }
+        if (document.getElementById('robbery-check').checked == true) {
+          tableBody += '<th class="border-0" scope="col" id="total-table-heading">ROBBERY</th>';
+        }
+
+        tableBody += '</tr>';
+
+
+        data.forEach(function (d) {
+          tableBody += '<tr><th scope="row">' + d.STATE_UT;
+          if (document.getElementById('total-check').checked == true) {
+            tableBody += '</th><td>' + d.TOTAL_IPC_CRIMES;
+          }
+          if (document.getElementById('murder-check').checked == true) {
+            tableBody += '</th><td>' + d.MURDER;
+          }
+          if (document.getElementById('kidnapping-check').checked == true) {
+            tableBody += '</th><td>' + d.KIDNAPPING_AND_ABDUCTION;
+          }
+          if (document.getElementById('robbery-check').checked == true) {
+            tableBody += '</th><td>' + d.ROBBERY;
+          }
+
+          tableBody += '</td></tr>';
+        });
+        tableBody += '<table>';
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+
+        var divContainer = document.getElementById("myGrid");
+        divContainer.innerHTML = tableBody;
+      });
+    }
+  </script>
+
+
+
+  <!-- running python script -->
+  <script>
+    function postData(input) {
+    $.ajax({
+        type: "POST",
+        url: "/templates/neumorphism/python-test.py",
+        data: { param: input },
+        success: callbackFunc
+    });
+    }
+
+    function callbackFunc(response) {
+    // do something with the response
+    console.log(response,"oyee hoyee");
+    }
+
+
+  </script>
+
+
+
+
+
 </head>
 
-<body onload="startTime()">
+<body onload="startTime();datafillfun(1);postData('data to process');">
 
   <my-header></my-header>
 
@@ -84,7 +235,7 @@
           </button>
           <div class="dropdown1-content">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
               <label class="form-check-label" for="defaultCheck1">
                 <a href="#">Past Data </a>
               </label>
@@ -116,26 +267,26 @@
           </button>
           <div class="dropdown1-content">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-              <label class="form-check-label" for="defaultCheck4">
-                <a href="#">Accidents</a>
+              <input class="form-check-input" type="checkbox" value="Total" id="total-check" checked>
+              <label class="form-check-label" for="total-check">
+                <a href="#">Total</a>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
-              <label class="form-check-label" for="defaultCheck5">
+              <input class="form-check-input" type="checkbox" value="Murder" id="murder-check">
+              <label class="form-check-label" for="murder-check">
                 <a href="#">Murder</a>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
-              <label class="form-check-label" for="defaultCheck6">
+              <input class="form-check-input" type="checkbox" value="Kidnapping" id="kidnapping-check">
+              <label class="form-check-label" for="kidnapping-check">
                 <a href="#">Kidnapping</a>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
-              <label class="form-check-label" for="defaultCheck7">
+              <input class="form-check-input" type="checkbox" value="Robbery" id="robbery-check">
+              <label class="form-check-label" for="robbery-check">
                 <a href="#">Robbery</a>
               </label>
             </div>
@@ -145,15 +296,103 @@
         </div>
       </div>
     </div>
-    <!-- date selector [Calendar Icon]-->
+    <!-- dropdown button-2 [Select Data Items] -->
+    <div id="item-2" class="table-buttons-item">
+      <div class="drop-1">
+        <div class="dropdown1">
+          <button class="dropdown1-button outset-neomo " id="dropdownMenuButton">
+            Select Year &nbsp;
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown1-content">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2001" id="2001-check" checked>
+              <label class="form-check-label" for="2001-check">
+                <a href="#" onclick="datafillfun(1)">2001</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2002" id="2002-check">
+              <label class="form-check-label" for="2002-check">
+                <a href="#" onclick="datafillfun(2)">2002</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2003" id="2003-check">
+              <label class="form-check-label" for="2003-check">
+                <a href="#" onclick="datafillfun(3)">2003</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2004" id="2004-check">
+              <label class="form-check-label" for="2004-check">
+                <a href="#" onclick="datafillfun(4)">2004</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2005" id="2005-check">
+              <label class="form-check-label" for="2005-check">
+                <a href="#" onclick="datafillfun(5)">2005</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2006" id="2006-check">
+              <label class="form-check-label" for="2006-check">
+                <a href="#" onclick="datafillfun(6)">2006</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2007" id="2007-check">
+              <label class="form-check-label" for="2007-check">
+                <a href="#" onclick="datafillfun(7)">2007</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2008" id="2008-check">
+              <label class="form-check-label" for="2008-check">
+                <a href="#" onclick="datafillfun(8)">2008</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2009" id="2009-check">
+              <label class="form-check-label" for="2009-check">
+                <a href="#" onclick="datafillfun(9)">2009</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2010" id="2010-check">
+              <label class="form-check-label" for="2010-check">
+                <a href="#" onclick="datafillfun(10)">2010</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2011" id="2011-check">
+              <label class="form-check-label" for="2011-check">
+                <a href="#" onclick="datafillfun(11)">2011</a>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2012" id="2012-check">
+              <label class="form-check-label" for="2012-check">
+                <a href="#" onclick="datafillfun(12)">2012</a>
+              </label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- date selector [Calendar Icon]
     <div id="item-3" class="table-buttons-item">
       <button class="btn btn-primary btn-pill text-success mr-2 mb-2 mb-4 mt-4 ml-3" type="button"><i
           class="far fa-calendar-alt"></i></i></button>
     </div>
+    -->
+
     <!-- Search Button [Search Icon]-->
     <div id="item-4" class="table-buttons-item">
-      <button class="btn btn-primary btn-pill text-success mr-2 mb-2 mb-4 mt-4 ml-3" type="button"> <i
-          class="fas fa-search"></i></button>
+      <button class="btn btn-primary btn-pill text-success mr-2 mb-2 mb-4 mt-4 ml-3" type="button"
+        onclick="datafillfun(0)"> <i class="fas fa-search"></i></button>
     </div>
 
     <div id="item-5" class="table-buttons-item">
@@ -166,77 +405,13 @@
 
   <div class="row" id="row-table-map">
 
-
     <div class="col-5">
-      <table class="table shadow-soft rounded">
-        <tr>
 
-          <th class="border-0" scope="col" id="teacher">Teacher</th>
-          <th class="border-0" scope="col" id="males">Males</th>
-          <th class="border-0" scope="col" id="females">Females</th>
-        </tr>
-        <tr>
 
-          <th scope="row" id="Bolter" headers="firstyear teacher">D. Bolter</th>
-          <td headers="firstyear Bolter males">5</td>
-          <td headers="firstyear Bolter females">4</td>
-        </tr>
-        <tr>
-          <th scope="row" id="Cheetham" headers="firstyear teacher">A. Cheetham</th>
-          <td headers="firstyear Cheetham males">7</td>
-          <td headers="firstyear Cheetham females">9</td>
-        </tr>
-        <tr>
+      <div id="myGrid"></div>
 
-          <th scope="row" id="Lam" headers="secondyear teacher">M. Lam</th>
-          <td headers="secondyear Lam males">3</td>
-          <td headers="secondyear Lam females">9</td>
-        </tr>
-        <tr>
 
-          <th scope="row" id="Bolter" headers="firstyear teacher">D. Bolter</th>
-          <td headers="firstyear Bolter males">5</td>
-          <td headers="firstyear Bolter females">4</td>
-        </tr>
-        <tr>
-          <th scope="row" id="Cheetham" headers="firstyear teacher">A. Cheetham</th>
-          <td headers="firstyear Cheetham males">7</td>
-          <td headers="firstyear Cheetham females">9</td>
-        </tr>
-        <tr>
 
-          <th scope="row" id="Lam" headers="secondyear teacher">M. Lam</th>
-          <td headers="secondyear Lam males">3</td>
-          <td headers="secondyear Lam females">9</td>
-        </tr>
-        <tr>
-
-          <th scope="row" id="Bolter" headers="firstyear teacher">D. Bolter</th>
-          <td headers="firstyear Bolter males">5</td>
-          <td headers="firstyear Bolter females">4</td>
-        </tr>
-        <tr>
-          <th scope="row" id="Cheetham" headers="firstyear teacher">A. Cheetham</th>
-          <td headers="firstyear Cheetham males">7</td>
-          <td headers="firstyear Cheetham females">9</td>
-        </tr>
-        <tr>
-
-          <th scope="row" id="Lam" headers="secondyear teacher">M. Lam</th>
-          <td headers="secondyear Lam males">3</td>
-          <td headers="secondyear Lam females">9</td>
-        </tr>
-        <tr>
-          <th scope="row" id="Crossy" headers="secondyear teacher">S. Crossy</th>
-          <td headers="secondyear Crossy males">4</td>
-          <td headers="secondyear Crossy females">3</td>
-        </tr>
-        <tr>
-          <th scope="row" id="Forsyth" headers="secondyear teacher">A. Forsyth</th>
-          <td headers="secondyear Forsyth males">6</td>
-          <td headers="secondyear Forsyth females">9</td>
-        </tr>
-      </table>
     </div>
 
     <!-- map code -->
@@ -247,21 +422,21 @@
       <div class="container">
         <div class="state-name">...</div>
         <div class="data">
-          <div class="active">
-            <div class="caseActive">Active</div>
-            <div class="caseFigActive">...</div>
+          <div class="murder">
+            <div class="caseMurder">Murder</div>
+            <div class="caseFigMurder">...</div>
           </div>
-          <div class="confirmed">
-            <div class="caseConfirmed">Confirmed</div>
-            <div class="caseFigConfirmed">...</div>
+          <div class="kidnapping">
+            <div class="caseKidnapping">Kidnapping</div>
+            <div class="caseFigKidnapping">...</div>
           </div>
-          <div class="recod">
-            <div class="caseRecod">Recovered</div>
-            <div class="caseFigRecod">...</div>
+          <div class="robbery">
+            <div class="caseRobbery">Robbery</div>
+            <div class="caseFigRobbery">...</div>
           </div>
-          <div class="died">
-            <div class="caseDied">Died</div>
-            <div class="caseFigDied">...</div>
+          <div class="total">
+            <div class="caseTotal">Total</div>
+            <div class="caseFigTotal">...</div>
           </div>
         </div>
         <div class="map">
@@ -473,25 +648,79 @@
       </div>
       <script>
         showMapData("Total");
-
         function showMapData(stateName) {
-          console.log(stateName);
-          fetch("https://api.covid19india.org/data.json")
+
+          if (document.getElementById('2001-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2001';
+        s = "/templates/neumorphism/assets/data/fulldata2001.json";
+      }
+      else if (document.getElementById('2002-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2002';
+        s = "/templates/neumorphism/assets/data/fulldata2002.json";
+      }
+      else if (document.getElementById('2003-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2003';
+        s = "/templates/neumorphism/assets/data/fulldata2003.json";
+      }
+      else if (document.getElementById('2004-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2004';
+        s = "/templates/neumorphism/assets/data/fulldata2004.json";
+      }
+      else if (document.getElementById('2005-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2005';
+        s = "/templates/neumorphism/assets/data/fulldata2005.json";
+      }
+      else if (document.getElementById('2006-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2006';
+        s = "/templates/neumorphism/assets/data/fulldata2006.json";
+      }
+      else if (document.getElementById('2007-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2007';
+        s = "/templates/neumorphism/assets/data/fulldata2007.json";
+      }
+      else if (document.getElementById('2008-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2008';
+        s = "/templates/neumorphism/assets/data/fulldata2008.json";
+      }
+      else if (document.getElementById('2009-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2009';
+        s = "/templates/neumorphism/assets/data/fulldata2009.json";
+      }
+      else if (document.getElementById('2010-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2010';
+        s = "/templates/neumorphism/assets/data/fulldata2010.json";
+      }
+      else if (document.getElementById('2011-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2011';
+        s = "/templates/neumorphism/assets/data/fulldata2011.json";
+      }
+      else if (document.getElementById('2012-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2012';
+        s = "/templates/neumorphism/assets/data/fulldata2012.json";
+      }
+      else {
+        s = "/templates/neumorphism/assets/data/fulldata2011.json";
+      }
+
+
+          fetch(s)
             .then((e) => {
               return e.json();
             })
             .then((data) => {
-              for (var i in data.statewise) {
-                if (data.statewise[i].state == stateName) {
+              var i;
+              for (i = 0; i < data.length; i++) {
+                if (data[i].STATE_UT.toLowerCase() == stateName.toLowerCase()) {
+
                   document.querySelector(".state-name").innerHTML = stateName;
-                  document.querySelector(".caseFigActive").innerHTML =
-                    data.statewise[i].active;
-                  document.querySelector(".caseFigConfirmed").innerHTML =
-                    data.statewise[i].confirmed;
-                  document.querySelector(".caseFigRecod").innerHTML =
-                    data.statewise[i].recovered;
-                  document.querySelector(".caseFigDied").innerHTML =
-                    data.statewise[i].deaths;
+                  document.querySelector(".caseFigMurder").innerHTML =
+                    data[i].MURDER;
+                  document.querySelector(".caseFigKidnapping").innerHTML =
+                    data[i].KIDNAPPING_AND_ABDUCTION;
+                  document.querySelector(".caseFigRobbery").innerHTML =
+                    data[i].ROBBERY;
+                  document.querySelector(".caseFigTotal").innerHTML =
+                    data[i].TOTAL_IPC_CRIMES;
                 }
               }
             });
@@ -506,44 +735,12 @@
 
   </div>
 
-  <div class="row">
-    <div class="col-8 pl-5 pt-5 pb-5">
-      <div class="card bg-primary border-light shadow-soft">
-        <rssapp-wall id="GYDpbOYQdxRPUKQi"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
-      </div>
-    </div>
-    <div class="col-4 pt-5 pb-5">
-      <a class="twitter-timeline" data-lang="en" data-width="500" data-height="800" data-theme="dark" href="https://twitter.com/Aryaveerbajpai?ref_src=twsrc%5Etfw"  style=" display: none;-ms-overflow-style: none; scrollbar-width: none;" >Tweets by Aryaveerbajpai</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
- 
-    </div>
-  </div>
-
 
   <my-footer></my-footer>
 
   <script type='text/javascript'>
-    (function (I, L, T, i, c, k, s) {
-      if (I.iticks) return;
-      I.iticks = {
-        host: c,
-        settings: s,
-        clientId: k,
-        cdn: L,
-        queue: []
-      };
-      var h = T.head || T.documentElement;
-      var e = T.createElement(i);
-      var l = I.location;
-      e.async = true;
-      e.src = (L || c) + '/client/inject-v2.min.js';
-      h.insertBefore(e, h.firstChild);
-      I.iticks.call = function (a, b) {
-        I.iticks.queue.push([a, b]);
-      };
-    })(window, 'https://cdn.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com',
-      'iqAWJ8ykdYtKhfsxp_c', {});
+    (function (I, L, T, i, c, k, s) { if (I.iticks) return; I.iticks = { host: c, settings: s, clientId: k, cdn: L, queue: [] }; var h = T.head || T.documentElement; var e = T.createElement(i); var l = I.location; e.async = true; e.src = (L || c) + '/client/inject-v2.min.js'; h.insertBefore(e, h.firstChild); I.iticks.call = function (a, b) { I.iticks.queue.push([a, b]); }; })(window, 'https://cdn.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'iqAWJ8ykdYtKhfsxp_c', {});
   </script>
-
 
 
 
