@@ -128,6 +128,39 @@
     <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+    <!-- dropdown functionality script -->
+
+    <script>
+
+        function dropdownfun() {
+
+        console.log("testing run...");
+        /*
+        var s = "/templates/neumorphism/assets/data/fulldata2001.json";
+        if (document.getElementById('2001-check').checked == true) {
+        document.getElementById('dropdownMenuButton').innerHTML = '2001';
+        s = "/templates/neumorphism/assets/data/fulldata2001.json";
+        }
+        */
+
+        dataset=document.getElementById("inlineFormCustomSelectPref0").value;
+        typeofcrime=document.getElementById("inlineFormCustomSelectPref1").value;
+        year=document.getElementById("inlineFormCustomSelectPref2").value;
+        state=document.getElementById("inlineFormCustomSelectPref3").value;
+        console.log(dataset);
+        console.log(typeofcrime);
+        console.log(year);
+        console.log(state);        
+
+        }
+
+    </script>
+
+
+
+
+
 </head>
 
 
@@ -149,12 +182,10 @@
             <div class="tool-item-1">
                 <div class="form-group">
 
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-
-                        <option selected>Data Set</option>
-                        <option value="1">Past Data</option>
-                        <option value="2">Predicted</option>
-                        <option value="3">Webscrapped</option>
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref0">
+                        <option selected>Past Data</option>
+                        <option>Predicted</option>
+                        <option>Webscrapped</option>
                     </select>
                 </div>
 
@@ -165,14 +196,14 @@
             <div class="tool-item-2">
                 <div class="form-group">
 
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref1">
                         <option selected>Options</option>
 
-                        <option value="1">All</option>
-                        <option value="2">Murder</option>
-                        <option value="3">Kidnapping</option>
-                        <option value="4">Robbery</option>
-                        <option value="6">Accidents</option>
+                        <option>All</option>
+                        <option>Murder</option>
+                        <option>Kidnapping</option>
+                        <option>Robbery</option>
+                        <option>Accidents</option>
                     </select>
                 </div>
 
@@ -183,15 +214,15 @@
             <div class="tool-item-3">
                 <div class="form-group">
 
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref2">
 
                         <option selected>Year</option>
-                        <option value="1">2015</option>
-                        <option value="2">2016</option>
-                        <option value="3">2017</option>
-                        <option value="4">2018</option>
-                        <option value="5">2019</option>
-                        <option value="6">2020</option>
+                        <option>2015</option>
+                        <option>2016</option>
+                        <option>2017</option>
+                        <option>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
                     </select>
                 </div>
 
@@ -200,53 +231,53 @@
             <div class="tool-item-4">
                 <div class="form-group">
 
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref3">
 
                         <option selected>States</option>
-                        <option value="37">All</option>
-                        <option value="1">Andhra Pradesh </option>
-                        <option value="2">Arunachal Pradesh </option>
-                        <option value="3">Assam </option>
-                        <option value="4">Bihar </option>
-                        <option value="5">Chhattisgarh </option>
-                        <option value="6">Goa </option>
-                        <option value="7">Gujarat </option>
-                        <option value="8">Haryana </option>
-                        <option value="9">Himachal Pradesh </option>
-                        <option value="10">Jammu and Kashmir </option>
-                        <option value="11">Jharkhand </option>
-                        <option value="12">Karnataka </option>
-                        <option value="13">Kerala </option>
-                        <option value="14">Madhya Pradesh </option>
-                        <option value="15">Maharashtra </option>
-                        <option value="16">Manipur </option>
-                        <option value="17">Meghalaya </option>
-                        <option value="18">Mizoram </option>
-                        <option value="19">Nagaland </option>
-                        <option value="20">Odisha </option>
-                        <option value="21">Punjab </option>
-                        <option value="22">Rajasthan </option>
-                        <option value="23">Sikkim </option>
-                        <option value="24">Tamil Nadu </option>
-                        <option value="25">Telangana </option>
-                        <option value="26">Tripura </option>
-                        <option value="27">Uttar Pradesh </option>
-                        <option value="28">Uttarakhand </option>
-                        <option value="29">West Bengal </option>
-                        <option value="30">Andaman and Nicobar Islands </option>
-                        <option value="31">Chandigarh </option>
-                        <option value="32">Dadra and Nagar Haveli </option>
-                        <option value="33">Daman and Diu </option>
-                        <option value="34">Lakshadweep </option>
-                        <option value="35">Delhi </option>
-                        <option value="36">Puducherry </option>
+                        <option>All</option>
+                        <option>Andhra Pradesh </option>
+                        <option>Arunachal Pradesh </option>
+                        <option>Assam </option>
+                        <option>Bihar </option>
+                        <option>Chhattisgarh </option>
+                        <option>Goa </option>
+                        <option>Gujarat </option>
+                        <option>Haryana </option>
+                        <option>Himachal Pradesh </option>
+                        <option>Jammu and Kashmir </option>
+                        <option>Jharkhand </option>
+                        <option>Karnataka </option>
+                        <option>Kerala </option>
+                        <option>Madhya Pradesh </option>
+                        <option>Maharashtra </option>
+                        <option>Manipur </option>
+                        <option>Meghalaya </option>
+                        <option>Mizoram </option>
+                        <option>Nagaland </option>
+                        <option>Odisha </option>
+                        <option>Punjab </option>
+                        <option>Rajasthan </option>
+                        <option>Sikkim </option>
+                        <option>Tamil Nadu </option>
+                        <option>Telangana </option>
+                        <option>Tripura </option>
+                        <option>Uttar Pradesh </option>
+                        <option>Uttarakhand </option>
+                        <option>West Bengal </option>
+                        <option>Andaman and Nicobar Islands </option>
+                        <option>Chandigarh </option>
+                        <option>Dadra and Nagar Haveli </option>
+                        <option>Daman and Diu </option>
+                        <option>Lakshadweep </option>
+                        <option>Delhi </option>
+                        <option>Puducherry </option>
                     </select>
                 </div>
 
 
             </div>
             <div class="tool-item-5">
-                <button class="btn btn-primary btn-pill text-gray" type="button">Go</button>
+                <button class="btn btn-primary btn-pill text-gray" type="button" onclick="dropdownfun()">Go</button>
             </div>
 
         </div>
