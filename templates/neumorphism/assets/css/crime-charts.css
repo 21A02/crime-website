@@ -256,7 +256,7 @@ padding-bottom: 10px;
 
 #btn-pill{
   width: 140px;
-  height: 40px;
+  height: 60px;
   background-size: cover;
   color: black;
   background-color: #e6e7ee;
@@ -285,3 +285,55 @@ padding-bottom: 10px;
   display: none;
 }
 
+
+
+/* scroll-down-animation css */
+
+.chevron {
+  position: absolute;
+  width: 2.1rem;
+  height: 0.48rem;
+  opacity: 0;
+  transform: scale(0.3);
+  animation: move-chevron 3s ease-out infinite;
+}
+.chevron:first-child {
+  animation: move-chevron 3s ease-out 1s infinite;
+}
+.chevron:nth-child(2) {
+  animation: move-chevron 3s ease-out 2s infinite;
+}
+.chevron:before, .chevron:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #2c3e50;
+}
+.chevron:before {
+  left: 0;
+  transform: skewY(30deg);
+}
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skewY(-30deg);
+}
+@keyframes move-chevron {
+  25% {
+    opacity: 1;
+ }
+  33.3% {
+    opacity: 1;
+    transform: translateY(2.28rem);
+ }
+  66.6% {
+    opacity: 1;
+    transform: translateY(3.12rem);
+ }
+  100% {
+    opacity: 0;
+    transform: translateY(4.8rem) scale(0.5);
+ }
+}

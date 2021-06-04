@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="utf-8">
+  <title>ZingSoft Demo</title>
+ 
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    #myChart {
+      height: 100%;
+      width: 100%;
+      min-height: 150px;
+    }
+ 
+    .zc-ref {
+      display: none;
+    }
+  </style>
+</head>
+ 
+<body>
+  <div id="zc"></div>
+  <script>
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+    var IDS = ["ISL", "NOR", "SWE", "FIN", "EST", "IRL", "GBR", "DNK", "LTU", "LVA", "BEL", "NLD", "DEU", "POL", "BLR", "RUS", "FRA", "LUX", "CHE", "CZE", "SVK", "UKR", "PRT", "ESP", "ITA", "AUT", "HGR", "ROU", "MDA", "GEO", "AZE", "SLO", "HRV", "MNE", "SRB", "BGR", "TUR", "ARM", "MLT", "BIH", "KOS", "MKD", "CYP", "ALB", "GRC", "ISR"];
+    var data = {};
+    for (var i = 0; i < IDS.length; i++) {
+      data[IDS[i]] = {
+        value: ZC._r_(0, 100),
+        'background-repeat': 'no-repeat',
+        'background-scale': 0.05,
+        'background-position': '50% 25%',
+        'background-image': '/view/M4HBHXDJ/' + IDS[i].toLowerCase() + '.png'
+      };
+    }
+ 
+    var cdata = {
+      "type": "tilemap",
+      "options": {
+        "map": "EUROPE",
+        "type": "square",
+        "size-factor": 1,
+        "data": data,
+        "tile": {
+          "border-width": 2,
+          "border-color": "#fff",
+          "background-color": "#ccc",
+          "label": {
+            "font-size": 10,
+            "offset-y": 16
+          }
+        }
+      },
+      "tooltip": {
+        "padding": 10,
+        "border-width": 1,
+        "border-color": "#333",
+        "font-weight": "600"
+      },
+      "plotarea": {
+        "margin": "10 10 10 10"
+      }
+    };
+ 
+    zingchart.render({
+      id: 'zc',
+      width: 800,
+      height: 500,
+      output: 'svg',
+      data: cdata
+    });
+  </script>
+</body>
+ 
+</html>

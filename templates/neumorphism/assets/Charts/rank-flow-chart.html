@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="utf-8">
+  <title>ZingSoft Demo</title>
+ 
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <style>
+    html,
+    body,
+    #myChart {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+</head>
+ 
+<body>
+  <div id='myChart'></div>
+  <script>
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+    var myConfig = {
+      "type": "rankflow",
+      "globals": {
+        "font-family": "Arial",
+      },
+      "options": {
+        "global-ranking": false, // hide left column and make chart fit full width
+        "color-type": "palette",
+        "palette": ['#00BAF2', '#9B26AF', '#E82121', '#E80C60', '#4caf4f'],
+        "style": {
+          "label-overall": {
+            "text": "OVERALL RANK",
+            "font-weight": "bold"
+          },
+          "tooltip": {
+            "font-size": "13px",
+            "font-color": "#fff",
+            "background-color": "#424242",
+            "shadow": false,
+            "border-width": "0px",
+            "border-color": "none",
+            "border-radius": "8px"
+          },
+          "flow": {
+            "border-width": "0px",
+            "border-color": "none",
+            "shadow": false
+          },
+          "item-flow": {
+            "font-size": "13px",
+            "font-color": "#ffffff"
+          },
+          "rank-overall": {
+            "background-color": "#393d4b",
+            "font-size": "13px",
+            "font-color": "#d8d9db"
+          },
+          "rank-left": {
+            "visible": 0
+          },
+          "rank-right": {
+            "visible": 0
+          }
+        }
+      },
+      "plotarea": {
+        "margin": 20
+      },
+      "scale-x": {
+        "labels": [
+          "Food Quality",
+          "Complaints",
+          "Avg. Meal Cost in ($$$)"
+        ],
+        "item": {
+          "font-color": "#b1b5bf",
+          "font-size": "14px",
+          "font-weight": "normal"
+        },
+        "values": [
+          "Food Quality",
+          "Complaints",
+          "Avg. Meal Cost in ($$$)"
+        ]
+      },
+      "series": [{
+          "text": "Café Caterwaul",
+          "ranks": [
+            5,
+            1,
+            2
+          ],
+          "rank": 2
+        },
+        {
+          "text": "Plutarch",
+          "ranks": [
+            3,
+            3,
+            1
+          ],
+          "rank": 1
+        },
+        {
+          "text": "Eden Parlor",
+          "ranks": [
+            1,
+            4,
+            5
+          ],
+          "rank": 3
+        },
+        {
+          "text": "Naiveté Sushi",
+          "ranks": [
+            2,
+            2,
+            4
+          ],
+          "rank": 4
+        },
+        {
+          "text": "Flying Chaucer",
+          "ranks": [
+            4,
+            5,
+            3
+          ],
+          "rank": 5
+        }
+      ]
+    };
+ 
+    zingchart.render({
+      id: 'myChart',
+      data: myConfig,
+      height: "100%",
+      width: "100%"
+    });
+  </script>
+</body>
+ 
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="utf-8">
+  <title>ZingSoft Demo</title>
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+ 
+    .chart--container {
+      margin: auto;
+      min-height: 150px;
+      _width: 640px;
+      _height: 160px;
+    }
+ 
+    .zc-ref {
+      display: none;
+    }
+  </style>
+</head>
+ 
+<body>
+  <div id="myChart" class="chart--container">
+    <a class="zc-ref" href="https://www.zingchart.com/">Powered by ZingChart</a>
+  </div>
+  <script>
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+    let chartConfig = {
+      globals: {
+        fontFamily: 'Lucida Sans Unicode'
+      },
+      layout: '1x2',
+      graphset: [{
+          type: 'scorecard',
+          border: '1px solid #ccc',
+          options: {
+            value: {
+              text: '1,450',
+              _color: '#a00'
+            },
+            icon: {
+              backgroundColor: '#8eba31 #8dcd41',
+              backgroundImage: 'https://storage.googleapis.com/zingchart-com.appspot.com/gallery/up-arrow.png',
+              backgroundScale: 0.2
+            },
+            title: {
+              text: 'Up',
+              size: '20px',
+              _color: '#a00'
+            },
+            bars: [{}]
+          },
+          plotarea: {
+            margin: '10px'
+          }
+        },
+        {
+          type: 'scorecard',
+          borderTop: '1px solid #ccc',
+          borderRight: '1px solid #ccc',
+          borderBottom: '1px solid #ccc',
+          options: {
+            value: {
+              text: '5,042',
+              _color: '#0a0'
+            },
+            icon: {
+              backgroundColor: '#eb4034',
+              backgroundImage: 'https://storage.googleapis.com/zingchart-com.appspot.com/gallery/down-arrow.png',
+              backgroundScale: 0.2,
+              borderColor: '#6fb023'
+            },
+            bars: [{}],
+            title: {
+              text: 'Down',
+              _color: '#0a0'
+            }
+          },
+          plotarea: {
+            margin: '10px'
+          }
+        }
+      ]
+    };
+ 
+    zingchart.render({
+      id: 'myChart',
+      data: chartConfig,
+      height: '80px',
+      width: '320px',
+      modules: 'scorecard'
+    });
+  </script>
+</body>
+ 
+</html>
