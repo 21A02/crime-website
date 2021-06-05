@@ -181,43 +181,7 @@
         }
     </script>
 
-<style>
-  
-    .multipleSelection {
-        width: 300px;
-        background-color: #BCC2C1;
-    }
 
-    .selectBox {
-        position: relative;
-    }
-
-    .selectBox select {
-        width: 100%;
-        font-weight: bold;
-    }
-
-    .overSelect {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-    }
-
-    #checkBoxes {
-        display: none;
-        border: 1px #8DF5E4 solid;
-    }
-
-    #checkBoxes label {
-        display: block;
-    }
-
-    #checkBoxes label:hover {
-        background-color: #4F615E;
-    }
-</style>
 
 
 
@@ -344,64 +308,11 @@
             <div class="tool-item-5">
                 <button class="btn btn-primary btn-pill text-gray" type="button" onclick="dropdownfun()">Go</button>
             </div>
-            <div>
-                <script>
-                    var show = true;
-            
-                    function showCheckboxes() {
-                        var checkboxes =
-                            document.getElementById("checkBoxes");
-            
-                        if (show) {
-                            checkboxes.style.display = "block";
-                            show = false;
-                        } else {
-                            checkboxes.style.display = "none";
-                            show = true;
-                        }
-                    }
-                </script>
-                <form>
-                    <div class="multipleSelection">
-                        <div class="selectBox"
-                            onclick="showCheckboxes()">
-                            <select>
-                                <option>Select options</option>
-                            </select>
-                            <div class="overSelect"></div>
-                        </div>
-            
-                        <div id="checkBoxes">
-                            <label for="first">
-                                <input type="checkbox" id="first" />
-                                checkBox1
-                            </label>
-                            
-                            <label for="second">
-                                <input type="checkbox" id="second" />
-                                checkBox2
-                            </label>
-                            <label for="third">
-                                <input type="checkbox" id="third" />
-                                checkBox3
-                            </label>
-                            <label for="fourth">
-                                <input type="checkbox" id="fourth" />
-                                checkBox4
-                            </label>
-                        </div>
-                    </div>
-                </form>
-
-
-
-            </div>
 
 
         </div>
 
         <div class="col-5"></div>
-
     </div>
     <div class="row pl-4" style="padding-right: 40px;">
         <div class="col-2 pt-2">
