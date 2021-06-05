@@ -29,6 +29,96 @@
 <body>
   <div id='myChart'><a class="zc-ref" href="https://www.zingchart.com/">Charts by ZingChart</a></div>
   <script>
+     s = "/templates/neumorphism/assets/data/fulljsondata2012.json";
+      
+
+      //  console.log(n, s);
+
+
+      //document.getElementById('myGrid').innerHTML = '';
+
+
+      // function for reading json file
+      function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function () {
+          if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+          }
+        }
+        rawFile.send(null);
+      }
+
+      readTextFile(s, function (text) {
+        var data = JSON.parse(text);
+        console.log(data);
+/*
+          var state_arr = [];
+          var murder_arr = [];
+          var robbery_arr = [];
+          var rape_arr = [];
+          var kidnapping_arr = [];
+          var total_arr = [];
+
+          console.log(data[0]);
+
+          var i;
+          for (i = 0; i < 7; i++) {
+            state_arr.push(data[i].STATE_UT)
+            murder_arr.push(data[i].MURDER);
+            robbery_arr.push(data[i].ROBBERY);
+            rape_arr.push(data[i].RAPE);
+            kidnapping_arr.push(data[i].KIDNAPPING_AND_ABDUCTION);
+            total_arr.push(data[i].TOTAL_IPC_CRIMES)
+          }
+
+          console.log(state_arr);
+
+
+          var element = {}, series_new = [];
+          element.values = murder_arr;
+          series_new.push(element);
+          var element = {};
+          element.values = robbery_arr;
+          series_new.push(element);
+          var element = {};
+          element.values = rape_arr;
+          series_new.push(element);
+          var element = {};
+          element.values = kidnapping_arr;
+          series_new.push(element);
+        //  var element = {};
+        //  element.values = total_arr;
+        //  series_new.push(element);
+
+          console.log(series_new);
+
+
+
+          
+        var obj1 = JSON.parse(localStorage.getItem('myStorage'));
+
+        console.log(obj1);
+
+*/
+var gujrat_arr=[];
+var bihar_arr=[];
+var punjab_arr=[];
+var i;
+for(i=2001;i<2013;i++){
+  console.log(i);
+  if(data[i].STATE_UT=="GUJRAT"){
+    gujrat_arr.push(data[i].MURDER);
+  }
+  if(data[i].STATE_UT=="GUJRAT"){
+    gujrat_arr.push(data[i].MURDER);
+  }
+}
+
+
+
     ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
     var myConfig = {
       "globals": {
@@ -279,7 +369,7 @@
           }
         ]
       }]
-    };
+      };
  
     zingchart.render({
       id: 'myChart',
@@ -287,6 +377,8 @@
       height: '100%',
       width: '100%'
     });
+
+  });
   </script>
 </body>
  
