@@ -18,7 +18,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        </script>
+    </script>
 
 
     <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
@@ -132,7 +132,6 @@
     <!-- dropdown functionality script -->
 
     <script>
-
         function dropdownfun() {
 
             console.log("testing run...");
@@ -159,7 +158,9 @@
             arr.push(year);
             arr.push(state);
 
-            var obj = { 'x': arr };
+            var obj = {
+                'x': arr
+            };
 
             localStorage.setItem('myStorage', JSON.stringify(obj));
 
@@ -167,17 +168,6 @@
 
             console.log(obj1);
 
-        }
-
-    </script>
-
-    <script>
-        var checkList = document.getElementById('list1');
-        checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
-            if (checkList.classList.contains('visible'))
-                checkList.classList.remove('visible');
-            else
-                checkList.classList.add('visible');
         }
     </script>
 
@@ -196,124 +186,440 @@
     <my-header></my-header>
 
 
-    <div class="row pl-4">
-        <div id="toolbar" class="col-9 pl-1">
-            <div class="btn">Select Charts &nbsp <img src="/templates/neumorphism/assets/images/scroll-gif.gif"
-                    alt="scroll-down-animation" style="width: 30px;
-                height: 30px;"></div>
-            <div>
+
+    <!-- row for toolbar -->
+    <div class="row pl-4" id="toolbar" style="display: flex; flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;">
+        <!-- <div id="toolbar" class="col-9 pl-1"> -->
+        <div id="table-buttons" class="row pl-5" style="display: flex;
+        flex-wrap: nowrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-start;
+    ">
+            <div class="btn table-buttons-item">Select Charts &nbsp <img src="/templates/neumorphism/assets/images/scroll-gif.gif"
+                    alt="scroll-down-animation" style="width: 30px; height: 30px;">
+            </div>
+            <div class="table-buttons-item">
                 <span><i class="far fa-file-alt"></i></i></span>
             </div>
-            <div class="tool-item-1">
-                <div class="form-group">
+            <!-- dropdown button-1 [Data Set] -->
+            <div id="item-1" class="table-buttons-item">
+                <div class="drop-1">
+                    <div class="dropdown1">
+                        <button class="dropdown1-button outset-neomo">
+                            Data Set
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown1-content">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
+                                <label class="form-check-label" for="defaultCheck1">
+                                    <a href="#">Past Data </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                <label class="form-check-label" for="defaultCheck2">
+                                    <a href="#">Webscrapped Data </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                <label class="form-check-label" for="defaultCheck3">
+                                    <a href="#">Predicted Data </a>
+                                </label>
+                            </div>
+                        </div>
 
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref0">
-                        <option selected>Past Data</option>
-                        <option>Predicted</option>
-                        <option>Webscrapped</option>
-                    </select>
+                    </div>
                 </div>
-
             </div>
-            <div>
+            <div class="table-buttons-item">
                 <span><i class="fas fa-filter"></i></span>
             </div>
-            <div class="tool-item-2">
-                <div class="form-group">
+            <!-- dropdown button-2 [Select Data Items] -->
+            <div id="item-2" class="table-buttons-item">
+                <div class="drop-1">
+                    <div class="dropdown1">
+                        <button class="dropdown1-button outset-neomo ">
+                            Options &nbsp;
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown1-content">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Total" id="total-check" checked>
+                                <label class="form-check-label" for="total-check">
+                                    <a href="#">All</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Murder" id="murder-check">
+                                <label class="form-check-label" for="murder-check">
+                                    <a href="#">Murder</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Kidnapping"
+                                    id="kidnapping-check">
+                                <label class="form-check-label" for="kidnapping-check">
+                                    <a href="#">Kidnapping</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Robbery" id="robbery-check">
+                                <label class="form-check-label" for="robbery-check">
+                                    <a href="#">Robbery</a>
+                                </label>
+                            </div>
 
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref1">
-                        <option selected>Options</option>
 
-                        <option>All</option>
-                        <option> Murder</option>
-                        <option>Kidnapping</option>
-                        <option>Robbery</option>
-                        <option>Accidents</option>
-
-                    </select>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-            <div>
+            <div class="table-buttons-item">
                 <span><i class="far fa-calendar-alt"></i></i></span>
             </div>
-            <div class="tool-item-3">
+            <!-- dropdown button-3 [Select Year] -->
+            <div id="item-2" class="table-buttons-item">
+                <div class="drop-1">
+                    <div class="dropdown1">
+                        <button class="dropdown1-button outset-neomo " id="dropdownMenuButton">
+                            Select Year &nbsp;
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown1-content">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2001" id="2001-check" checked>
+                                <label class="form-check-label" for="2001-check">
+                                    <a href="#" onclick="datafillfun(1)">2001</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2002" id="2002-check">
+                                <label class="form-check-label" for="2002-check">
+                                    <a href="#" onclick="datafillfun(2)">2002</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2003" id="2003-check">
+                                <label class="form-check-label" for="2003-check">
+                                    <a href="#" onclick="datafillfun(3)">2003</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2004" id="2004-check">
+                                <label class="form-check-label" for="2004-check">
+                                    <a href="#" onclick="datafillfun(4)">2004</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2005" id="2005-check">
+                                <label class="form-check-label" for="2005-check">
+                                    <a href="#" onclick="datafillfun(5)">2005</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2006" id="2006-check">
+                                <label class="form-check-label" for="2006-check">
+                                    <a href="#" onclick="datafillfun(6)">2006</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2007" id="2007-check">
+                                <label class="form-check-label" for="2007-check">
+                                    <a href="#" onclick="datafillfun(7)">2007</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2008" id="2008-check">
+                                <label class="form-check-label" for="2008-check">
+                                    <a href="#" onclick="datafillfun(8)">2008</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2009" id="2009-check">
+                                <label class="form-check-label" for="2009-check">
+                                    <a href="#" onclick="datafillfun(9)">2009</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2010" id="2010-check">
+                                <label class="form-check-label" for="2010-check">
+                                    <a href="#" onclick="datafillfun(10)">2010</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2011" id="2011-check">
+                                <label class="form-check-label" for="2011-check">
+                                    <a href="#" onclick="datafillfun(11)">2011</a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="2012" id="2012-check">
+                                <label class="form-check-label" for="2012-check">
+                                    <a href="#" onclick="datafillfun(12)">2012</a>
+                                </label>
+                            </div>
 
-
-                <div class="form-group">
-
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref2">
-
-                        <option selected>Year</option>
-                        <option>2015</option>
-                        <option>2016</option>
-                        <option>2017</option>
-                        <option>2018</option>
-                        <option>2019</option>
-                        <option>2020</option>
-                    </select>
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
+            <!-- dropdown button-4 select state -->
+            <div id="item-4" class="table-buttons-item">
+                <div class="drop-1">
+                    <div class="dropdown1">
+                        <button class="dropdown1-button outset-neomo">
+                            States
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown1-content">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 1 ">
+                                <label class="form-check-label" for="defaultCheck 1 ">
+                                    <a href="#"> Andhra Pradesh </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 2 ">
+                                <label class="form-check-label" for="defaultCheck 2 ">
+                                    <a href="#"> Arunachal Pradesh </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 3 ">
+                                <label class="form-check-label" for="defaultCheck 3 ">
+                                    <a href="#"> Assam </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 4 ">
+                                <label class="form-check-label" for="defaultCheck 4 ">
+                                    <a href="#"> Bihar </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 5 ">
+                                <label class="form-check-label" for="defaultCheck 5 ">
+                                    <a href="#"> Chhattisgarh </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 6 ">
+                                <label class="form-check-label" for="defaultCheck 6 ">
+                                    <a href="#"> Goa </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 7 ">
+                                <label class="form-check-label" for="defaultCheck 7 ">
+                                    <a href="#"> Gujarat </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 8 ">
+                                <label class="form-check-label" for="defaultCheck 8 ">
+                                    <a href="#"> Haryana </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 9 ">
+                                <label class="form-check-label" for="defaultCheck 9 ">
+                                    <a href="#"> Himachal Pradesh </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 10 ">
+                                <label class="form-check-label" for="defaultCheck 10 ">
+                                    <a href="#"> Jammu and Kashmir </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 11 ">
+                                <label class="form-check-label" for="defaultCheck 11 ">
+                                    <a href="#"> Jharkhand </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 12 ">
+                                <label class="form-check-label" for="defaultCheck 12 ">
+                                    <a href="#"> Karnataka </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 13 ">
+                                <label class="form-check-label" for="defaultCheck 13 ">
+                                    <a href="#"> Kerala </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 14 ">
+                                <label class="form-check-label" for="defaultCheck 14 ">
+                                    <a href="#"> Madhya Pradesh </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 15 ">
+                                <label class="form-check-label" for="defaultCheck 15 ">
+                                    <a href="#"> Maharashtra </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 16 ">
+                                <label class="form-check-label" for="defaultCheck 16 ">
+                                    <a href="#"> Manipur </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 17 ">
+                                <label class="form-check-label" for="defaultCheck 17 ">
+                                    <a href="#"> Meghalaya </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 18 ">
+                                <label class="form-check-label" for="defaultCheck 18 ">
+                                    <a href="#"> Mizoram </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 19 ">
+                                <label class="form-check-label" for="defaultCheck 19 ">
+                                    <a href="#"> Nagaland </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 20 ">
+                                <label class="form-check-label" for="defaultCheck 20 ">
+                                    <a href="#"> Odisha </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 21 ">
+                                <label class="form-check-label" for="defaultCheck 21 ">
+                                    <a href="#"> Punjab </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 22 ">
+                                <label class="form-check-label" for="defaultCheck 22 ">
+                                    <a href="#"> Rajasthan </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 23 ">
+                                <label class="form-check-label" for="defaultCheck 23 ">
+                                    <a href="#"> Sikkim </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 24 ">
+                                <label class="form-check-label" for="defaultCheck 24 ">
+                                    <a href="#"> Tamil Nadu </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 25 ">
+                                <label class="form-check-label" for="defaultCheck 25 ">
+                                    <a href="#"> Telangana </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 26 ">
+                                <label class="form-check-label" for="defaultCheck 26 ">
+                                    <a href="#"> Tripura </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 27 ">
+                                <label class="form-check-label" for="defaultCheck 27 ">
+                                    <a href="#"> Uttar Pradesh </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 28 ">
+                                <label class="form-check-label" for="defaultCheck 28 ">
+                                    <a href="#"> Uttarakhand </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 29 ">
+                                <label class="form-check-label" for="defaultCheck 29 ">
+                                    <a href="#"> West Bengal </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 30 ">
+                                <label class="form-check-label" for="defaultCheck 30 ">
+                                    <a href="#"> Andaman and Nicobar Islands </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 31 ">
+                                <label class="form-check-label" for="defaultCheck 31 ">
+                                    <a href="#"> Chandigarh </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 32 ">
+                                <label class="form-check-label" for="defaultCheck 32 ">
+                                    <a href="#"> Dadra and Nagar Haveli </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 33 ">
+                                <label class="form-check-label" for="defaultCheck 33 ">
+                                    <a href="#"> Daman and Diu </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 34 ">
+                                <label class="form-check-label" for="defaultCheck 34 ">
+                                    <a href="#"> Lakshadweep </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 35 ">
+                                <label class="form-check-label" for="defaultCheck 35 ">
+                                    <a href="#"> National Capital Territory of Delhi </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 36 ">
+                                <label class="form-check-label" for="defaultCheck 36 ">
+                                    <a href="#"> Puducherry </a>
+                                </label>
+                            </div>
+                        </div>
 
-            <div class="tool-item-4">
-                <div class="form-group">
-
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref3">
-
-                        <option selected>States</option>
-                        <option>All</option>
-                        <option>Andhra Pradesh </option>
-                        <option>Arunachal Pradesh </option>
-                        <option>Assam </option>
-                        <option>Bihar </option>
-                        <option>Chhattisgarh </option>
-                        <option>Goa </option>
-                        <option>Gujarat </option>
-                        <option>Haryana </option>
-                        <option>Himachal Pradesh </option>
-                        <option>Jammu and Kashmir </option>
-                        <option>Jharkhand </option>
-                        <option>Karnataka </option>
-                        <option>Kerala </option>
-                        <option>Madhya Pradesh </option>
-                        <option>Maharashtra </option>
-                        <option>Manipur </option>
-                        <option>Meghalaya </option>
-                        <option>Mizoram </option>
-                        <option>Nagaland </option>
-                        <option>Odisha </option>
-                        <option>Punjab </option>
-                        <option>Rajasthan </option>
-                        <option>Sikkim </option>
-                        <option>Tamil Nadu </option>
-                        <option>Telangana </option>
-                        <option>Tripura </option>
-                        <option>Uttar Pradesh </option>
-                        <option>Uttarakhand </option>
-                        <option>West Bengal </option>
-                        <option>Andaman and Nicobar Islands </option>
-                        <option>Chandigarh </option>
-                        <option>Dadra and Nagar Haveli </option>
-                        <option>Daman and Diu </option>
-                        <option>Lakshadweep </option>
-                        <option>Delhi </option>
-                        <option>Puducherry </option>
-                    </select>
+                    </div>
                 </div>
-
-
             </div>
-            <div class="tool-item-5">
-                <button class="btn btn-primary btn-pill text-gray" type="button" onclick="dropdownfun()">Go</button>
+            <!-- Search Button [Search Icon]-->
+            <div id="item-5" class="table-buttons-item">
+                <div class="tool-item-5">
+                    <button class="btn btn-primary btn-pill text-gray" type="button" onclick="dropdownfun()">Go</button>
+                </div>
             </div>
 
 
         </div>
-
-        <div class="col-5"></div>
     </div>
+    \
+
+
+
+
+    <!-- row for charts scrollbar and map -->
+
     <div class="row pl-4" style="padding-right: 40px;">
         <div class="col-2 pt-2">
             <div class="card bg-primary border-light shadow-soft button-grid ">
@@ -498,16 +804,17 @@
     </div>
 
 
-    <!-- ----------------------------------------------funciton-------------------------------------------------- -->
 
 
 
 
-    </div>
+    <!--row footer -->
     <div class="row">
         <div class="col-8 mx-auto">
             <div class="d-flex align-items-start">
                 <!-- buttons of nav -->
+
+               
 
                 <!-- tab content -->
             </div>
@@ -515,12 +822,9 @@
     </div>
 
 
-
-
-
-
-
     <my-footer></my-footer>
+
+
 
 </body>
 
