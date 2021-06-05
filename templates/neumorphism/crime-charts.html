@@ -153,6 +153,20 @@
         console.log(year);
         console.log(state);        
 
+        var arr=[]
+        arr.push(dataset);
+        arr.push(typeofcrime);
+        arr.push(year);
+        arr.push(state);
+        
+        var obj = {'x':arr};
+
+        localStorage.setItem('myStorage', JSON.stringify(obj));
+
+        var obj1 = JSON.parse(localStorage.getItem('myStorage'));
+
+        console.log(obj1);
+
         }
 
     </script>
