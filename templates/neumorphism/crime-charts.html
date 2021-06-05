@@ -18,7 +18,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+        </script>
 
 
     <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
@@ -135,43 +135,89 @@
 
         function dropdownfun() {
 
-        console.log("testing run...");
-        /*
-        var s = "/templates/neumorphism/assets/data/fulldata2001.json";
-        if (document.getElementById('2001-check').checked == true) {
-        document.getElementById('dropdownMenuButton').innerHTML = '2001';
-        s = "/templates/neumorphism/assets/data/fulldata2001.json";
-        }
-        */
+            console.log("testing run...");
+            /*
+            var s = "/templates/neumorphism/assets/data/fulldata2001.json";
+            if (document.getElementById('2001-check').checked == true) {
+            document.getElementById('dropdownMenuButton').innerHTML = '2001';
+            s = "/templates/neumorphism/assets/data/fulldata2001.json";
+            }
+            */
 
-        dataset=document.getElementById("inlineFormCustomSelectPref0").value;
-        typeofcrime=document.getElementById("inlineFormCustomSelectPref1").value;
-        year=document.getElementById("inlineFormCustomSelectPref2").value;
-        state=document.getElementById("inlineFormCustomSelectPref3").value;
-        console.log(dataset);
-        console.log(typeofcrime);
-        console.log(year);
-        console.log(state);        
+            dataset = document.getElementById("inlineFormCustomSelectPref0").value;
+            typeofcrime = document.getElementById("inlineFormCustomSelectPref1").value;
+            year = document.getElementById("inlineFormCustomSelectPref2").value;
+            state = document.getElementById("inlineFormCustomSelectPref3").value;
+            console.log(dataset);
+            console.log(typeofcrime);
+            console.log(year);
+            console.log(state);
 
-        var arr=[]
-        arr.push(dataset);
-        arr.push(typeofcrime);
-        arr.push(year);
-        arr.push(state);
-        
-        var obj = {'x':arr};
+            var arr = []
+            arr.push(dataset);
+            arr.push(typeofcrime);
+            arr.push(year);
+            arr.push(state);
 
-        localStorage.setItem('myStorage', JSON.stringify(obj));
+            var obj = { 'x': arr };
 
-        var obj1 = JSON.parse(localStorage.getItem('myStorage'));
+            localStorage.setItem('myStorage', JSON.stringify(obj));
 
-        console.log(obj1);
+            var obj1 = JSON.parse(localStorage.getItem('myStorage'));
+
+            console.log(obj1);
 
         }
 
     </script>
 
+    <script>
+        var checkList = document.getElementById('list1');
+        checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
+            if (checkList.classList.contains('visible'))
+                checkList.classList.remove('visible');
+            else
+                checkList.classList.add('visible');
+        }
+    </script>
 
+<style>
+  
+    .multipleSelection {
+        width: 300px;
+        background-color: #BCC2C1;
+    }
+
+    .selectBox {
+        position: relative;
+    }
+
+    .selectBox select {
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .overSelect {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #checkBoxes {
+        display: none;
+        border: 1px #8DF5E4 solid;
+    }
+
+    #checkBoxes label {
+        display: block;
+    }
+
+    #checkBoxes label:hover {
+        background-color: #4F615E;
+    }
+</style>
 
 
 
@@ -188,7 +234,8 @@
 
     <div class="row pl-4">
         <div id="toolbar" class="col-9 pl-1">
-            <div class="btn">Select Charts &nbsp <img src="/templates/neumorphism/assets/images/scroll-gif.gif" alt="scroll-down-animation" style="width: 30px;
+            <div class="btn">Select Charts &nbsp <img src="/templates/neumorphism/assets/images/scroll-gif.gif"
+                    alt="scroll-down-animation" style="width: 30px;
                 height: 30px;"></div>
             <div>
                 <span><i class="far fa-file-alt"></i></i></span>
@@ -214,10 +261,11 @@
                         <option selected>Options</option>
 
                         <option>All</option>
-                        <option>Murder</option>
+                        <option> Murder</option>
                         <option>Kidnapping</option>
                         <option>Robbery</option>
                         <option>Accidents</option>
+
                     </select>
                 </div>
 
@@ -226,6 +274,8 @@
                 <span><i class="far fa-calendar-alt"></i></i></span>
             </div>
             <div class="tool-item-3">
+
+
                 <div class="form-group">
 
                     <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref2">
@@ -242,6 +292,7 @@
 
 
             </div>
+
             <div class="tool-item-4">
                 <div class="form-group">
 
@@ -293,13 +344,64 @@
             <div class="tool-item-5">
                 <button class="btn btn-primary btn-pill text-gray" type="button" onclick="dropdownfun()">Go</button>
             </div>
+            <div>
+                <script>
+                    var show = true;
+            
+                    function showCheckboxes() {
+                        var checkboxes =
+                            document.getElementById("checkBoxes");
+            
+                        if (show) {
+                            checkboxes.style.display = "block";
+                            show = false;
+                        } else {
+                            checkboxes.style.display = "none";
+                            show = true;
+                        }
+                    }
+                </script>
+                <form>
+                    <div class="multipleSelection">
+                        <div class="selectBox"
+                            onclick="showCheckboxes()">
+                            <select>
+                                <option>Select options</option>
+                            </select>
+                            <div class="overSelect"></div>
+                        </div>
+            
+                        <div id="checkBoxes">
+                            <label for="first">
+                                <input type="checkbox" id="first" />
+                                checkBox1
+                            </label>
+                            
+                            <label for="second">
+                                <input type="checkbox" id="second" />
+                                checkBox2
+                            </label>
+                            <label for="third">
+                                <input type="checkbox" id="third" />
+                                checkBox3
+                            </label>
+                            <label for="fourth">
+                                <input type="checkbox" id="fourth" />
+                                checkBox4
+                            </label>
+                        </div>
+                    </div>
+                </form>
+
+
+
+            </div>
+
 
         </div>
 
         <div class="col-5"></div>
 
-
-    </div>
     </div>
     <div class="row pl-4" style="padding-right: 40px;">
         <div class="col-2 pt-2">
@@ -457,8 +559,8 @@
                 </div>
                 <div class="tab-pane fade" id="v-pills-nested-pie-chart" role="tabpanel"
                     aria-labelledby="v-pills-nested-pie-chart-tab">
-                    <embed type="text/html" src="/templates/neumorphism/assets/Charts/nested-pie-chart.html" width="1200" 
-                    height="600">
+                    <embed type="text/html" src="/templates/neumorphism/assets/Charts/nested-pie-chart.html"
+                        width="1200" height="600">
                 </div>
                 <div class="tab-pane fade" id="v-pills-pie-chart" role="tabpanel"
                     aria-labelledby="v-pills-pie-chart-tab">
