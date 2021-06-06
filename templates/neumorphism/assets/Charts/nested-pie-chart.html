@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="zc-html">
- 
+
 <head>
   <meta charset="utf-8">
   <title>ZingSoft Demo</title>
@@ -11,130 +11,249 @@
       width: 100%;
       min-height: 530px;
     }
- 
+
     .zc-ref {
       display: none;
     }
   </style>
 </head>
 ​
- 
+
 <body class="zc-body">
   ​
   <div id="myChart" class="chart--container">
     <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref">Powered by ZingChart</a>
   </div>
- 
+
   <script>
-    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"]; // CHART CONFIG
-    // -----------------------------
-    let chartConfig = {
-      type: 'nestedpie',
-      title: {
-        text: 'Animated Nested Pie Chart'
-      },
-      legend: {
-        borderColor: 'gray',
-        borderRadius: '5px',
-        borderWidth: '1px',
-        dragHandler: 'icon',
-        header: {
-          text: 'Ages',
-          fontColor: 'purple',
-          fontFamily: 'Georgia',
-          fontSize: '12px',
-          fontWeight: 'normal'
-        },
-        icon: {
-          lineColor: 'orange'
-        },
-        item: {
-          fontColor: 'black',
-          fontFamily: 'Georgia'
-        },
-        lineStyle: 'dashdot',
-        marker: {
-          type: 'circle'
-        },
-        minimize: true,
-        toggleAction: 'remove'
-      },
-      plot: {
-        tooltip: {
-          text: '%data-year Ages %t: %v',
-          padding: '10%',
-          alpha: 0.7,
-          backgroundColor: 'white',
-          borderColor: 'gray',
-          borderRadius: '3px',
-          borderWidth: '1px',
-          fontColor: 'black',
-          fontFamily: 'Georgia',
-          fontSize: '12px',
-          lineStyle: 'dashdot',
-          textAlpha: 1
-        },
-        valueBox: {
-          text: '%data-year',
-          fontColor: 'white',
-          fontFamily: 'Georgia',
-          fontSize: '12px',
-          fontWeight: 'normal',
-          rules: [{
-            rule: '%p != 0',
-            visible: false
-          }]
-        },
-        alpha: 0.8,
-        animation: {
-          effect: 'ANIMATION_EXPAND_LEFT',
-          onLegendToggle: false,
-          method: 'ANIMATION_BACK_EASE_OUT',
-          sequence: 'ANIMATION_BY_PLOT',
-          speed: 700
-        },
-        borderColor: 'white',
-        borderWidth: '1px',
-        dataYear: ['2019', '2020', '2021'],
-        shadow: false,
-        sliceStart: '30%'
-      },
-      series: [{
-          text: '0-18',
-          values: [59, 55, 30],
-          backgroundColor: 'orange red',
-          tooltipText: 'Ages %t: %v'
-        },
-        {
-          text: '19-30',
-          values: [60, 50, 35],
-          backgroundColor: 'yellow orange'
-        },
-        {
-          text: '31-34',
-          values: [50, 40, 30],
-          backgroundColor: 'green blue'
-        },
-        {
-          text: '46-64',
-          values: [61, 59, 35],
-          backgroundColor: 'blue purple'
-        },
-        {
-          text: '65 and over',
-          values: [65, 55, 45],
-          backgroundColor: 'purple red'
+
+    s = "/templates/neumorphism/assets/data/fulljsondata2012.json";
+
+
+    //  console.log(n, s);
+
+
+    //document.getElementById('myGrid').innerHTML = '';
+
+
+    // function for reading json file
+    function readTextFile(file, callback) {
+      var rawFile = new XMLHttpRequest();
+      rawFile.overrideMimeType("application/json");
+      rawFile.open("GET", file, true);
+      rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+          callback(rawFile.responseText);
         }
-      ]
-    };
- 
-    // RENDER CHARTS
-    // -----------------------------
-    zingchart.render({
-      id: 'myChart',
-      data: chartConfig
+      }
+      rawFile.send(null);
+    }
+
+    readTextFile(s, function (text) {
+      var data = JSON.parse(text);
+      //console.log(data);
+      /*
+                var state_arr = [];
+                var murder_arr = [];
+                var robbery_arr = [];
+                var rape_arr = [];
+                var kidnapping_arr = [];
+                var total_arr = [];
+      
+                console.log(data[0]);
+      
+                var i;
+                for (i = 0; i < 7; i++) {
+                  state_arr.push(data[i].STATE_UT)
+                  murder_arr.push(data[i].MURDER);
+                  robbery_arr.push(data[i].ROBBERY);
+                  rape_arr.push(data[i].RAPE);
+                  kidnapping_arr.push(data[i].KIDNAPPING_AND_ABDUCTION);
+                  total_arr.push(data[i].TOTAL_IPC_CRIMES)
+                }
+      
+                console.log(state_arr);
+      
+      
+                var element = {}, series_new = [];
+                element.values = murder_arr;
+                series_new.push(element);
+                var element = {};
+                element.values = robbery_arr;
+                series_new.push(element);
+                var element = {};
+                element.values = rape_arr;
+                series_new.push(element);
+                var element = {};
+                element.values = kidnapping_arr;
+                series_new.push(element);
+              //  var element = {};
+              //  element.values = total_arr;
+              //  series_new.push(element);
+      
+                console.log(series_new);
+      
+      
+      
+                
+              var obj1 = JSON.parse(localStorage.getItem('myStorage'));
+      
+              console.log(obj1);
+      
+      */
+
+      var year_arr = [2001, 2002, 2003, 2004,2005]
+      var state_arr = ["ARUNACHAL PRADESH", "ASSAM", "BIHAR", "KERALA", "PUNJAB"]
+
+
+
+      var gujrat_arr = [];
+      var bihar_arr = [];
+      var punjab_arr = [];
+      var i;
+
+
+
+      console.log(data, "nested-pie-chart");
+
+      console.log(data.STATE_UT, "nested-pie-chart");
+
+      var arr = []
+
+      for (i = 0; i < data.length; i++) {
+        for (j = 0; j < state_arr.length; j++) {
+          
+            var brr=[];
+            for (k = 0; k < year_arr.length; k++) {
+              if (data[i].YEAR == year_arr[j] && data[i].STATE_UT == state_arr[k]) {
+                console.log(data[i].MURDER, year_arr[j], state_arr[j], "test");
+                brr.push(data[i].MURDER);
+                console.log(brr,"brr");
+              }
+            }
+            if (brr.length!=0){
+            arr.push(brr[0]);
+          }
+          
+        }
+      }
+
+      console.log(arr);
+
+
+      var series_new = [];
+      var element={}
+      element.text=state_arr[0];
+      element.values = arr.slice(0,5);
+      series_new.push(element);
+      var element={}
+      element.text=state_arr[1];
+      element.values = arr.slice(5,10);
+      series_new.push(element);
+      var element={}
+      element.text=state_arr[2];
+      element.values = arr.slice(10,15);
+      series_new.push(element);
+      var element={}
+      element.text=state_arr[3];
+      element.values = arr.slice(15,20);
+      series_new.push(element);
+      var element={}
+      element.text=state_arr[4];
+      element.values = arr.slice(20,25);
+      series_new.push(element);
+
+      console.log(series_new)
+
+
+
+      ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"]; // CHART CONFIG
+      // -----------------------------
+      let chartConfig = {
+        type: 'nestedpie',
+        title: {
+          text: 'Animated Nested Pie Chart'
+        },
+        legend: {
+          borderColor: 'gray',
+          borderRadius: '5px',
+          borderWidth: '1px',
+          dragHandler: 'icon',
+          header: {
+            text: 'Crime Rate:',
+            fontColor: 'purple',
+            fontFamily: 'Georgia',
+            fontSize: '12px',
+            fontWeight: 'normal'
+          },
+          icon: {
+            lineColor: 'orange'
+          },
+          item: {
+            fontColor: 'black',
+            fontFamily: 'Georgia'
+          },
+          lineStyle: 'dashdot',
+          marker: {
+            type: 'circle'
+          },
+          minimize: true,
+          toggleAction: 'remove'
+        },
+        plot: {
+          tooltip: {
+            text: '%data-year MURDER %t: %v',
+            padding: '10%',
+            alpha: 0.7,
+            backgroundColor: 'white',
+            borderColor: 'gray',
+            borderRadius: '3px',
+            borderWidth: '1px',
+            fontColor: 'black',
+            fontFamily: 'Georgia',
+            fontSize: '12px',
+            lineStyle: 'dashdot',
+            textAlpha: 1
+          },
+          valueBox: {
+            text: '%data-year',
+            fontColor: 'white',
+            fontFamily: 'Georgia',
+            fontSize: '12px',
+            fontWeight: 'normal',
+            rules: [{
+              rule: '%p != 0',
+              visible: false
+            }]
+          },
+          alpha: 0.8,
+          animation: {
+            effect: 'ANIMATION_EXPAND_LEFT',
+            onLegendToggle: false,
+            method: 'ANIMATION_BACK_EASE_OUT',
+            sequence: 'ANIMATION_BY_PLOT',
+            speed: 700
+          },
+          borderColor: 'white',
+          borderWidth: '1px',
+          //dataYear: ['2019', '2020', '2021'],
+          dataYear: year_arr,
+          
+          shadow: false,
+          sliceStart: '30%'
+        },
+        series: series_new
+      };
+
+      // RENDER CHARTS
+      // -----------------------------
+      zingchart.render({
+        id: 'myChart',
+        data: chartConfig
+      });
+
     });
   </script>
 </body>
- 
+
 </html>
