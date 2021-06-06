@@ -6,116 +6,169 @@
   <title>ZingSoft Demo</title>
  
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-  <style>
-    @import 'https://fonts.googleapis.com/css?family=Open+Sans';
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-    }
- 
-    #myChart {
-      width: 100%;
-      height: 100%;
-      min-height: 250px;
-    }
- 
-    .zc-ref {
-      display: none;
-    }
-  </style>
+  <style></style>
 </head>
  
 <body>
-  <div id='myChart'><a class="zc-ref" href="https://www.zingchart.com/">Charts by ZingChart</a></div>
+  <div id='myChart'></div>
   <script>
+    s = "/templates/neumorphism/assets/data/fulljsondata2012.json";
+
+
+//  console.log(n, s);
+
+
+//document.getElementById('myGrid').innerHTML = '';
+
+
+// function for reading json file
+function readTextFile(file, callback) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.overrideMimeType("application/json");
+  rawFile.open("GET", file, true);
+  rawFile.onreadystatechange = function () {
+    if (rawFile.readyState === 4 && rawFile.status == "200") {
+      callback(rawFile.responseText);
+    }
+  }
+  rawFile.send(null);
+}
+
+readTextFile(s, function (text) {
+  var data = JSON.parse(text);
+  console.log(data);
+
+  // var gujrat_arr = [];
+  // var bihar_arr = [];
+  // var punjab_arr = [];
+  // var i;
+
+
+  // var year_arr = [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012]
+   var state_arr = ["UTTAR PRADESH", "ASSAM", "BIHAR", "KERALA", "PUNJAB"]
+
+
+
+  // console.log(data, "area-chart");
+
+  // console.log(data.STATE_UT, "area-chart");
+
+  // var arr = []
+
+  // var i;
+  // for (i = 0; i < state_arr.length; i++) {
+  //   console.log(state_arr[i]);
+  //   for (j = 0; j < year_arr.length; j++) {
+  //     console.log(year_arr[j]);
+  //     var brr = []
+  //     for (k = 0; k < data.length; k++) {
+  //       if (data[k].YEAR == year_arr[j] && data[k].STATE_UT == state_arr[i]) {
+  //         console.log(data[k].MURDER, state_arr[i], year_arr[j], "test1");
+  //         brr.push(data[k].MURDER);
+  //         console.log(brr, "brr");
+  //       }
+        
+  //     }
+  //     if (brr.length != 0) {
+  //         arr.push(brr[0]);
+  //       }
+  //   }
+  // }
+
+
+
+
+
+
+  year = 2001;
+
+
+// var arr = []
+
+//
+
+
+// series_new.push(element);
+
+
+// var i;
+// for (i = 0; i < data.length; i++) {
+//   if (data[i].YEAR == year) {
+//     console.log(data[i].STATE_UT, data[i].MURDER, "testing")
+//     var element={};
+//     element.id = data[i].STATE_UT;
+//     element.parent = 'theworld';
+//     element.name = data[i].STATE_UT;
+//     element.value = data[i].MURDER;
+//     element.group = 'europe'
+
+//     series_new.push(element);
+//   }
+// }
+
+
+var series_new = [];
+var i;
+for(i=0;i<state_arr.length;i++){
+  //console.log(state_arr[i],"testing");
+  var j;
+  for(j=0;j<data.length;j++){
+
+    if(data[j].YEAR==year && data[j].STATE_UT==state_arr[i]){
+      console.log(state_arr[i],data[j].MURDER,"testing2");
+      var element={};
+      element.text = state_arr[i];
+      element.values = [data[j].MURDER];
+      series_new.push(element);
+    }
+
+  }
+}
+
+
+ console.log(series_new);
+  
+
+  console.log("pie-chart file running");
+
+
     ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
     var myConfig = {
-      type: "pie",
-      plot: {
-        borderColor: "#2B313B",
-        borderWidth: 5,
-        // slice: 90,
-        valueBox: {
-          placement: 'out',
-          text: '%t\n%npv%',
-          fontFamily: "Open Sans"
-        },
-        tooltip: {
-          fontSize: '18',
-          fontFamily: "Open Sans",
-          padding: "5 10",
-          text: "%npv%"
-        },
-        animation: {
-          effect: 2,
-          method: 5,
-          speed: 900,
-          sequence: 1,
-          delay: 3000
-        }
+      "type": "pie3d", //"pie", "pie3d", "ring", or "ring3d"
+      "title": {
+        "text": "Pie Chart"
       },
-      source: {
-        text: 'gs.statcounter.com',
-        fontColor: "#8e99a9",
-        fontFamily: "Open Sans"
+      "plot": {
+        "offset-r": "25%" //provide percentage value
       },
-      title: {
-        fontColor: "#8e99a9",
-        text: 'Global Browser Usage',
-        align: "left",
-        offsetX: 10,
-        fontFamily: "Open Sans",
-        fontSize: 25
-      },
-      subtitle: {
-        offsetX: 10,
-        offsetY: 10,
-        fontColor: "#8e99a9",
-        fontFamily: "Open Sans",
-        fontSize: "16",
-        text: 'May 2016',
-        align: "left"
-      },
-      plotarea: {
-        margin: "20 0 0 0"
-      },
-      series: [{
-          values: [11.38],
-          text: "Internet Explorer",
-          backgroundColor: '#50ADF5',
-        },
-        {
-          values: [56.94],
-          text: "Chrome",
-          backgroundColor: '#FF7965',
-          detached: true
-        },
-        {
-          values: [14.52],
-          text: 'Firefox',
-          backgroundColor: '#FFCB45',
-          detached: true
-        },
-        {
-          text: 'Safari',
-          values: [9.69],
-          backgroundColor: '#6877e5'
-        },
-        {
-          text: 'Other',
-          values: [7.48],
-          backgroundColor: '#6FB07F'
-        }
-      ]
+      "series": series_new
+      
+      // [{
+      //     "values": [59]
+      //   },
+      //   {
+      //     "values": [55]
+      //   },
+      //   {
+      //     "values": [30]
+      //   },
+      //   {
+      //     "values": [28]
+      //   },
+      //   {
+      //     "values": [15]
+      //   }
+      // ]
     };
  
     zingchart.render({
       id: 'myChart',
       data: myConfig,
-      height: '100%',
-      width: '100%'
+      height: 400,
+      width: "100%"
     });
+
+  });
   </script>
 </body>
  
