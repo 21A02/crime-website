@@ -18,7 +18,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+        </script>
 
 
     <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
@@ -73,7 +73,6 @@
             document.getElementById('dropdownMenuButton').innerHTML = '2001';
             s = "/templates/neumorphism/assets/data/fulldata2001.json";
             }
-            */
 
             dataset = document.getElementById("inlineFormCustomSelectPref0").value;
             typeofcrime = document.getElementById("inlineFormCustomSelectPref1").value;
@@ -83,23 +82,196 @@
             console.log(typeofcrime);
             console.log(year);
             console.log(state);
+            */
 
-            var arr = []
-            arr.push(dataset);
-            arr.push(typeofcrime);
-            arr.push(year);
-            arr.push(state);
+            var dataset_arr = [];
+            var typeofcrime_arr = [];
+            var year_arr = [];
+            var state_arr = []
 
-            var obj = {
-                'x': arr
-            };
+            if (document.getElementById('2001-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2001';
+                //  s = "/templates/neumorphism/assets/data/fulldata2001.json";
+                year_arr.push('2001');
+            }
+            if (document.getElementById('2002-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2002';
+                //  s = "/templates/neumorphism/assets/data/fulldata2002.json";
+                year_arr.push('2002');
+            }
+            if (document.getElementById('2003-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2003';
+                //  s = "/templates/neumorphism/assets/data/fulldata2003.json";
+                year_arr.push('2003');
+            }
+            if (document.getElementById('2004-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2004';
+                //  s = "/templates/neumorphism/assets/data/fulldata2004.json";
+                year_arr.push('2004');
+            }
+            if (document.getElementById('2005-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2005';
+                //  s = "/templates/neumorphism/assets/data/fulldata2005.json";
+                year_arr.push('2005');
+            }
+            if (document.getElementById('2006-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2006';
+                //  s = "/templates/neumorphism/assets/data/fulldata2006.json";
+                year_arr.push('2006');
+            }
+            if (document.getElementById('2007-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2007';
+                //  s = "/templates/neumorphism/assets/data/fulldata2007.json";
+                year_arr.push('2007');
+            }
+            if (document.getElementById('2008-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2008';
+                //  s = "/templates/neumorphism/assets/data/fulldata2008.json";
+                year_arr.push('2008');
+            }
+            if (document.getElementById('2009-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2009';
+                //  s = "/templates/neumorphism/assets/data/fulldata2009.json";
+                year_arr.push('2009');
+            }
+            if (document.getElementById('2010-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2010';
+                //  s = "/templates/neumorphism/assets/data/fulldata2010.json";
+                year_arr.push('2010');
+            }
+            if (document.getElementById('2011-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2011';
+                //  s = "/templates/neumorphism/assets/data/fulldata2011.json";
+                year_arr.push('2011');
+            }
+            if (document.getElementById('2012-check').checked == true) {
+                //  document.getElementById('dropdownMenuButton').innerHTML = '2012';
+                //  s = "/templates/neumorphism/assets/data/fulldata2012.json";
+                year_arr.push('2012');
+            }
 
-            localStorage.setItem('myStorage', JSON.stringify(obj));
 
-            var obj1 = JSON.parse(localStorage.getItem('myStorage'));
 
-            console.log(obj1);
 
+            if (document.getElementById('total-check').checked == true) {
+                typeofcrime_arr.push('Total');
+            }
+            if (document.getElementById('murder-check').checked == true) {
+                typeofcrime_arr.push('MURDER');
+            }
+            if (document.getElementById('kidnapping-check').checked == true) {
+                typeofcrime_arr.push('KIDNAPPING');
+            }
+            if (document.getElementById('robbery-check').checked == true) {
+                typeofcrime_arr.push('ROBBERY');
+            }
+
+
+
+            if (document.getElementById('Andhra Pradesh').checked == true) {
+                state_arr.push('Andhra Pradesh');
+            }
+            if (document.getElementById('Arunachal Pradesh').checked == true) {
+                state_arr.push('Arunachal Pradesh');
+            }
+            if (document.getElementById('Assam').checked == true) {
+                state_arr.push('Assam');
+            }
+            if (document.getElementById('Bihar').checked == true) {
+                state_arr.push('Bihar');
+            }
+            if (document.getElementById('Chhattisgarh').checked == true) {
+                state_arr.push('Chhattisgarh');
+            }
+            if (document.getElementById('Goa').checked == true) {
+                state_arr.push('Goa');
+            }
+            if (document.getElementById('Gujarat').checked == true) {
+                state_arr.push('Gujarat');
+            }
+            if (document.getElementById('Haryana').checked == true) {
+                state_arr.push('Haryana');
+            }
+            if (document.getElementById('Himachal Pradesh').checked == true) {
+                state_arr.push('Himachal Pradesh');
+            }
+            if (document.getElementById('Jammu and Kashmir').checked == true) {
+                state_arr.push('Jammu and Kashmir');
+            }
+            if (document.getElementById('Jharkhand').checked == true) {
+                state_arr.push('Jharkhand');
+            }
+            if (document.getElementById('Karnataka').checked == true) {
+                state_arr.push('Karnataka');
+            }
+            if (document.getElementById('Kerala').checked == true) {
+                state_arr.push('Kerala');
+            }
+            if (document.getElementById('Madhya Pradesh').checked == true) {
+                state_arr.push('Madhya Pradesh');
+            }
+            if (document.getElementById('Maharashtra').checked == true) {
+                state_arr.push('Maharashtra');
+            }
+            if (document.getElementById('Manipur').checked == true) {
+                state_arr.push('Manipur');
+            }
+            if (document.getElementById('Meghalaya').checked == true) {
+                state_arr.push('Meghalaya');
+            }
+            if (document.getElementById('Mizoram').checked == true) {
+                state_arr.push('Mizoram');
+            }
+            if (document.getElementById('Nagaland').checked == true) {
+                state_arr.push('Nagaland');
+            }
+            if (document.getElementById('Bihar').checked == true) {
+                state_arr.push('Bihar');
+            }
+            if (document.getElementById('Bihar').checked == true) {
+                state_arr.push('Bihar');
+            }
+            if (document.getElementById('Bihar').checked == true) {
+                state_arr.push('Bihar');
+            }
+            if (document.getElementById('Bihar').checked == true) {
+                state_arr.push('Bihar');
+            }
+            if (document.getElementById('Bihar').checked == true) {
+                state_arr.push('Bihar');
+            }
+            if (document.getElementById('Bihar').checked == true) {
+                state_arr.push('Bihar');
+            }
+            if (document.getElementById('Bihar').checked == true) {
+                state_arr.push('Bihar');
+            }
+            if (document.getElementById('Bihar').checked == true) {
+                state_arr.push('Bihar');
+            }
+
+
+            console.log(year_arr);
+            console.log(typeofcrime_arr);
+
+            /*
+      
+                  var arr = []
+                  arr.push(dataset);
+                  arr.push(typeofcrime);
+                  arr.push(year);
+                  arr.push(state);
+      
+                  var obj = {
+                      'x': arr
+                  };
+      
+                  localStorage.setItem('myStorage', JSON.stringify(obj));
+      
+                  var obj1 = JSON.parse(localStorage.getItem('myStorage'));
+      
+                  console.log(obj1);
+      */
         }
     </script>
 
@@ -135,8 +307,9 @@
         align-items: center;
         justify-content: flex-start;
     ">
-            <div class="btn table-buttons-item">Select Charts &nbsp <img src="/templates/neumorphism/assets/images/scroll-gif.gif"
-                    alt="scroll-down-animation" style="width: 30px; height: 30px;">
+            <div class="btn table-buttons-item">Select Charts &nbsp <img
+                    src="/templates/neumorphism/assets/images/scroll-gif.gif" alt="scroll-down-animation"
+                    style="width: 30px; height: 30px;">
             </div>
             <div class="table-buttons-item">
                 <span><i class="far fa-file-alt"></i></i></span>
@@ -151,19 +324,22 @@
                         </button>
                         <div class="dropdown1-content">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
+                                <input class="form-check-input" type="checkbox" value="Past Data" id="defaultCheck1"
+                                    checked>
                                 <label class="form-check-label" for="defaultCheck1">
                                     <a href="#">Past Data </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                <input class="form-check-input" type="checkbox" value="Webscrapped Data"
+                                    id="defaultCheck2">
                                 <label class="form-check-label" for="defaultCheck2">
                                     <a href="#">Webscrapped Data </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                <input class="form-check-input" type="checkbox" value="Predicted Data"
+                                    id="defaultCheck3">
                                 <label class="form-check-label" for="defaultCheck3">
                                     <a href="#">Predicted Data </a>
                                 </label>
@@ -315,218 +491,218 @@
                         </button>
                         <div class="dropdown1-content">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 1 ">
-                                <label class="form-check-label" for="defaultCheck 1 ">
+                                <input class="form-check-input" type="checkbox" value="Andhra Pradesh" id="Andhra Pradesh">
+                                <label class="form-check-label" for="Andhra Pradesh">
                                     <a href="#"> Andhra Pradesh </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 2 ">
-                                <label class="form-check-label" for="defaultCheck 2 ">
+                                <input class="form-check-input" type="checkbox" value="Arunachal Pradesh" id="Arunachal Pradesh">
+                                <label class="form-check-label" for="Arunachal Pradesh">
                                     <a href="#"> Arunachal Pradesh </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 3 ">
-                                <label class="form-check-label" for="defaultCheck 3 ">
+                                <input class="form-check-input" type="checkbox" value="Assam" id="Assam">
+                                <label class="form-check-label" for="Assam">
                                     <a href="#"> Assam </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 4 ">
-                                <label class="form-check-label" for="defaultCheck 4 ">
+                                <input class="form-check-input" type="checkbox" value="Bihar" id="Bihar">
+                                <label class="form-check-label" for="Bihar">
                                     <a href="#"> Bihar </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 5 ">
-                                <label class="form-check-label" for="defaultCheck 5 ">
+                                <input class="form-check-input" type="checkbox" value="Chhattisgarh" id="Chhattisgarh">
+                                <label class="form-check-label" for="Chhattisgarh">
                                     <a href="#"> Chhattisgarh </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 6 ">
-                                <label class="form-check-label" for="defaultCheck 6 ">
+                                <input class="form-check-input" type="checkbox" value="Goa" id="Goa">
+                                <label class="form-check-label" for="Goa">
                                     <a href="#"> Goa </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 7 ">
-                                <label class="form-check-label" for="defaultCheck 7 ">
+                                <input class="form-check-input" type="checkbox" value="Gujarat" id="Gujarat">
+                                <label class="form-check-label" for="Gujarat">
                                     <a href="#"> Gujarat </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 8 ">
-                                <label class="form-check-label" for="defaultCheck 8 ">
+                                <input class="form-check-input" type="checkbox" value="Haryana" id="Haryana">
+                                <label class="form-check-label" for="Haryana">
                                     <a href="#"> Haryana </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 9 ">
-                                <label class="form-check-label" for="defaultCheck 9 ">
+                                <input class="form-check-input" type="checkbox" value="Himachal Pradesh" id="Himachal Pradesh">
+                                <label class="form-check-label" for="Himachal Pradesh">
                                     <a href="#"> Himachal Pradesh </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 10 ">
-                                <label class="form-check-label" for="defaultCheck 10 ">
+                                <input class="form-check-input" type="checkbox" value="Jammu and Kashmir" id="Jammu and Kashmir">
+                                <label class="form-check-label" for="Jammu and Kashmir">
                                     <a href="#"> Jammu and Kashmir </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 11 ">
-                                <label class="form-check-label" for="defaultCheck 11 ">
+                                <input class="form-check-input" type="checkbox" value="Jharkhand" id="Jharkhand">
+                                <label class="form-check-label" for="Jharkhand">
                                     <a href="#"> Jharkhand </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 12 ">
-                                <label class="form-check-label" for="defaultCheck 12 ">
+                                <input class="form-check-input" type="checkbox" value="Karnataka" id="Karnataka">
+                                <label class="form-check-label" for="Karnataka">
                                     <a href="#"> Karnataka </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 13 ">
-                                <label class="form-check-label" for="defaultCheck 13 ">
+                                <input class="form-check-input" type="checkbox" value="Kerala" id="Kerala">
+                                <label class="form-check-label" for="Kerala">
                                     <a href="#"> Kerala </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 14 ">
-                                <label class="form-check-label" for="defaultCheck 14 ">
+                                <input class="form-check-input" type="checkbox" value="Madhya Pradesh" id="Madhya Pradesh">
+                                <label class="form-check-label" for="Madhya Pradesh">
                                     <a href="#"> Madhya Pradesh </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 15 ">
-                                <label class="form-check-label" for="defaultCheck 15 ">
+                                <input class="form-check-input" type="checkbox" value="Maharashtra" id="Maharashtra">
+                                <label class="form-check-label" for="Maharashtra">
                                     <a href="#"> Maharashtra </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 16 ">
-                                <label class="form-check-label" for="defaultCheck 16 ">
+                                <input class="form-check-input" type="checkbox" value="Manipur" id="Manipur">
+                                <label class="form-check-label" for="Manipur">
                                     <a href="#"> Manipur </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 17 ">
-                                <label class="form-check-label" for="defaultCheck 17 ">
+                                <input class="form-check-input" type="checkbox" value="Meghalaya" id="Meghalaya">
+                                <label class="form-check-label" for="Meghalaya">
                                     <a href="#"> Meghalaya </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 18 ">
-                                <label class="form-check-label" for="defaultCheck 18 ">
+                                <input class="form-check-input" type="checkbox" value="Mizoram" id="Mizoram">
+                                <label class="form-check-label" for="Mizoram">
                                     <a href="#"> Mizoram </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 19 ">
-                                <label class="form-check-label" for="defaultCheck 19 ">
+                                <input class="form-check-input" type="checkbox" value="Nagaland" id="Nagaland">
+                                <label class="form-check-label" for="Nagaland">
                                     <a href="#"> Nagaland </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 20 ">
-                                <label class="form-check-label" for="defaultCheck 20 ">
+                                <input class="form-check-input" type="checkbox" value="Odisha" id="Odisha">
+                                <label class="form-check-label" for="Odisha">
                                     <a href="#"> Odisha </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 21 ">
-                                <label class="form-check-label" for="defaultCheck 21 ">
+                                <input class="form-check-input" type="checkbox" value="Punjab" id="Punjab">
+                                <label class="form-check-label" for="Punjab">
                                     <a href="#"> Punjab </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 22 ">
-                                <label class="form-check-label" for="defaultCheck 22 ">
+                                <input class="form-check-input" type="checkbox" value="Rajasthan" id="Rajasthan">
+                                <label class="form-check-label" for="Rajasthan ">
                                     <a href="#"> Rajasthan </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 23 ">
+                                <input class="form-check-input" type="checkbox" value="Sikkim" id="Sikkim">
                                 <label class="form-check-label" for="defaultCheck 23 ">
                                     <a href="#"> Sikkim </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 24 ">
+                                <input class="form-check-input" type="checkbox" value="Tamil Nadu" id="Tamil Nadu">
                                 <label class="form-check-label" for="defaultCheck 24 ">
                                     <a href="#"> Tamil Nadu </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 25 ">
-                                <label class="form-check-label" for="defaultCheck 25 ">
+                                <input class="form-check-input" type="checkbox" value="Telangana" id="Telangana">
+                                <label class="form-check-label" for="Telangana">
                                     <a href="#"> Telangana </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 26 ">
-                                <label class="form-check-label" for="defaultCheck 26 ">
+                                <input class="form-check-input" type="checkbox" value="Tripura" id="Tripura">
+                                <label class="form-check-label" for="Tripura">
                                     <a href="#"> Tripura </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 27 ">
-                                <label class="form-check-label" for="defaultCheck 27 ">
+                                <input class="form-check-input" type="checkbox" value="Uttar Pradesh" id="Uttar Pradesh">
+                                <label class="form-check-label" for="Uttar Pradesh">
                                     <a href="#"> Uttar Pradesh </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 28 ">
-                                <label class="form-check-label" for="defaultCheck 28 ">
+                                <input class="form-check-input" type="checkbox" value="Uttarakhand" id="Uttarakhand">
+                                <label class="form-check-label" for="Uttarakhand">
                                     <a href="#"> Uttarakhand </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 29 ">
-                                <label class="form-check-label" for="defaultCheck 29 ">
+                                <input class="form-check-input" type="checkbox" value="West Bengal" id="West Bengal">
+                                <label class="form-check-label" for="West Bengal">
                                     <a href="#"> West Bengal </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 30 ">
-                                <label class="form-check-label" for="defaultCheck 30 ">
+                                <input class="form-check-input" type="checkbox" value="Andaman and Nicobar Islands" id="Andaman and Nicobar Islands">
+                                <label class="form-check-label" for="Andaman and Nicobar Islands">
                                     <a href="#"> Andaman and Nicobar Islands </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 31 ">
-                                <label class="form-check-label" for="defaultCheck 31 ">
+                                <input class="form-check-input" type="checkbox" value="Chandigarh" id="Chandigarh">
+                                <label class="form-check-label" for="Chandigarh">
                                     <a href="#"> Chandigarh </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 32 ">
-                                <label class="form-check-label" for="defaultCheck 32 ">
+                                <input class="form-check-input" type="checkbox" value="Dadra and Nagar Haveli" id="Dadra and Nagar Haveli">
+                                <label class="form-check-label" for="Dadra and Nagar Haveli">
                                     <a href="#"> Dadra and Nagar Haveli </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 33 ">
-                                <label class="form-check-label" for="defaultCheck 33 ">
+                                <input class="form-check-input" type="checkbox" value="Daman and Diu" id="Daman and Diu">
+                                <label class="form-check-label" for="Daman and Diu">
                                     <a href="#"> Daman and Diu </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 34 ">
-                                <label class="form-check-label" for="defaultCheck 34 ">
+                                <input class="form-check-input" type="checkbox" value="Lakshadweep" id="Lakshadweep">
+                                <label class="form-check-label" for="Lakshadweep">
                                     <a href="#"> Lakshadweep </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 35 ">
+                                <input class="form-check-input" type="checkbox" value="Delhi" id="Delhi">
                                 <label class="form-check-label" for="defaultCheck 35 ">
-                                    <a href="#"> National Capital Territory of Delhi </a>
+                                    <a href="#"> Delhi </a>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck 36 ">
-                                <label class="form-check-label" for="defaultCheck 36 ">
+                                <input class="form-check-input" type="checkbox" value="Puducherry" id="Puducherry">
+                                <label class="form-check-label" for="Puducherry">
                                     <a href="#"> Puducherry </a>
                                 </label>
                             </div>
@@ -746,7 +922,6 @@
             <div class="d-flex align-items-start">
                 <!-- buttons of nav -->
 
-               
 
                 <!-- tab content -->
             </div>
