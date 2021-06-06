@@ -55,71 +55,12 @@
     readTextFile(s, function (text) {
       var data = JSON.parse(text);
       console.log(data);
-      /*
-                var state_arr = [];
-                var murder_arr = [];
-                var robbery_arr = [];
-                var rape_arr = [];
-                var kidnapping_arr = [];
-                var total_arr = [];
-      
-                console.log(data[0]);
-      
-                var i;
-                for (i = 0; i < 7; i++) {
-                  state_arr.push(data[i].STATE_UT)
-                  murder_arr.push(data[i].MURDER);
-                  robbery_arr.push(data[i].ROBBERY);
-                  rape_arr.push(data[i].RAPE);
-                  kidnapping_arr.push(data[i].KIDNAPPING_AND_ABDUCTION);
-                  total_arr.push(data[i].TOTAL_IPC_CRIMES)
-                }
-      
-                console.log(state_arr);
-      
-      
-                var element = {}, series_new = [];
-                element.values = murder_arr;
-                series_new.push(element);
-                var element = {};
-                element.values = robbery_arr;
-                series_new.push(element);
-                var element = {};
-                element.values = rape_arr;
-                series_new.push(element);
-                var element = {};
-                element.values = kidnapping_arr;
-                series_new.push(element);
-              //  var element = {};
-              //  element.values = total_arr;
-              //  series_new.push(element);
-      
-                console.log(series_new);
-      
-      
-      
-                
-              var obj1 = JSON.parse(localStorage.getItem('myStorage'));
-      
-              console.log(obj1);
-      
-      */
+    
       var gujrat_arr = [];
       var bihar_arr = [];
       var punjab_arr = [];
       var i;
-      /*
-      for(i=0;i<2013;i++){
-        console.log(i);
-        if(data[i].STATE_UT=="GUJRAT"){
-          gujrat_arr.push(data[i].MURDER);
-        }
-        if(data[i].STATE_UT=="GUJRAT"){
-          gujrat_arr.push(data[i].MURDER);
-        }
-      }
-      */
-
+   
 
       var year_arr = [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012]
       var state_arr = ["ARUNACHAL PRADESH", "ASSAM", "BIHAR", "KERALA", "PUNJAB"]
@@ -131,28 +72,7 @@
       console.log(data.STATE_UT, "area-chart");
 
       var arr = []
-      /*
-      var i;
-      for (i = 0; i < data.length; i++) {
-        for (j = 0; j < state_arr.length; j++) {
-          
-            var brr=[];
-            console.log(state_arr[j],"state");
-            for (k = 0; k < year_arr.length; k++) {
-              if (data[i].YEAR == year_arr[k] && data[i].STATE_UT == state_arr[j]) {
-                console.log(data[i].MURDER, state_arr[j], year_arr[k], "test1");
-                brr.push(data[i].MURDER);
-                console.log(brr,"brr");
-              }
-            }
-            if (brr.length!=0){
-            arr.push(brr[0]);
-          }
-          
-        }
-      }
-      */
-
+    
       var i;
       for (i = 0; i < state_arr.length; i++) {
         console.log(state_arr[i]);
