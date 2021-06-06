@@ -1,0 +1,54 @@
+
+/* emoji-button-css-that makes sound */
+
+
+.btn-emoji{
+    height: 40px;
+    width: 40px;
+    border-radius: 150px;
+    background: #e0e5ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    box-shadow:
+     -7px -7px 20px 0px #fff9,
+     -4px -4px 5px 0px #fff9,
+     7px 7px 20px 0px #0002,
+     4px 4px 5px 0px #0001;
+   transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+    font-size: 40px;
+    color: #666;
+    text-decoration: none;
+    
+  }
+  .btn-emoji:hover{
+  background: radial-gradient(circle,  #0ff 0%, #e0e5ec 60%);
+    color: rgba(102,102,102,.5); 
+    animation: colorchange 3s linear infinite;
+  }
+  .btn-emoji:active{
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  }
+  
+  @keyframes colorchange {
+      to {filter: hue-rotate(360deg);}
+  }
+
+
+#map{
+
+  border-radius: 28px;
+background: #e6e7ee;
+
+box-shadow:  28px 28px 55px #bebebe,
+             -28px -28px 55px #ffffff;
+
+}
+
+/* btn-emoji CSS ends */

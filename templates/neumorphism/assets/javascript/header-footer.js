@@ -1,7 +1,7 @@
 class MyHeader extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML =
-            `
+  connectedCallback() {
+    this.innerHTML =
+      `
 <header class="navbar navbar-nav navbar-expand navbar-light navbar-theme-primary">
 <div class="container-fluid px-3 px-md-4">
 
@@ -16,34 +16,18 @@ class MyHeader extends HTMLElement {
     </a>
   </div>
 
-  <!----------------------time------------------------------------ -->
-  <!-- 
-  <div class="d-flex align-item pt-2 pb-2 pr-2s-center">
-    <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-xl-4" href="#">
-      
-      <div id="txt"><span class="ml-2 text-dark" style="font-size:xx-large;"></span> </div> 
-    </a>
-  </div> -->
-
-
   <!-- ---------------------nav-bar-item pt-2 pb-2 pr-2s---------------------------- -->
   <div class="d-flex align-item pt-2 pb-2 pr-2s-center">
     <div class="d-none d-lg-block">
-      <a href="/templates/neumorphism/index.html" class="btn btn-primary text-dark mr-3"><i class="fas fa-home"></i>&nbsp Home</a>
-      <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-globe-asia"></i>&nbsp CrimeMap</a>
-      <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-map-marker-alt"></i> &nbsp
-        CrimeLocator</a>
-      <a href="/templates/neumorphism/feed.html" class="btn btn-primary text-dark mr-3"><i class="fas fa-newspaper"></i>&nbsp CrimeFeed</a>
-      <a href="/templates/neumorphism/about.html" class="btn btn-primary text-dark mr-3"><i class="fas fa-user-secret"></i>&nbsp About Us</a>
-      <a href="#" class="btn btn-primary text-dark mr-3"><i class="fas fa-info-circle"></i>&nbsp Help</a>
+      <a href="/templates/neumorphism/index.html" class="btn btn-primary text-dark mr-2"><i class="fas fa-home"></i>&nbsp Home</a>
+      <a href="/templates/neumorphism/crime-charts.html" class="btn btn-primary text-dark mr-2"><i class="fas fa-globe-asia"></i>&nbsp CrimeCharts</a>
+      <a href="/templates/neumorphism/crime-predictor.html" class="btn btn-primary text-dark mr-2"><i class="fas fa-robot"></i>&nbsp CrimePredictor</a>  
+      <a href="#" class="btn btn-primary text-dark mr-2"><i class="fas fa-map-marker-alt"></i> &nbsp CrimeLocator</a>
+      <a href="/templates/neumorphism/feed.html" class="btn btn-primary text-dark mr-2"><i class="fas fa-newspaper"></i>&nbsp CrimeFeed</a>
+      <a href="/templates/neumorphism/about.html" class="btn btn-primary text-dark mr-2"><i class="fas fa-user-secret"></i>&nbsp About Us</a>
+      <a href="#" class="btn btn-primary text-dark mr-2"><i class="fas fa-info-circle"></i>&nbsp Help</a>
     </div>
   </div>
-
-
-  <!-- <button class="btn btn-icon-only " type="button" aria-label="love button" title="love button"  onclick="audio()">
-    <span aria-hidden="true" class="far fa-heart"></span>
-  </button> -->
-
 
   <a href="#" class="btn-emoji" onclick="audio()">
     <i class="far fa-grin-tongue"></i>
@@ -53,31 +37,42 @@ class MyHeader extends HTMLElement {
   <div id="txt"> </div>
 
 </div>
-</header>
+
+<script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
 
 
 `
 
-    }
+  }
 }
 
 customElements.define('my-header', MyHeader);
 
 
 class MyFooter extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML =
-            `
+  connectedCallback() {
+    this.innerHTML =
+      `
 <footer>
-<div class="row pt-5">
-    <div class="col-3 mx-auto"><i class="fas fa-copyright"></i> 2021 Crime Data Analysis All rights reserved </div>
+<div class="row pt-5 mx-auto" style="
+position: absolute;
+bottom: 5;
+left: 0;
+right: 0;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+align-content: center;
+justify-content: center;
+align-items: center;">
+    <div class="col-3 "><i class="fas fa-copyright"></i> 2021 Crime Data Analysis All rights reserved </div>
 </div>
 </footer>
 
 
 `
 
-    }
+  }
 }
 
 customElements.define('my-footer', MyFooter);
