@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimePredictor</title>
+    <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
+    <link rel="stylesheet" href="/templates/neumorphism/assets/css/crime-predictor.css">
+    <!-- header footer script -->
+
+    <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
+
+    <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
+
+
+
+
+    <!-- live time -->
+    <script>
+        function startTime() {
+            var time = new Date();
+            document.getElementById('txt').innerHTML = time.toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            });
+        }
+    </script>
+    <!-- sound script -->
+    <script>
+        function audio() {
+            var audio = new Audio("/templates/neumorphism/assets/sound/click-sound.mp3");
+            audio.play();
+
+        }
+    </script>
+
+
+</head>
+
+<body onload="startTime()">
+    <my-header></my-header>
+
+    <div id="upper" class="row pl-6 pr-6">
+        <div id="upload" class="col-4">
+            <div id="card1" class="upload_items pt-4">
+                <div class="card bg-primary border-light shadow-soft">
+                    <div class="card-body">
+                        <h3 class="h5 card-title mt-3">CrimePrediction</h3>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+                <div id="upload-file" class="upload_items pt-4">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                </div>
+                <div id="upload-metadata" class="upload_items pt-4">
+                    <div class="card bg-primary border-light shadow-soft">
+                        <div class="card-body">
+                            <h3 class="h5 card-title mt-3">Metadata</h3>
+                            <p class="card-text">Some quick example text to build on the card title and make ctetur,
+                                adipitus incidunt esse labore architecto reprehenderit asperioresssitatibus dolorum
+                                cumque at dignissimos suscipit. Expedita dolores neque adipisci. Soluta ad itaque,
+                                ratione quia laboriosam voluptatibus vero nisi suscipit libero esciunt, vero voluptates
+                                maiores laborum? Quas quidem sapiente non magni vitae aperiam ut, iure neque commodi
+                                rporis, quae quis voluptas accusantium animi sunt? Labore, commodi quia?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="upload_table" class="col-6">
+            <div id="table-card" class="upload_items pt-4">
+                <div class="card bg-primary border-light shadow-soft" style="height:595px; width:900px">
+                    <div class="card-body">
+                        <h3>Input Table</h3>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                    <th scope="col">Random</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ----------------------------middle panel----------------------------------->
+
+    <div id="middle-panel" class="row pt-5 pl-6 pr-6">
+        <div class="col-12">
+            <div class="card bg-primary border-light shadow-soft">
+                <div class="card-body">
+                    <h3 class="h5 card-title mt-3">Output chart-2</h3>
+                    <h2>Enter something about the process</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta quibusdam numquam aperiam
+                        consequuntur repellendus. Hic provident ducimus ratione in possimus, quos minus quidem
+                        doloribus. Eaque ea in quia maxime placeat!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- -----------------------lower panel-------------------------------- -->
+
+
+
+
+    <div id="lower" class="row pt-5 pl-6 pr-6 pb-6">
+        <div class="col-6">
+            <div id="table">
+                <div class="card bg-primary border-light shadow-soft" style="height:595px;">
+                    <div class="card-body">
+                        <h3 class="h5">Output Table</h3>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                    <th scope="col">Random</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div id="chart-1" class="pt-1">
+                <div class="card bg-primary border-light shadow-soft">
+                    <div class="card-body">
+                        <h3 class="h5 card-title mt-3">Output chart-1</h3>
+                        <img src="https://www.researchgate.net/profile/Norita-Mohd-Zain/publication/280546446/figure/fig1/AS:287003582189570@1445438394272/Graph-of-growth-curve-presented-as-log-10-CFU-ml-versus-incubation-time-for-Candida.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div id="chart-2" class="pt-4 ">
+                <div class="card bg-primary border-light shadow-soft">
+                    <div class="card-body">
+                        <h3 class="h5 card-title mt-3">Output chart-2</h3>
+                        <img src="https://www.researchgate.net/profile/Norita-Mohd-Zain/publication/280546446/figure/fig1/AS:287003582189570@1445438394272/Graph-of-growth-curve-presented-as-log-10-CFU-ml-versus-incubation-time-for-Candida.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+    <my-footer></my-footer>
+
+</body>
+
+</html>
