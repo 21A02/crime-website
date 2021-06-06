@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
   <meta charset="utf-8">
   <title>ZingSoft Demo</title>
- 
+
   <link href='//fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
- 
+
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
   <style>
     html,
@@ -16,139 +16,218 @@
       height: 100%;
 
     }
- 
+
     .zc-ref {
       display: none;
     }
+
     ::-webkit-scrollbar {
-        display: none;
-      }
+      display: none;
+    }
   </style>
 </head>
- 
+
 <body>
   <div id='myChart'><a class="zc-ref" href="https://www.zingchart.com/">Charts by ZingChart</a></div>
   <script>
-     s = "/templates/neumorphism/assets/data/fulljsondata2012.json";
-      
-
-      //  console.log(n, s);
+    s = "/templates/neumorphism/assets/data/fulljsondata2012.json";
 
 
-      //document.getElementById('myGrid').innerHTML = '';
+    //  console.log(n, s);
 
 
-      // function for reading json file
-      function readTextFile(file, callback) {
-        var rawFile = new XMLHttpRequest();
-        rawFile.overrideMimeType("application/json");
-        rawFile.open("GET", file, true);
-        rawFile.onreadystatechange = function () {
-          if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-          }
+    //document.getElementById('myGrid').innerHTML = '';
+
+
+    // function for reading json file
+    function readTextFile(file, callback) {
+      var rawFile = new XMLHttpRequest();
+      rawFile.overrideMimeType("application/json");
+      rawFile.open("GET", file, true);
+      rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+          callback(rawFile.responseText);
         }
-        rawFile.send(null);
+      }
+      rawFile.send(null);
+    }
+
+    readTextFile(s, function (text) {
+      var data = JSON.parse(text);
+      console.log(data);
+      /*
+                var state_arr = [];
+                var murder_arr = [];
+                var robbery_arr = [];
+                var rape_arr = [];
+                var kidnapping_arr = [];
+                var total_arr = [];
+      
+                console.log(data[0]);
+      
+                var i;
+                for (i = 0; i < 7; i++) {
+                  state_arr.push(data[i].STATE_UT)
+                  murder_arr.push(data[i].MURDER);
+                  robbery_arr.push(data[i].ROBBERY);
+                  rape_arr.push(data[i].RAPE);
+                  kidnapping_arr.push(data[i].KIDNAPPING_AND_ABDUCTION);
+                  total_arr.push(data[i].TOTAL_IPC_CRIMES)
+                }
+      
+                console.log(state_arr);
+      
+      
+                var element = {}, series_new = [];
+                element.values = murder_arr;
+                series_new.push(element);
+                var element = {};
+                element.values = robbery_arr;
+                series_new.push(element);
+                var element = {};
+                element.values = rape_arr;
+                series_new.push(element);
+                var element = {};
+                element.values = kidnapping_arr;
+                series_new.push(element);
+              //  var element = {};
+              //  element.values = total_arr;
+              //  series_new.push(element);
+      
+                console.log(series_new);
+      
+      
+      
+                
+              var obj1 = JSON.parse(localStorage.getItem('myStorage'));
+      
+              console.log(obj1);
+      
+      */
+      var gujrat_arr = [];
+      var bihar_arr = [];
+      var punjab_arr = [];
+      var i;
+      /*
+      for(i=0;i<2013;i++){
+        console.log(i);
+        if(data[i].STATE_UT=="GUJRAT"){
+          gujrat_arr.push(data[i].MURDER);
+        }
+        if(data[i].STATE_UT=="GUJRAT"){
+          gujrat_arr.push(data[i].MURDER);
+        }
+      }
+      */
+
+
+      var year_arr = [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012]
+      var state_arr = ["ARUNACHAL PRADESH", "ASSAM", "BIHAR", "KERALA", "PUNJAB"]
+
+
+
+      console.log(data, "area-chart");
+
+      console.log(data.STATE_UT, "area-chart");
+
+      var arr = []
+      /*
+      var i;
+      for (i = 0; i < data.length; i++) {
+        for (j = 0; j < state_arr.length; j++) {
+          
+            var brr=[];
+            console.log(state_arr[j],"state");
+            for (k = 0; k < year_arr.length; k++) {
+              if (data[i].YEAR == year_arr[k] && data[i].STATE_UT == state_arr[j]) {
+                console.log(data[i].MURDER, state_arr[j], year_arr[k], "test1");
+                brr.push(data[i].MURDER);
+                console.log(brr,"brr");
+              }
+            }
+            if (brr.length!=0){
+            arr.push(brr[0]);
+          }
+          
+        }
+      }
+      */
+
+      var i;
+      for (i = 0; i < state_arr.length; i++) {
+        console.log(state_arr[i]);
+        for (j = 0; j < year_arr.length; j++) {
+          console.log(year_arr[j]);
+          var brr = []
+          for (k = 0; k < data.length; k++) {
+            if (data[k].YEAR == year_arr[j] && data[k].STATE_UT == state_arr[i]) {
+              console.log(data[k].MURDER, state_arr[i], year_arr[j], "test1");
+              brr.push(data[k].MURDER);
+              console.log(brr, "brr");
+            }
+            
+          }
+          if (brr.length != 0) {
+              arr.push(brr[0]);
+            }
+        }
       }
 
-      readTextFile(s, function (text) {
-        var data = JSON.parse(text);
-        console.log(data);
-/*
-          var state_arr = [];
-          var murder_arr = [];
-          var robbery_arr = [];
-          var rape_arr = [];
-          var kidnapping_arr = [];
-          var total_arr = [];
+      
+      console.log(arr);
 
-          console.log(data[0]);
+      
+      var series_new = [];
 
-          var i;
-          for (i = 0; i < 7; i++) {
-            state_arr.push(data[i].STATE_UT)
-            murder_arr.push(data[i].MURDER);
-            robbery_arr.push(data[i].ROBBERY);
-            rape_arr.push(data[i].RAPE);
-            kidnapping_arr.push(data[i].KIDNAPPING_AND_ABDUCTION);
-            total_arr.push(data[i].TOTAL_IPC_CRIMES)
-          }
+      c=0
+      for(i=0;i<state_arr.length;i++){
+      var element={}
+      console.log(c,c+12);
+      element.values = arr.slice(c,c+12);
+      element.data_days=year_arr;
+      element.text="Murder Cases";
+      element.state=state_arr[i];
+      series_new.push(element);
+      c=c+12;
+    }
 
-          console.log(state_arr);
+    console.log(series_new);
+      
 
-
-          var element = {}, series_new = [];
-          element.values = murder_arr;
-          series_new.push(element);
-          var element = {};
-          element.values = robbery_arr;
-          series_new.push(element);
-          var element = {};
-          element.values = rape_arr;
-          series_new.push(element);
-          var element = {};
-          element.values = kidnapping_arr;
-          series_new.push(element);
-        //  var element = {};
-        //  element.values = total_arr;
-        //  series_new.push(element);
-
-          console.log(series_new);
+      console.log("area-chart file running");
 
 
 
-          
-        var obj1 = JSON.parse(localStorage.getItem('myStorage'));
-
-        console.log(obj1);
-
-*/
-var gujrat_arr=[];
-var bihar_arr=[];
-var punjab_arr=[];
-var i;
-for(i=2001;i<2013;i++){
-  console.log(i);
-  if(data[i].STATE_UT=="GUJRAT"){
-    gujrat_arr.push(data[i].MURDER);
-  }
-  if(data[i].STATE_UT=="GUJRAT"){
-    gujrat_arr.push(data[i].MURDER);
-  }
-}
-
-
-
-    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
-    var myConfig = {
-      "globals": {
-        "font-family": "Roboto"
-      },
-      "graphset": [{
-        "type": "area",
-        "background-color": "#fff",
-        "utc": true,
-        "title": {
-          "y": "15px",
-          "text": "Website Traffic Metrics",
-          "background-color": "none",
-          "font-color": "#05636c",
-          "font-size": "24px",
-          "height": "25px",
-          "adjust-layout": true
+      ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+      var myConfig = {
+        "globals": {
+          "font-family": "Roboto"
         },
-        "plotarea": {
-          "margin-top": "10%",
-          "margin-right": "dynamic",
-          "margin-bottom": "dynamic",
-          "margin-left": "dynamic",
-          "adjust-layout": true
-        },
-        "labels": [{
-            "text": "Visitors: %plot-2-value",
+        "graphset": [{
+          "type": "area",
+          "background-color": "#fff",
+          "utc": true,
+          "title": {
+            "y": "15px",
+            "text": "Crime Intensity Metrics",
+            "background-color": "none",
+            "font-color": "#05636c",
+            "font-size": "24px",
+            "height": "25px",
+            "adjust-layout": true
+          },
+          "plotarea": {
+            "margin-top": "10%",
+            "margin-right": "dynamic",
+            "margin-bottom": "dynamic",
+            "margin-left": "dynamic",
+            "adjust-layout": true
+          },
+          "labels": [{
+            "text": "BIHAR: %plot-2-value",
             "default-value": "",
             "color": "#8da0cb",
-            "x": "20%",
+            "x": "10%",
             "y": 50,
             "width": 120,
             "text-align": "left",
@@ -157,9 +236,21 @@ for(i=2001;i<2013;i++){
             "font-weight": "bold"
           },
           {
-            "text": "Clicks: %plot-1-value",
+            "text": "ASSAM: %plot-1-value",
             "default-value": "",
             "color": "#66c2a5",
+            "x": "30%",
+            "y": 50,
+            "width": 120,
+            "text-align": "left",
+            "bold": 0,
+            "font-size": "14px",
+            "font-weight": "bold"
+          },
+          {
+            "text": "ARUNACHAL PRADESH: %plot-0-value",
+            "default-value": "",
+            "color": "#fc8d62",
             "x": "45%",
             "y": 50,
             "width": 120,
@@ -169,9 +260,9 @@ for(i=2001;i<2013;i++){
             "font-weight": "bold"
           },
           {
-            "text": "Returns: %plot-0-value",
+            "text": "KERELA: %plot-3-value",
             "default-value": "",
-            "color": "#fc8d62",
+          //  "color": "#fc8d62",
             "x": "70%",
             "y": 50,
             "width": 120,
@@ -180,83 +271,97 @@ for(i=2001;i<2013;i++){
             "font-size": "14px",
             "font-weight": "bold"
           }
-        ],
-        "scale-x": {
-          "label": {
-            "text": "Date Range",
-            "font-size": "14px",
-            "font-weight": "normal",
-            "offset-x": "10%",
-            "font-angle": 360
-          },
-          "item": {
-            "text-align": "center",
-            "font-color": "#05636c"
-          },
-          "zooming": 1,
-          "max-labels": 12,
-          "labels": [
-            "Sept<br>19",
-            "Sept<br>20",
-            "Sept<br>21",
-            "Sept<br>22",
-            "Sept<br>23",
-            "Sept<br>24",
-            "Sept<br>25",
-            "Sept<br>26",
-            "Sept<br>27",
-            "Sept<br>28",
-            "Sept<br>29",
-            "Sept<br>30"
-          ],
-          "max-items": 12,
-          "items-overlap": true,
-          "guide": {
-            "line-width": "0px"
-          },
-          "tick": {
-            "line-width": "2px"
-          },
-        },
-        "crosshair-x": {
-          "line-color": "#fff",
-          "line-width": 1,
-          "plot-label": {
-            "visible": false
-          }
-        },
-        "scale-y": {
-          "values": "0:2500:500",
-          "item": {
-            "font-color": "#05636c",
-            "font-weight": "normal"
-          },
-          "label": {
-            "text": "Metrics",
-            "font-size": "14px"
-          },
-          "guide": {
-            "line-width": "0px",
-            "alpha": 0.2,
-            "line-style": "dashed"
-          }
-        },
-        "plot": {
-          "line-width": 2,
-          "marker": {
-            "size": 1,
-            "visible": false
-          },
-          "tooltip": {
-            "font-family": "Roboto",
-            "font-size": "15px",
-            "text": "There were %v %t on %data-days",
+          ,
+          {
+            "text": "PUNJAB: %plot-4-value",
+            "default-value": "",
+            "color": "#fc8d62",
+            "x": "90%",
+            "y": 50,
+            "width": 120,
             "text-align": "left",
-            "border-radius": 5,
-            "padding": 10
+            "bold": 0,
+            "font-size": "14px",
+            "font-weight": "bold"
           }
-        },
-        "series": [{
+          ],
+          "scale-x": {
+            "label": {
+              "text": "Date Range",
+              "font-size": "14px",
+              "font-weight": "normal",
+              "offset-x": "10%",
+              "font-angle": 360
+            },
+            "item": {
+              "text-align": "center",
+              "font-color": "#05636c"
+            },
+            "zooming": 1,
+            "max-labels": 12,
+            "labels": year_arr //[
+            //   "Sept<br>19",
+            //   "Sept<br>20",
+            //   "Sept<br>21",
+            //   "Sept<br>22",
+            //   "Sept<br>23",
+            //   "Sept<br>24",
+            //   "Sept<br>25",
+            //   "Sept<br>26",
+            //   "Sept<br>27",
+            //   "Sept<br>28",
+            //   "Sept<br>29",
+            //   "Sept<br>30"
+            // ]
+            ,
+            "max-items": 12,
+            "items-overlap": true,
+            "guide": {
+              "line-width": "0px"
+            },
+            "tick": {
+              "line-width": "2px"
+            },
+          },
+          "crosshair-x": {
+            "line-color": "#fff",
+            "line-width": 1,
+            "plot-label": {
+              "visible": false
+            }
+          },
+          "scale-y": {
+            "values": "0:2500:500",
+            "item": {
+              "font-color": "#05636c",
+              "font-weight": "normal"
+            },
+            "label": {
+              "text": "Cases Registered",
+              "font-size": "14px"
+            },
+            "guide": {
+              "line-width": "0px",
+              "alpha": 0.2,
+              "line-style": "dashed"
+            }
+          },
+          "plot": {
+            "line-width": 2,
+            "marker": {
+              "size": 1,
+              "visible": false
+            },
+            "tooltip": {
+              "font-family": "Roboto",
+              "font-size": "15px",
+              "text": "There were %v %t ",/*on %data-days",*/
+              "text-align": "left",
+              "border-radius": 5,
+              "padding": 10
+            }
+          },
+          "series": series_new/*[{
             "values": [
               1204,
               1179,
@@ -367,19 +472,19 @@ for(i=2001;i<2013;i++){
             "font-family": "Roboto",
             "font-size": "14px"
           }
-        ]
-      }]
+          ] */
+        }]
       };
- 
-    zingchart.render({
-      id: 'myChart',
-      data: myConfig,
-      height: '100%',
-      width: '100%'
-    });
 
-  });
+      zingchart.render({
+        id: 'myChart',
+        data: myConfig,
+        height: '100%',
+        width: '100%'
+      });
+
+    });
   </script>
 </body>
- 
+
 </html>
