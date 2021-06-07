@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimePredictor</title>
+    <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
+    <link rel="stylesheet" href="/templates/neumorphism/assets/css/crime-predictor.css">
+    <!-- header footer script -->
+
+    <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
+
+    <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
+
+
+
+
+    <!-- live time -->
+    <script>
+        function startTime() {
+            var time = new Date();
+            document.getElementById('txt').innerHTML = time.toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            });
+        }
+    </script>
+    <!-- sound script -->
+    <script>
+        function audio() {
+            var audio = new Audio("/templates/neumorphism/assets/sound/click-sound.mp3");
+            audio.play();
+
+        }
+    </script>
+
+
+</head>
+
+<body onload="startTime()">
+    <my-header></my-header>
+
+    <div class="row" style="display: flex;
+    flex-wrap: nowrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;">
+             <form action="#" class="w-75 pt-5" style="
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            align-content: center;
+        ">
+                <div class="form-group mb-3" style="display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: space-evenly;
+                align-items: center;">
+                    <label for="pincode" style="
+                    font-size: 22px;
+                    font-weight: 600;
+                    padding-right: 40px;
+                    font-family: monospace;
+                ">Enter Pincode</label>
+                    <input  class="form-control" id="pincode" aria-describedby="pincode" style="width: 500px;">
+                    </div>
+                <button type="submit" class="btn btn-primary" style="width: 200px;">Search</button>
+            </form>
+     
+    </div>
+
+    
+    <my-footer></my-footer>
+
+</body>
+
+</html>
