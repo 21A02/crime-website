@@ -37,10 +37,161 @@
         }
     </script>
 
+ <!-- table creation scrippt-->
+ <script>
+
+    function datafillfun(n) {
+
+      //console.log("testing run...");
+      var s = "/templates/neumorphism/assets/data/predictinput.json";
+
+
+      document.getElementById('myGrid').innerHTML = '';
+
+
+      // function for reading json file
+      function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function () {
+          if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+          }
+        }
+        rawFile.send(null);
+      }
+
+      readTextFile(s, function (text) {
+        var data = JSON.parse(text);
+            console.log(data);
+
+
+        var tableBody = '<h5>Input Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">ID</th>';
+
+
+        // if (document.getElementById('total-check').checked == true) {
+           tableBody += '<th class="border-0" scope="col" id="total-table-heading">DATE</th>';
+        // }
+        // if (document.getElementById('murder-check').checked == true) {
+           tableBody += '<th class="border-0" scope="col" id="total-table-heading">PRIMARY TYPE</th>';
+        // }
+        // if (document.getElementById('kidnapping-check').checked == true) {
+          tableBody += '<th class="border-0" scope="col" id="total-table-heading">LOCATION</th>';
+        // }
+        // if (document.getElementById('robbery-check').checked == true) {
+        //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">ROBBERY</th>';
+        // }
+
+        tableBody += '</tr>';
+
+
+        data.forEach(function (d) {
+          tableBody += '<tr><th scope="row">' + d.ID;
+        //   if (document.getElementById('total-check').checked == true) {
+             tableBody += '</th><td>' + d.Date;
+        //   }
+        //   if (document.getElementById('murder-check').checked == true) {
+             tableBody += '</th><td>' + d.Primary_Type;
+        //   }
+        //   if (document.getElementById('kidnapping-check').checked == true) {
+             tableBody += '</th><td>' + d.Location;
+        //   }
+        //   if (document.getElementById('robbery-check').checked == true) {
+           //  tableBody += '</th><td>' + d.ROBBERY;
+        //   }
+
+          tableBody += '</td></tr>';
+        });
+        tableBody += '<table>';
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+
+        var divContainer = document.getElementById("myGrid");
+        divContainer.innerHTML = tableBody;
+      });
+    }
+  </script>
+
+  <!-- table creation scrippt-->
+ <script>
+
+    function datafillfun1(n) {
+
+      //console.log("testing run...");
+      var s = "/templates/neumorphism/assets/data/predictoutput.json";
+
+
+      document.getElementById('myGrid1').innerHTML = '';
+
+
+      // function for reading json file
+      function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function () {
+          if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+          }
+        }
+        rawFile.send(null);
+      }
+
+      readTextFile(s, function (text) {
+        var data = JSON.parse(text);
+            console.log(data);
+
+
+        var tableBody = '<h5>Output Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">ds</th>';
+
+
+        // if (document.getElementById('total-check').checked == true) {
+           tableBody += '<th class="border-0" scope="col" id="total-table-heading">trend</th>';
+        // }
+        // if (document.getElementById('murder-check').checked == true) {
+        //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">PRIMARY TYPE</th>';
+        // }
+        // if (document.getElementById('kidnapping-check').checked == true) {
+        //  tableBody += '<th class="border-0" scope="col" id="total-table-heading">LOCATION</th>';
+        // }
+        // if (document.getElementById('robbery-check').checked == true) {
+        //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">ROBBERY</th>';
+        // }
+
+        tableBody += '</tr>';
+
+
+        data.forEach(function (d) {
+          tableBody += '<tr><th scope="row">' + d.ds;
+        //   if (document.getElementById('total-check').checked == true) {
+             tableBody += '</th><td>' + d.trend;
+        //   }
+        //   if (document.getElementById('murder-check').checked == true) {
+        //     tableBody += '</th><td>' + d.Primary_Type;
+        //   }
+        //   if (document.getElementById('kidnapping-check').checked == true) {
+        //     tableBody += '</th><td>' + d.Location;
+        //   }
+        //   if (document.getElementById('robbery-check').checked == true) {
+           //  tableBody += '</th><td>' + d.ROBBERY;
+        //   }
+
+          tableBody += '</td></tr>';
+        });
+        tableBody += '<table>';
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+
+        var divContainer = document.getElementById("myGrid1");
+        divContainer.innerHTML = tableBody;
+      });
+    }
+  </script>
 
 </head>
 
-<body onload="startTime()">
+<body onload="startTime();datafillfun(1);datafillfun1(1);">
     <my-header></my-header>
 
     <div id="upper" class="row pl-6 pr-6">
@@ -79,47 +230,8 @@
         <div id="upload_table" class="col-6">
             <div id="table-card" class="upload_items pt-4">
                 <div class="card bg-primary border-light shadow-soft" style="height:595px; width:900px">
-                    <div class="card-body">
-                        <h3>Input Table</h3>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                    <th scope="col">Random</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-
-
-                            </tbody>
-                        </table>
+                    <div class="card-body" id="myGrid">
+                        
                     </div>
                 </div>
             </div>
@@ -158,8 +270,8 @@
         <div class="col-6">
             <div id="table">
                 <div class="card bg-primary border-light shadow-soft" style="height:595px;">
-                    <div class="card-body">
-                        <h3 class="h5">Output Table</h3>
+                    <div class="card-body" id="myGrid1">
+                        <!-- <h3 class="h5">Output Table</h3>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -197,7 +309,7 @@
                                 </tr>
 
                             </tbody>
-                        </table>
+                        </table> -->
                     </div>
                 </div>
 
@@ -209,7 +321,7 @@
                 <div class="card bg-primary border-light shadow-soft">
                     <div class="card-body">
                         <h3 class="h5 card-title mt-3">Output chart-1</h3>
-                        <img src="https://www.researchgate.net/profile/Norita-Mohd-Zain/publication/280546446/figure/fig1/AS:287003582189570@1445438394272/Graph-of-growth-curve-presented-as-log-10-CFU-ml-versus-incubation-time-for-Candida.png" alt="">
+                        <img src="/templates/neumorphism/assets/images/output1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -218,7 +330,7 @@
                 <div class="card bg-primary border-light shadow-soft">
                     <div class="card-body">
                         <h3 class="h5 card-title mt-3">Output chart-2</h3>
-                        <img src="https://www.researchgate.net/profile/Norita-Mohd-Zain/publication/280546446/figure/fig1/AS:287003582189570@1445438394272/Graph-of-growth-curve-presented-as-log-10-CFU-ml-versus-incubation-time-for-Candida.png" alt="">
+                        <img src="/templates/neumorphism/assets/images/output2.png" alt="">
                     </div>
                 </div>
             </div>
