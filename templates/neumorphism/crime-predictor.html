@@ -37,157 +37,157 @@
         }
     </script>
 
- <!-- table creation scrippt-->
- <script>
+    <!-- table creation scrippt-->
+    <script>
 
-    function datafillfun(n) {
+        function datafillfun(n) {
 
-      //console.log("testing run...");
-      var s = "/templates/neumorphism/assets/data/predictinput.json";
-
-
-      document.getElementById('myGrid').innerHTML = '';
+            //console.log("testing run...");
+            var s = "/templates/neumorphism/assets/data/predictinput.json";
 
 
-      // function for reading json file
-      function readTextFile(file, callback) {
-        var rawFile = new XMLHttpRequest();
-        rawFile.overrideMimeType("application/json");
-        rawFile.open("GET", file, true);
-        rawFile.onreadystatechange = function () {
-          if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-          }
+            document.getElementById('myGrid').innerHTML = '';
+
+
+            // function for reading json file
+            function readTextFile(file, callback) {
+                var rawFile = new XMLHttpRequest();
+                rawFile.overrideMimeType("application/json");
+                rawFile.open("GET", file, true);
+                rawFile.onreadystatechange = function () {
+                    if (rawFile.readyState === 4 && rawFile.status == "200") {
+                        callback(rawFile.responseText);
+                    }
+                }
+                rawFile.send(null);
+            }
+
+            readTextFile(s, function (text) {
+                var data = JSON.parse(text);
+                console.log(data);
+
+
+                var tableBody = '<h5>Input Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">ID</th>';
+
+
+                // if (document.getElementById('total-check').checked == true) {
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">DATE</th>';
+                // }
+                // if (document.getElementById('murder-check').checked == true) {
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">PRIMARY TYPE</th>';
+                // }
+                // if (document.getElementById('kidnapping-check').checked == true) {
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">LOCATION</th>';
+                // }
+                // if (document.getElementById('robbery-check').checked == true) {
+                //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">ROBBERY</th>';
+                // }
+
+                tableBody += '</tr>';
+
+
+                data.forEach(function (d) {
+                    tableBody += '<tr><th scope="row">' + d.ID;
+                    //   if (document.getElementById('total-check').checked == true) {
+                    tableBody += '</th><td>' + d.Date;
+                    //   }
+                    //   if (document.getElementById('murder-check').checked == true) {
+                    tableBody += '</th><td>' + d.Primary_Type;
+                    //   }
+                    //   if (document.getElementById('kidnapping-check').checked == true) {
+                    tableBody += '</th><td>' + d.Location;
+                    //   }
+                    //   if (document.getElementById('robbery-check').checked == true) {
+                    //  tableBody += '</th><td>' + d.ROBBERY;
+                    //   }
+
+                    tableBody += '</td></tr>';
+                });
+                tableBody += '<table>';
+
+                // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+
+                var divContainer = document.getElementById("myGrid");
+                divContainer.innerHTML = tableBody;
+            });
         }
-        rawFile.send(null);
-      }
+    </script>
 
-      readTextFile(s, function (text) {
-        var data = JSON.parse(text);
-            console.log(data);
+    <!-- table creation scrippt-->
+    <script>
 
+        function datafillfun1(n) {
 
-        var tableBody = '<h5>Input Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">ID</th>';
-
-
-        // if (document.getElementById('total-check').checked == true) {
-           tableBody += '<th class="border-0" scope="col" id="total-table-heading">DATE</th>';
-        // }
-        // if (document.getElementById('murder-check').checked == true) {
-           tableBody += '<th class="border-0" scope="col" id="total-table-heading">PRIMARY TYPE</th>';
-        // }
-        // if (document.getElementById('kidnapping-check').checked == true) {
-          tableBody += '<th class="border-0" scope="col" id="total-table-heading">LOCATION</th>';
-        // }
-        // if (document.getElementById('robbery-check').checked == true) {
-        //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">ROBBERY</th>';
-        // }
-
-        tableBody += '</tr>';
+            //console.log("testing run...");
+            var s = "/templates/neumorphism/assets/data/predictoutput.json";
 
 
-        data.forEach(function (d) {
-          tableBody += '<tr><th scope="row">' + d.ID;
-        //   if (document.getElementById('total-check').checked == true) {
-             tableBody += '</th><td>' + d.Date;
-        //   }
-        //   if (document.getElementById('murder-check').checked == true) {
-             tableBody += '</th><td>' + d.Primary_Type;
-        //   }
-        //   if (document.getElementById('kidnapping-check').checked == true) {
-             tableBody += '</th><td>' + d.Location;
-        //   }
-        //   if (document.getElementById('robbery-check').checked == true) {
-           //  tableBody += '</th><td>' + d.ROBBERY;
-        //   }
-
-          tableBody += '</td></tr>';
-        });
-        tableBody += '<table>';
-
-        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-
-        var divContainer = document.getElementById("myGrid");
-        divContainer.innerHTML = tableBody;
-      });
-    }
-  </script>
-
-  <!-- table creation scrippt-->
- <script>
-
-    function datafillfun1(n) {
-
-      //console.log("testing run...");
-      var s = "/templates/neumorphism/assets/data/predictoutput.json";
+            document.getElementById('myGrid1').innerHTML = '';
 
 
-      document.getElementById('myGrid1').innerHTML = '';
+            // function for reading json file
+            function readTextFile(file, callback) {
+                var rawFile = new XMLHttpRequest();
+                rawFile.overrideMimeType("application/json");
+                rawFile.open("GET", file, true);
+                rawFile.onreadystatechange = function () {
+                    if (rawFile.readyState === 4 && rawFile.status == "200") {
+                        callback(rawFile.responseText);
+                    }
+                }
+                rawFile.send(null);
+            }
+
+            readTextFile(s, function (text) {
+                var data = JSON.parse(text);
+                console.log(data);
 
 
-      // function for reading json file
-      function readTextFile(file, callback) {
-        var rawFile = new XMLHttpRequest();
-        rawFile.overrideMimeType("application/json");
-        rawFile.open("GET", file, true);
-        rawFile.onreadystatechange = function () {
-          if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-          }
+                var tableBody = '<h5>Output Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">ds</th>';
+
+
+                // if (document.getElementById('total-check').checked == true) {
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">trend</th>';
+                // }
+                // if (document.getElementById('murder-check').checked == true) {
+                //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">PRIMARY TYPE</th>';
+                // }
+                // if (document.getElementById('kidnapping-check').checked == true) {
+                //  tableBody += '<th class="border-0" scope="col" id="total-table-heading">LOCATION</th>';
+                // }
+                // if (document.getElementById('robbery-check').checked == true) {
+                //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">ROBBERY</th>';
+                // }
+
+                tableBody += '</tr>';
+
+
+                data.forEach(function (d) {
+                    tableBody += '<tr><th scope="row">' + d.ds;
+                    //   if (document.getElementById('total-check').checked == true) {
+                    tableBody += '</th><td>' + d.trend;
+                    //   }
+                    //   if (document.getElementById('murder-check').checked == true) {
+                    //     tableBody += '</th><td>' + d.Primary_Type;
+                    //   }
+                    //   if (document.getElementById('kidnapping-check').checked == true) {
+                    //     tableBody += '</th><td>' + d.Location;
+                    //   }
+                    //   if (document.getElementById('robbery-check').checked == true) {
+                    //  tableBody += '</th><td>' + d.ROBBERY;
+                    //   }
+
+                    tableBody += '</td></tr>';
+                });
+                tableBody += '<table>';
+
+                // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+
+                var divContainer = document.getElementById("myGrid1");
+                divContainer.innerHTML = tableBody;
+            });
         }
-        rawFile.send(null);
-      }
-
-      readTextFile(s, function (text) {
-        var data = JSON.parse(text);
-            console.log(data);
-
-
-        var tableBody = '<h5>Output Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">ds</th>';
-
-
-        // if (document.getElementById('total-check').checked == true) {
-           tableBody += '<th class="border-0" scope="col" id="total-table-heading">trend</th>';
-        // }
-        // if (document.getElementById('murder-check').checked == true) {
-        //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">PRIMARY TYPE</th>';
-        // }
-        // if (document.getElementById('kidnapping-check').checked == true) {
-        //  tableBody += '<th class="border-0" scope="col" id="total-table-heading">LOCATION</th>';
-        // }
-        // if (document.getElementById('robbery-check').checked == true) {
-        //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">ROBBERY</th>';
-        // }
-
-        tableBody += '</tr>';
-
-
-        data.forEach(function (d) {
-          tableBody += '<tr><th scope="row">' + d.ds;
-        //   if (document.getElementById('total-check').checked == true) {
-             tableBody += '</th><td>' + d.trend;
-        //   }
-        //   if (document.getElementById('murder-check').checked == true) {
-        //     tableBody += '</th><td>' + d.Primary_Type;
-        //   }
-        //   if (document.getElementById('kidnapping-check').checked == true) {
-        //     tableBody += '</th><td>' + d.Location;
-        //   }
-        //   if (document.getElementById('robbery-check').checked == true) {
-           //  tableBody += '</th><td>' + d.ROBBERY;
-        //   }
-
-          tableBody += '</td></tr>';
-        });
-        tableBody += '<table>';
-
-        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-
-        var divContainer = document.getElementById("myGrid1");
-        divContainer.innerHTML = tableBody;
-      });
-    }
-  </script>
+    </script>
 
 </head>
 
@@ -200,8 +200,8 @@
                 <div class="card bg-primary border-light shadow-soft">
                     <div class="card-body">
                         <h3 class="h5 card-title mt-3">CrimePrediction</h3>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <p class="card-text">We are using FB prophet charting library to show the future crime trend for
+                            the relevant dataset upladed.</p>
                     </div>
                 </div>
                 <div id="upload-file" class="upload_items pt-4">
@@ -214,12 +214,19 @@
                     <div class="card bg-primary border-light shadow-soft">
                         <div class="card-body">
                             <h3 class="h5 card-title mt-3">Metadata</h3>
-                            <p class="card-text">Some quick example text to build on the card title and make ctetur,
-                                adipitus incidunt esse labore architecto reprehenderit asperioresssitatibus dolorum
-                                cumque at dignissimos suscipit. Expedita dolores neque adipisci. Soluta ad itaque,
-                                ratione quia laboriosam voluptatibus vero nisi suscipit libero esciunt, vero voluptates
-                                maiores laborum? Quas quidem sapiente non magni vitae aperiam ut, iure neque commodi
-                                rporis, quae quis voluptas accusantium animi sunt? Labore, commodi quia?</p>
+                            <p class="card-text">Dataset contains the following columns:
+                            <ul>
+                                <li>ID: Unique identifier for the record.</li>
+                                <li>Date: Date when the incident occurred.</li>
+                                <li>Primary Type: The primary description of the crime.</li>
+                                <li>Location: The location where the incident occurred in a format that allows for
+                                    creation of maps and other geographic operations on this data portal. This location
+                                    is shifted from the actual location for partial redaction but falls on the same
+                                    block.</li>
+                            </ul>
+                            </p>
+
+
                         </div>
                     </div>
                 </div>
@@ -231,7 +238,7 @@
             <div id="table-card" class="upload_items pt-4">
                 <div class="card bg-primary border-light shadow-soft" style="height:595px; width:900px">
                     <div class="card-body" id="myGrid">
-                        
+
                     </div>
                 </div>
             </div>
@@ -320,7 +327,7 @@
             <div id="chart-1" class="pt-1">
                 <div class="card bg-primary border-light shadow-soft">
                     <div class="card-body">
-                        <h3 class="h5 card-title mt-3">Output chart-1</h3>
+                        <h3 class="h5 card-title mt-3">Visualizing future results</h3>
                         <img src="/templates/neumorphism/assets/images/output1.png" alt="">
                     </div>
                 </div>
@@ -329,7 +336,7 @@
             <div id="chart-2" class="pt-4 ">
                 <div class="card bg-primary border-light shadow-soft">
                     <div class="card-body">
-                        <h3 class="h5 card-title mt-3">Output chart-2</h3>
+                        <h3 class="h5 card-title mt-3">Expected trend in the future</h3>
                         <img src="/templates/neumorphism/assets/images/output2.png" alt="">
                     </div>
                 </div>
