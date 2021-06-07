@@ -166,3 +166,7 @@ box-shadow:  28px 28px 55px #bebebe,
 }
 
 /* btn-emoji CSS ends */
+
+.card-text{
+  font-weight: 500;
+}
