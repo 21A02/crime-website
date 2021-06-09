@@ -150,24 +150,24 @@
       // }
 
 
-for(i=0;i<year_arr.length;i++){
-  for(j=0;j<state_arr.length;j++){
-    var brr = [];
-    for(k=0;k<data.length;k++){
+      for (i = 0; i < year_arr.length; i++) {
+        for (j = 0; j < state_arr.length; j++) {
+          var brr = [];
+          for (k = 0; k < data.length; k++) {
 
-      if (data[k].YEAR == year_arr[i] && data[k].STATE_UT == state_arr[j]) {
-               console.log(data[k].TOTAL, year_arr[i], state_arr[j], "test");
-               brr.push(data[k].TOTAL);
-               console.log(brr, "brr");
-             }
+            if (data[k].YEAR == year_arr[i] && data[k].STATE_UT == state_arr[j]) {
+              console.log(data[k].TOTAL, year_arr[i], state_arr[j], "test");
+              brr.push(data[k].TOTAL);
+              console.log(brr, "brr");
+            }
 
 
-    }
-    if (brr.length != 0) {
-           arr.push(brr[0]);
-           }
-  }
-}
+          }
+          if (brr.length != 0) {
+            arr.push(brr[0]);
+          }
+        }
+      }
 
 
 
