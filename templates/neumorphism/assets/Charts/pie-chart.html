@@ -1,175 +1,99 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
   <meta charset="utf-8">
   <title>ZingSoft Demo</title>
- 
+
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-  <style></style>
+
 </head>
- 
+
 <body>
   <div id='myChart'></div>
   <script>
     s = "/templates/neumorphism/assets/data/fulljsondata2012.json";
 
 
-//  console.log(n, s);
 
-
-//document.getElementById('myGrid').innerHTML = '';
-
-
-// function for reading json file
-function readTextFile(file, callback) {
-  var rawFile = new XMLHttpRequest();
-  rawFile.overrideMimeType("application/json");
-  rawFile.open("GET", file, true);
-  rawFile.onreadystatechange = function () {
-    if (rawFile.readyState === 4 && rawFile.status == "200") {
-      callback(rawFile.responseText);
-    }
-  }
-  rawFile.send(null);
-}
-
-readTextFile(s, function (text) {
-  var data = JSON.parse(text);
-  console.log(data);
-
-  // var gujrat_arr = [];
-  // var bihar_arr = [];
-  // var punjab_arr = [];
-  // var i;
-
-
-  // var year_arr = [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012]
-   var state_arr = ["UTTAR PRADESH", "ASSAM", "BIHAR", "KERALA", "PUNJAB"]
-
-
-
-  // console.log(data, "area-chart");
-
-  // console.log(data.STATE_UT, "area-chart");
-
-  // var arr = []
-
-  // var i;
-  // for (i = 0; i < state_arr.length; i++) {
-  //   console.log(state_arr[i]);
-  //   for (j = 0; j < year_arr.length; j++) {
-  //     console.log(year_arr[j]);
-  //     var brr = []
-  //     for (k = 0; k < data.length; k++) {
-  //       if (data[k].YEAR == year_arr[j] && data[k].STATE_UT == state_arr[i]) {
-  //         console.log(data[k].MURDER, state_arr[i], year_arr[j], "test1");
-  //         brr.push(data[k].MURDER);
-  //         console.log(brr, "brr");
-  //       }
-        
-  //     }
-  //     if (brr.length != 0) {
-  //         arr.push(brr[0]);
-  //       }
-  //   }
-  // }
-
-
-
-
-
-
-  year = 2001;
-
-
-// var arr = []
-
-//
-
-
-// series_new.push(element);
-
-
-// var i;
-// for (i = 0; i < data.length; i++) {
-//   if (data[i].YEAR == year) {
-//     console.log(data[i].STATE_UT, data[i].MURDER, "testing")
-//     var element={};
-//     element.id = data[i].STATE_UT;
-//     element.parent = 'theworld';
-//     element.name = data[i].STATE_UT;
-//     element.value = data[i].MURDER;
-//     element.group = 'europe'
-
-//     series_new.push(element);
-//   }
-// }
-
-
-var series_new = [];
-var i;
-for(i=0;i<state_arr.length;i++){
-  //console.log(state_arr[i],"testing");
-  var j;
-  for(j=0;j<data.length;j++){
-
-    if(data[j].YEAR==year && data[j].STATE_UT==state_arr[i]){
-      console.log(state_arr[i],data[j].MURDER,"testing2");
-      var element={};
-      element.text = state_arr[i];
-      element.values = [data[j].MURDER];
-      series_new.push(element);
+    function readTextFile(file, callback) {
+      var rawFile = new XMLHttpRequest();
+      rawFile.overrideMimeType("application/json");
+      rawFile.open("GET", file, true);
+      rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+          callback(rawFile.responseText);
+        }
+      }
+      rawFile.send(null);
     }
 
-  }
-}
+    readTextFile(s, function (text) {
+      var data = JSON.parse(text);
+    //  console.log(data);
 
 
- console.log(series_new);
-  
+      var retrievedObject = localStorage.getItem('testObject');
 
-  console.log("pie-chart file running");
+      obj = JSON.parse(retrievedObject)
+
+//      console.log('retrievedObject: ', obj, "in pie chart file");
 
 
-    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
-    var myConfig = {
-      "type": "pie3d", //"pie", "pie3d", "ring", or "ring3d"
-      "title": {
-        "text": "Pie Chart"
-      },
-      "plot": {
-        "offset-r": "25%" //provide percentage value
-      },
-      "series": series_new
-      
-      // [{
-      //     "values": [59]
-      //   },
-      //   {
-      //     "values": [55]
-      //   },
-      //   {
-      //     "values": [30]
-      //   },
-      //   {
-      //     "values": [28]
-      //   },
-      //   {
-      //     "values": [15]
-      //   }
-      // ]
-    };
- 
-    zingchart.render({
-      id: 'myChart',
-      data: myConfig,
-      height: 400,
-      width: "100%"
+      var state_arr = obj.state;
+
+      var year = obj.year[0];
+
+
+
+//console.log(state_arr, year, "testing");
+
+      var series_new = [];
+      var i;
+      for (i = 0; i < state_arr.length; i++) {
+        var j;
+        for (j = 0; j < data.length; j++) {
+
+          if (String(data[j].YEAR) == year && data[j].STATE_UT == state_arr[i]) {
+    //        console.log(state_arr[i], data[j].MURDER, "testing2");
+            var element = {};
+            element.text = state_arr[i];
+            element.values = [data[j].MURDER];
+            series_new.push(element);
+          }
+
+        }
+      }
+
+
+
+     // console.log(series_new, "series_new");
+
+
+    //  console.log("pie-chart file running");
+
+
+      ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+      var myConfig = {
+        "type": "pie3d", //"pie", "pie3d", "ring", or "ring3d"
+        "title": {
+          "text": "Pie Chart"
+        },
+        "plot": {
+          "offset-r": "25%" //provide percentage value
+        },
+        "series": series_new
+      };
+
+      zingchart.render({
+        id: 'myChart',
+        data: myConfig,
+        height: 400,
+        width: "100%"
+      });
+
     });
-
-  });
   </script>
 </body>
- 
+
 </html>
