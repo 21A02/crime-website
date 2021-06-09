@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrimePredictor</title>
     <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
-    <link rel="stylesheet" href="/templates/neumorphism/assets/css/crime-predictor.css">
+    <link rel="stylesheet" href="/templates/neumorphism/assets/css/crime-locator.css">
     <!-- header footer script -->
 
     <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
     align-content: center;
     justify-content: space-around;
     align-items: center;">
-             <form action="#" class="w-75 pt-5" style="
+        <form action="#" class="w-75 pt-5" style="
             display: flex;
             flex-wrap: nowrap;
             flex-direction: row;
@@ -59,26 +59,231 @@
             justify-content: space-evenly;
             align-content: center;
         ">
-                <div class="form-group mb-3" style="display: flex;
+            <div class="form-group mb-3" style="display: flex;
                 flex-direction: row;
                 flex-wrap: nowrap;
                 align-content: center;
                 justify-content: space-evenly;
                 align-items: center;">
-                    <label for="pincode" style="
+                <label for="pincode" style="
                     font-size: 22px;
                     font-weight: 600;
                     padding-right: 40px;
                     font-family: monospace;
                 ">Enter Pincode</label>
-                    <input  class="form-control" id="pincode" aria-describedby="pincode" style="width: 500px;">
-                    </div>
-                <button type="submit" class="btn btn-primary" style="width: 200px;">Search</button>
-            </form>
-     
+                <input class="form-control" id="pincode" aria-describedby="pincode" style="width: 500px;">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 200px;">Search</button>
+        </form>
+
     </div>
 
-    
+
+    <div class="row pt-4">
+
+        <div class="col-6">
+            <div class="wiki-up">
+                <div id="wiki-panel" class="col-6">
+                    <div class="card bg-primary shadow-inset border-light p-3">
+                        <!-- Header -->
+                        <div class="card-header shadow-soft border border-light rounded p-3 mb-3">
+                            WIKI
+                        </div>
+                        <!-- End Header -->
+                        <!-- Content -->
+                        <div class="card-body shadow-soft border border-light rounded p-2 mb-2">
+                            <ul class="list-group list-group-flush price-list ">
+                                <li class="list-group-item border-primary pb-1"><span
+                                        class="fas fa-university"></span>State:
+                                </li>
+                                <li class="list-group-item border-primary pb-1"><i class="fas fa-city"></i> &nbsp City:
+                                </li>
+                                <li class="list-group-item border-primary pb-1"><span class="far fa-building"></span>
+                                    District:
+                                </li>
+                                <li class="list-group-item border-primary pb-1"><i class="fas fa-map-marker"></i> &nbsp
+                                    Coordinates:</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="crime-type" class="col-6">
+                    <div class="card bg-primary shadow-inset border-light p-3 ">
+                        <!-- Header -->
+                        <div class="card-header shadow-soft border border-light rounded p-3 mb-2">
+                            Type of Crimes
+                        </div>
+                        <!-- End Header -->
+                        <!-- Content -->
+                        <div class="card-body shadow-soft border border-light rounded p-2 " style="overflow: scroll;
+                        height: 219px; overflow-x: hidden;">
+                            <ul class="list-group list-group-flush price-list "> 
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">DACOITY </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">ROBBERY </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">BURGLARY
+                                </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">COUNTERFIETING
+                                </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">MURDER </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">ATTEMPT TO
+                                    MURDER </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">RAPE </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">CUSTODIAL RAPE
+                                </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">OTHER RAPE
+                                </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">KIDNAPPING &
+                                    ABDUCTION </div>
+                               
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">THEFT </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">AUTO THEFT
+                                </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">OTHER THEFT
+                                </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">RIOTS </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">CRIMINAL
+                                    BREACH OF TRUST </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">CHEATING
+                                </div>
+                                
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">ARSON </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">HURT/GREVIOUS
+                                    HURT </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">DOWRY DEATHS
+                                </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">INSULT TO
+                                    MODESTY OF WOMEN </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">CRUELTY BY
+                                    HUSBAND OR HIS RELATIVES </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">CAUSING DEATH
+                                    BY NEGLIGENCE </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">OTHER IPC
+                                    CRIMES </div>
+                                <div class="card-header shadow-soft border border-light rounded p-2 mb-2">TOTAL IPC
+                                    CRIMES </div>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="wiki-down pt-3 pl-3 pr-3 pb-2">
+                <div id="map-panel" class="">
+                    <div class="card bg-primary shadow-inset border-light p-3">
+                        <!-- Content -->
+                        <div class="card-body shadow-soft border border-light rounded p-2 mb-2">
+                            <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no"
+                                    marginheight="0" marginwidth="0"
+                                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Delhi+(Map)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+                                    href="https://www.maps.ie/draw-radius-circle-map/"></a></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="col-6">
+
+            <div id="table-panel" class="pr-5">
+                <div id="table">
+                    <div class="card bg-primary border-light shadow-soft" style="height:700px;">
+                        <div class="table-heading" style="
+                    text-align: center;
+                    font-weight: 400;
+                    font-size: 20px;
+                    font-weight: 600;
+                    font-family: system-ui;
+                    padding-top: 10px;"> Crime Data</div>
+                        <div class="card-body" id="myGrid1">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div id="middle-line" class="row pt-6" style="justify-content: center;">
+        <div class="col-8 card shadow-soft border border-light rounded" style=" height: 7px;">
+
+        </div>
+
+    </div>
+
+
+
+    <div class="row lower pt-4">
+
+
+        <div class="col-4 pl-8">
+
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_yzegai4o.json" background="transparent"
+                speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+
+        </div>
+
+
+        <div class="col-4  ">
+            <div class="card bg-primary shadow-inset border-light p-3">
+                <!-- Header -->
+                <div class="card-header shadow-soft border border-light rounded p-3 mb-2">
+                    <a href="" style="font-size: 20px;"> &nbsp Resources <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/kvsszuvz.json"
+                            trigger="loop"
+                            colors="primary:#121331,secondary:#08a88a"
+                            style="width:50px;height:50px">
+                        </lord-icon> </a>
+                </div>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body shadow-soft border border-light rounded p-2 ">
+                    <ul class="list-group list-group-flush price-list ">
+                        <div class="card-header shadow-soft border border-light rounded p-2 mb-2">
+                            <a href="https://ncrb.gov.in/en/crime-in-india-table-contents?page=9">Crime in India
+                                Table Data <i class="fas fa-angle-double-right"></i></a>
+                        </div>
+                        <div class="card-header shadow-soft border border-light rounded p-2 mb-2">
+                            <a href="https://ncrb.gov.in/en/crime-india">NCRB - Data Set <i class="fas fa-angle-double-right"></i></a>
+                        </div>
+                        <div class="card-header shadow-soft border border-light rounded p-2 mb-2">
+                           <a href="https://www.kaggle.com/rajanand/crime-in-india">Kaggle - Crime in India Data Set <i class="fas fa-angle-double-right"></i></a>
+                        </div>
+                        <div class="card-header shadow-soft border border-light rounded p-2 mb-2">
+                           <a href="https://knoema.com/NCRB_DCUVSOIPCCD2019/district-wise-crime-under-various-sections-of-indian-penal-code-ipc-crimes-during-2014"> Knoema - District-Wise Crime Data Set <i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
     <my-footer></my-footer>
 
 </body>

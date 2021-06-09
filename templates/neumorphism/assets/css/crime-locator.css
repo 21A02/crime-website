@@ -1,0 +1,30 @@
+@import url(/templates/neumorphism/assets/css/common.css);
+
+.panel1{
+    display: flex;
+}
+
+.wiki-up{
+    display: flex;
+    flex-direction: row;
+}
+
+.lower{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: flex-end;
+
+}
+
+    
+.crime-type::-webkit-scrollbar { 
+    width: 0;
+    background: transparent;  /* Optional: just make scrollbar invisible */
+    
+}
+   
