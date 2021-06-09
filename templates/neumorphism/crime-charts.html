@@ -281,9 +281,12 @@
         
 
 
-            // document.getElementById('iframeID').contentWindow.location.reload();
-            // document.getElementById('iframeID1').contentWindow.location.reload();
+            document.getElementById('iframeID').contentWindow.location.reload();
+            document.getElementById('iframeID1').contentWindow.location.reload();
             document.getElementById('iframeID2').contentWindow.location.reload();
+            document.getElementById('iframeID3').contentWindow.location.reload();
+            document.getElementById('iframeID4').contentWindow.location.reload();
+            
 
 
 testObject={'state':state_arr,'year':year_arr,'crime_type':typeofcrime_arr};
@@ -928,13 +931,25 @@ console.log('retrievedObject: ', JSON.parse(retrievedObject),"in crime chart fil
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-area-chart" role="tabpanel"
                     aria-labelledby="v-pills-area-chart-tab">
-                    <embed type="text/html" src="/templates/neumorphism/assets/Charts/area-chart.html" width="1200"
-                        height="600">
+                    <!-- <embed type="text/html" src="/templates/neumorphism/assets/Charts/area-chart.html" width="1200"
+                        height="600"> -->
+
+                        <iframe src="/templates/neumorphism/assets/Charts/area-chart.html" frameborder="0" width="1200" height="600" id="iframeID3"></iframe>
+                
+
+
+
                 </div>
                 <div class="tab-pane fade" id="v-pills-bubblechart" role="tabpanel"
                     aria-labelledby="v-pills-bubblechart-tab">
-                    <embed type="text/html" src="/templates/neumorphism/assets/Charts/bubble-chart.html" width="1200"
-                        height="600">
+                    <!-- <embed type="text/html" src="/templates/neumorphism/assets/Charts/bubble-chart.html" width="1200"
+                        height="600"> -->
+
+                        <iframe src="/templates/neumorphism/assets/Charts/bubble-chart.html" frameborder="0" width="1200" height="600" id="iframeID4"></iframe>
+              
+
+
+
                 </div>
                 <div class="tab-pane fade" id="v-pills-heat-chart" role="tabpanel"
                     aria-labelledby="v-pills-heat-chart-tab">

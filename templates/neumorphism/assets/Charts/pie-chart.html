@@ -42,7 +42,12 @@
 
       var state_arr = obj.state;
 
-      var year = obj.year[0];
+      var year = obj.year[obj.year.length-1];
+
+      var crime=obj.crime_type[obj.crime_type.length-1];
+      console.log(data[0][crime],"crime-type");
+
+
 
 
 
@@ -58,7 +63,7 @@
     //        console.log(state_arr[i], data[j].MURDER, "testing2");
             var element = {};
             element.text = state_arr[i];
-            element.values = [data[j].MURDER];
+            element.values = [data[j][crime]];
             series_new.push(element);
           }
 

@@ -63,15 +63,15 @@ var state_arr=obj.state;
  // var year_arr = [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012]
  // var state_arr = [ "KERALA", "ASSAM",  "PUNJAB"]
 
- console.log(obj.crime_type,"crime");
-var crime=obj.crime_type[0];
-console.log(data[0].TOTAL,"crime-type");
+ //console.log(obj.crime_type,"crime");
+var crime=obj.crime_type[obj.crime_type.length-1];
+console.log(data[0][crime],"crime-type");
 
 
 
-  console.log(data, "line-chart");
+  //console.log(data, "line-chart");
 
-  console.log(data.STATE_UT, "line-chart");
+  //console.log(data.STATE_UT, "line-chart");
 
 
   var arr = []
@@ -85,8 +85,8 @@ console.log(data[0].TOTAL,"crime-type");
       for (k = 0; k < data.length; k++) {
         if (data[k].YEAR == year_arr[j] && data[k].STATE_UT == state_arr[i]) {
           //console.log(data[k].TOTAL, state_arr[i], year_arr[j], "test1");
-          brr.push(data[k].TOTAL);
-          console.log(brr, "brr");
+          brr.push(data[k][crime]);
+          //console.log(brr, "brr");
         }
 
       }
@@ -97,7 +97,7 @@ console.log(data[0].TOTAL,"crime-type");
   }
 
 
-  console.log(arr);
+ // console.log(arr);
 
 
   var series_new = [];
@@ -108,7 +108,7 @@ console.log(data[0].TOTAL,"crime-type");
    // console.log(c, c + year_arr.length);
     element.values = arr.slice(c, c + year_arr.length);
     element.year = year_arr;
-    element.text = "Murder Cases";
+    element.text = crime+"Cases";
     element.state = state_arr[i];
     series_new.push(element);
     c = c + year_arr.length;

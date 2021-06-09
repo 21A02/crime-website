@@ -113,6 +113,9 @@
       var year_arr = obj.year;
 
 
+      var crime=obj.crime_type[obj.crime_type.length-1];
+console.log(data[0][crime],"crime-type");
+
 
 
 
@@ -125,9 +128,9 @@
 
 
 
-      console.log(data, "nested-pie-chart");
+     // console.log(data, "nested-pie-chart");
 
-      console.log(data.STATE_UT, "nested-pie-chart");
+      //console.log(data.STATE_UT, "nested-pie-chart");
 
       var arr = []
 
@@ -156,8 +159,8 @@
           for (k = 0; k < data.length; k++) {
 
             if (data[k].YEAR == year_arr[i] && data[k].STATE_UT == state_arr[j]) {
-              console.log(data[k].TOTAL, year_arr[i], state_arr[j], "test");
-              brr.push(data[k].TOTAL);
+              console.log(data[k][crime], year_arr[i], state_arr[j], "test");
+              brr.push(data[k][crime]);
               console.log(brr, "brr");
             }
 
@@ -172,7 +175,7 @@
 
 
 
-      console.log(arr);
+    //  console.log(arr);
 
 
 
@@ -257,7 +260,7 @@
         },
         plot: {
           tooltip: {
-            text: '%data-year CRIME %t: %v',
+            text: '%data-year ' + crime +  ' %t: %v',
             padding: '10%',
             alpha: 0.7,
             backgroundColor: 'white',

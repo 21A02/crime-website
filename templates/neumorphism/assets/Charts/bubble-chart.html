@@ -69,7 +69,20 @@
 
 
 
-      year = 2001;
+
+      var retrievedObject = localStorage.getItem('testObject');
+
+obj = JSON.parse(retrievedObject)
+
+//      console.log('retrievedObject: ', obj, "in pie chart file");
+
+
+var state_arr = obj.state;
+
+var year = obj.year[obj.year.length-1];
+
+var crime=obj.crime_type[obj.crime_type.length-1];
+console.log(data[0][crime],"crime-type");
 
 
       // var arr = []
@@ -86,19 +99,23 @@
     
 
       var i;
+
+    for(j=0;j<state_arr.length;j++){
+      console.log(state_arr[j],"state data");
       for (i = 0; i < data.length; i++) {
-        if (data[i].YEAR == year) {
-          console.log(data[i].STATE_UT, data[i].MURDER, "testing")
+        if (data[i].YEAR == year && data[i].STATE_UT == state_arr[j]) {
+          console.log(data[i].STATE_UT, data[i][crime], "testing")
           var element={};
           element.id = data[i].STATE_UT;
           element.parent = 'theworld';
           element.name = data[i].STATE_UT;
-          element.value = data[i].MURDER;
+          element.value = data[i][crime];
           element.group = 'europe'
 
           series_new.push(element);
         }
       }
+    }
 
 
 
