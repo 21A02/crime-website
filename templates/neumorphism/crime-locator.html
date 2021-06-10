@@ -38,6 +38,150 @@
     </script>
 
 
+    <script>
+        function datafillfun(n) {
+
+            //console.log("testing run...");
+            var s1 = "/templates/neumorphism/assets/data/pincodes.json";
+            var s = "/templates/neumorphism/assets/data/districtjsondata.json";
+
+
+            document.getElementById('myGrid1').innerHTML = '';
+
+            inppincode = document.getElementById('pincode').value;
+
+            console.log("testing");
+            console.log(inppincode, "pincode")
+
+            // function for reading json file
+            function readTextFile(file, callback) {
+                var rawFile = new XMLHttpRequest();
+                rawFile.overrideMimeType("application/json");
+                rawFile.open("GET", file, true);
+                rawFile.onreadystatechange = function () {
+                    if (rawFile.readyState === 4 && rawFile.status == "200") {
+                        callback(rawFile.responseText);
+                    }
+                }
+                rawFile.send(null);
+            }
+
+
+            readTextFile(s1, function (text) {
+                var data1 = JSON.parse(text);
+                console.log(data1);
+
+
+                readTextFile(s, function (text) {
+                    var data = JSON.parse(text);
+                    console.log(data);
+
+
+                    var district = "none";
+
+
+
+                    for (i = 0; i < data1.length; i++) {
+                        if (data1[i].pincode == inppincode) {
+                            district = data1[i].districtName;
+                            break;
+                        }
+                    }
+
+
+                    if (district == "none") {
+                        alert("Please check the pincode");
+                    }
+                    else {
+                        console.log(district, "district");
+                    }
+
+
+                    // arr=[]
+
+                    // for (i = 0; i < data.length; i++) {
+                    //     if (data[i].DISTRICT == district.toUpperCase()) {
+                    //         //console.log("yeh bhi chal gya");
+                    //         outdata = data[i];
+
+                    //         arr.push(data[i]);
+                    //         break;
+                    //     }
+                    // }
+
+
+                    // console.log(outdata);
+
+                    // console.log(arr);
+
+                    var tableBody = '<h5>Input Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">DISTRICT</th>';
+
+                    tableBody += '<th class="border-0" scope="col" id="total-table-heading">STATE/UT</th>';
+                    tableBody += '<th class="border-0" scope="col" id="total-table-heading">YEAR</th>';
+                    tableBody += '<th class="border-0" scope="col" id="total-table-heading">MURDER</th>';
+                    tableBody += '<th class="border-0" scope="col" id="total-table-heading">RAPE</th>';
+                    tableBody += '<th class="border-0" scope="col" id="total-table-heading">THEFT</th>';
+                    tableBody += '<th class="border-0" scope="col" id="total-table-heading">RIOTS</th>';
+                    tableBody += '<th class="border-0" scope="col" id="total-table-heading">KIDNAPPING</th>';
+                    tableBody += '<th class="border-0" scope="col" id="total-table-heading">OTHERS</th>';
+                    tableBody += '<th class="border-0" scope="col" id="total-table-heading">CRIME_AGAINST_WOMEN</th>';
+                    tableBody += '<th class="border-0" scope="col" id="total-table-heading">TOTAL</th>';
+
+
+
+
+                    tableBody += '</tr>';
+
+
+                    arr=[]
+
+for (i = 0; i < data.length; i++) {
+    if (data[i].DISTRICT == district.toUpperCase()) {
+        //console.log("yeh bhi chal gya");
+        outdata = data[i];
+
+
+
+                    d = outdata;
+
+                    tableBody += '<tr><th scope="row">' + d.DISTRICT;
+
+                    tableBody += '</th><td>' + d.STATE_UT;
+                    tableBody += '</th><td>' + d.YEAR;
+                    tableBody += '</th><td>' + d.MURDER;
+                    tableBody += '</th><td>' + d.RAPE;
+                    tableBody += '</th><td>' + d.THEFT;
+                    tableBody += '</th><td>' + d.RIOTS;
+                    tableBody += '</th><td>' + d.KIDNAPPING;
+                    tableBody += '</th><td>' + d.OTHERS;
+                    tableBody += '</th><td>' + d.CRIME_AGAINST_WOMEN;
+                    tableBody += '</th><td>' + d.TOTAL;
+
+                    tableBody += '</td></tr>';
+
+
+                }
+                    }
+
+
+                    data.forEach(function (d) {
+
+                    }
+                    );
+                    tableBody += '<table>';
+
+                    // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+
+                    var divContainer = document.getElementById("myGrid1");
+                    divContainer.innerHTML = tableBody;
+                });
+
+            });
+        }
+
+    </script>
+
+
 </head>
 
 <body onload="startTime()">
@@ -73,7 +217,7 @@
                 ">Enter Pincode</label>
                 <input class="form-control" id="pincode" aria-describedby="pincode" style="width: 500px;">
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 200px;">Search</button>
+            <button type="submit" class="btn btn-primary" style="width: 200px;" onclick="datafillfun()">Search</button>
         </form>
 
     </div>
@@ -120,7 +264,7 @@
                         <!-- Content -->
                         <div class="card-body shadow-soft border border-light rounded p-2 " style="overflow: scroll;
                         height: 219px; overflow-x: hidden;">
-                            <ul class="list-group list-group-flush price-list "> 
+                            <ul class="list-group list-group-flush price-list ">
                                 <div class="card-header shadow-soft border border-light rounded p-2 mb-2">DACOITY </div>
                                 <div class="card-header shadow-soft border border-light rounded p-2 mb-2">ROBBERY </div>
                                 <div class="card-header shadow-soft border border-light rounded p-2 mb-2">BURGLARY
@@ -137,7 +281,7 @@
                                 </div>
                                 <div class="card-header shadow-soft border border-light rounded p-2 mb-2">KIDNAPPING &
                                     ABDUCTION </div>
-                               
+
                                 <div class="card-header shadow-soft border border-light rounded p-2 mb-2">THEFT </div>
                                 <div class="card-header shadow-soft border border-light rounded p-2 mb-2">AUTO THEFT
                                 </div>
@@ -148,7 +292,7 @@
                                     BREACH OF TRUST </div>
                                 <div class="card-header shadow-soft border border-light rounded p-2 mb-2">CHEATING
                                 </div>
-                                
+
                                 <div class="card-header shadow-soft border border-light rounded p-2 mb-2">ARSON </div>
                                 <div class="card-header shadow-soft border border-light rounded p-2 mb-2">HURT/GREVIOUS
                                     HURT </div>
@@ -205,7 +349,7 @@
                     font-weight: 600;
                     font-family: system-ui;
                     padding-top: 10px;"> Crime Data</div>
-                        <div class="card-body" id="myGrid1">
+                        <div class="card-body" id="myGrid1" style="overflow: scroll">
 
                         </div>
                     </div>
@@ -247,13 +391,12 @@
             <div class="card bg-primary shadow-inset border-light p-3">
                 <!-- Header -->
                 <div class="card-header shadow-soft border border-light rounded p-3 mb-2">
-                    <a href="" style="font-size: 20px;"> &nbsp Resources <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
-                        <lord-icon
-                            src="https://cdn.lordicon.com/kvsszuvz.json"
-                            trigger="loop"
-                            colors="primary:#121331,secondary:#08a88a"
-                            style="width:50px;height:50px">
-                        </lord-icon> </a>
+                    <a href="" style="font-size: 20px;"> &nbsp Resources
+                        <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+                        <lord-icon src="https://cdn.lordicon.com/kvsszuvz.json" trigger="loop"
+                            colors="primary:#121331,secondary:#08a88a" style="width:50px;height:50px">
+                        </lord-icon>
+                    </a>
                 </div>
                 <!-- End Header -->
                 <!-- Content -->
@@ -264,13 +407,17 @@
                                 Table Data <i class="fas fa-angle-double-right"></i></a>
                         </div>
                         <div class="card-header shadow-soft border border-light rounded p-2 mb-2">
-                            <a href="https://ncrb.gov.in/en/crime-india">NCRB - Data Set <i class="fas fa-angle-double-right"></i></a>
+                            <a href="https://ncrb.gov.in/en/crime-india">NCRB - Data Set <i
+                                    class="fas fa-angle-double-right"></i></a>
                         </div>
                         <div class="card-header shadow-soft border border-light rounded p-2 mb-2">
-                           <a href="https://www.kaggle.com/rajanand/crime-in-india">Kaggle - Crime in India Data Set <i class="fas fa-angle-double-right"></i></a>
+                            <a href="https://www.kaggle.com/rajanand/crime-in-india">Kaggle - Crime in India Data Set <i
+                                    class="fas fa-angle-double-right"></i></a>
                         </div>
                         <div class="card-header shadow-soft border border-light rounded p-2 mb-2">
-                           <a href="https://knoema.com/NCRB_DCUVSOIPCCD2019/district-wise-crime-under-various-sections-of-indian-penal-code-ipc-crimes-during-2014"> Knoema - District-Wise Crime Data Set <i class="fas fa-angle-double-right"></i></a>
+                            <a
+                                href="https://knoema.com/NCRB_DCUVSOIPCCD2019/district-wise-crime-under-various-sections-of-indian-penal-code-ipc-crimes-during-2014">
+                                Knoema - District-Wise Crime Data Set <i class="fas fa-angle-double-right"></i></a>
                         </div>
 
                     </ul>
