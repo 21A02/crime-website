@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrimePredictor</title>
-    <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
-    <link rel="stylesheet" href="/templates/neumorphism/assets/css/crime-locator.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/neumorphism.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/crime-locator.css')}}">
     <!-- header footer script -->
 
     <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
 
-    <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
+    <script type="module" src="{{url_for('static',filename='assets/javascript/header-footer.js')}}"></script>
 
 
 
@@ -31,19 +31,18 @@
     <!-- sound script -->
     <script>
         function audio() {
-            var audio = new Audio("/templates/neumorphism/assets/sound/click-sound.mp3");
+            var audio = new Audio("{{url_for('static',filename='assets/sound/click-sound.mp3')}}");
             audio.play();
 
         }
     </script>
 
-
     <script>
         function datafillfun(n) {
 
             //console.log("testing run...");
-            var s1 = "/templates/neumorphism/assets/data/pincodes.json";
-            var s = "/templates/neumorphism/assets/data/districtjsondata.json";
+            var s1 = "{{url_for('static',filename='assets/data/pincodes.json')}}";
+            var s = "{{url_for('static',filename='assets/data/districtjsondata.json')}}";
 
 
             document.getElementById('myGrid1').innerHTML = '';
