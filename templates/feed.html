@@ -2,168 +2,113 @@
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <title>Crime Data Analysis
-    </title>
-    <link rel="stylesheet" href="{{url_for('static',filename='feed.css')}}">
-    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-map.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/geodata/2.1.0/countries/australia/australia.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" constent="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Document</title>
+  <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
+  <link rel="stylesheet" href="/templates/neumorphism/assets/css/feed.css">
+  <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
 
-    <style>
-        body{
-            background-image: url("/static/img/Background4.jpg");
-            background-size: cover;
-        }
-    </style>
+  <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+  <script>
+    function startTime() {
+      var time = new Date();
+      document.getElementById('txt').innerHTML = time.toLocaleString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+      });
+    }
+  </script>
+
+  <!-- header footer script -->
+  <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
 </head>
 
-<body>
-    <!---Nav Bar--->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#">Home</a>
-                <a href="#">CrimeLocator</a>
-                <a href="#">CrimeHeatmap</a>
-                <a href="#">CrimePredictor</a>
-                <a href="#">CrimeFeed</a>
+<body onload="startTime()">
+  <my-header></my-header>
 
-                <a href="#">About</a>
-                <a href="#">Help</a>
 
-            </div>
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  <!--Ticker-->
+  <rssapp-ticker id="iFc1yHN71dfYTTBQ"></rssapp-ticker>
+  <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+  <div class="container-fluid">
+    <div class="row">&nbsp;</div>
 
-            <script>
-                function openNav() {
-                    document.getElementById("mySidenav").style.width = "250px";
-                }
-
-                function closeNav() {
-                    document.getElementById("mySidenav").style.width = "0";
-                }
-            </script>
-
-            <a class="navbar-brand" href="#"></a>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                    <li class="nav-item">
-                        <a class="navbar-brand" href="#"> <img src="{{ url_for('static',filename='img/website-icon.png')}}" alt="home" height="40px"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" href="/#" role="button">Home</a>
-                        <!--PUT link here-->
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" href="{{url_for('static',filename='heatmap_final.html')}}">CrimeMap</a>
-                        <!--PUT link here-->
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" href="#" role="button">CrimeLocator</a>
-                        <!--PUT link here-->
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" href="#" role="button">CrimeFeed</a>
-                        <!--PUT link here-->
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" href="#" role="button">About Us</a>
-                        <!--PUT link here-->
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" href="#" role="button">Help</a>
-                        <!--PUT link here-->
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                    <!--PUT required items for search or remove the option-->
-                </form>
-                <!--to remove search delete form portion only-->
-            </div>
+    <div class="row">
+      <div class="col">
+        <div class="card bg-primary border-light shadow-soft">
+          <div class="ml-2 text-dark" style="font-size: large;">
+            <center>
+              <h3 class="h5 card-title mt-3"> Crime News</h3>
+            </center>
+          </div>
+          <!--crime news card-->
+          <rssapp-wall id="dp3vbkxzcikvFRqZ"></rssapp-wall>
+          <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
         </div>
-    </nav>
-    <div >
-        <h1>CrimeFeed</h1>
+      </div>
+      <div class="col">
+        <!--Live news feed-->
+        <div class="card bg-primary border-light shadow-soft pl-2 pr-2 pt-2">
+          <!-- <h3 class="h5 card-title mt-3">News Feed<p style="color:red">Live</p>
+          </h3> -->
+
+         <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Loading" data-fw-param="147160/"></script> <!-- end feedwind code -->
+
+          <div class="fw-block" style="position: relative; width: 90%; height: 50px;">
+            <iframe id="fw-iframe8886476202" name="fw-iframe8886476202" title="fw-iframe"
+              style="position: relative; min-width: 120px; min-height: 20px; width: 100%; height: 20px;"
+              class="fw-iframe" scrolling="no" frameborder="0" preloader-text="Loading" "="" data-src="
+              http://feed.mikle.com/widget/v2/146690/?id=fw-iframe8886476202&amp;preloader-text=Loading"> </iframe> <div
+              id="preview-back" style="position:absolute;top:0px;left:0px;"> <img id="preview-back-image"
+                class="fw-preview-button" onclick="onClickBack(this, 'fw-iframe8886476202', '146690/')"> </div>
+
+
+
+
+
+          <script>
+            function onClickBack(self, iframeid, id) {
+              var iframe = this.document.getElementById(iframeid);
+              if (iframe) {
+                iframe.src = ('https:' == location.protocol ? 'https:' : 'http:') + '//feed.mikle.com/widget/v2/' + id +
+                  '?id=' + iframeid;
+              }
+              self.setAttribute("class", "fw-preview-button");
+            }
+          </script>
+        </div>
+      </div>
+      <div class="pt-5">
+        <div class="card bg-primary border-light shadow-soft">
+          <div class="ml-2 text-dark" style="font-size: large;">
+            <center>
+              <h3 class="h5 card-title mt-3"> Top Stories </h3>
+            </center>
+          </div>
+          <!--Top stories-->
+          <rssapp-wall id="mtvFtqtfBsL1k4DH"></rssapp-wall>
+          <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+        </div>
+      </div>
+
+
     </div>
-    
-    
-    <section class="wrapper">
 
-        <h2 class="sentence">
-            <div class="slidingVertical">
-
-                <span id ='sp0'></span>
-                <span id ='sp1'></span>
-                <span id ='sp2'></span>
-                <span id ='sp3'></span>
-                <span id ='sp4'></span>
-                <span id ='sp5'></span>
-                <span id ='sp6'></span>
-                <span id ='sp7'></span>
-                <span id ='sp8'></span>
-                <span id ='sp9'></span>
-            </div>
-        </h2>
-
-    </section>
-
-    <script>
-
-		anychart.onDocumentReady(function () {
-		
-		var datas='{{dataz}}'
-		//var find='&#39;'
-		var data=datas.replaceAll('&#39;','"')
-        var data0=data.replaceAll('&#34;','"')
-		var data1=data0.replace('[','')
-		var data1=data1.replace(']','')	
-		var data1=data1.replaceAll('},','}#')
-		var data2=data1.split('#')
-
-
-
-
-		console.log('datas-->',datas)
-		console.log('data----->',data)
-		console.log("test")
-
-
-		console.log('data1------->',data1)
-		console.log('data2------------>',data2)
-		var i;
-		var values=[]
-		for (i = 0; i <= 9; i++) {
-            x=(data2[i].slice(29,));
-            y=x.indexOf('"link"');  
-            x=x.slice(1,y-3);  
-            values.push(x);
-                  
-		}
-		console.log('values--->',values)
-        document.getElementById("sp0").innerHTML=values[0];
-        document.getElementById("sp1").innerHTML=values[1];
-        document.getElementById("sp2").innerHTML=values[2];
-        document.getElementById("sp3").innerHTML=values[3];
-        document.getElementById("sp4").innerHTML=values[4];
-        document.getElementById("sp5").innerHTML=values[5];
-        document.getElementById("sp6").innerHTML=values[6];
-        document.getElementById("sp7").innerHTML=values[7];
-        document.getElementById("sp8").innerHTML=values[8];
-        document.getElementById("sp9").innerHTML=values[9];
-        
-        });
-        
-
-        </script>
-    <!-- <h3>{{dataz}}</h3> -->
+  </div>
+  <div class="row">&nbsp;</div>
+  <div class="row">&nbsp;</div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <my-footer></my-footer>
+    </div>
+  </div>
 
 </body>
 
