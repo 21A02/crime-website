@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="/templates/neumorphism/assets/css/feed.css">
   <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-    crossorigin="anonymous"></script>
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
 
   <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
   <script>
@@ -25,54 +25,76 @@
     }
   </script>
 
- <!-- header footer script -->
- <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
+  <!-- header footer script -->
+  <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
 </head>
 
 <body onload="startTime()">
   <my-header></my-header>
-  
 
-<!--Ticker-->
-<rssapp-ticker id="iFc1yHN71dfYTTBQ"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+
+  <!--Ticker-->
+  <rssapp-ticker id="iFc1yHN71dfYTTBQ"></rssapp-ticker>
+  <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
   <div class="container-fluid">
     <div class="row">&nbsp;</div>
-    
+
     <div class="row">
       <div class="col">
         <div class="card bg-primary border-light shadow-soft">
           <div class="ml-2 text-dark" style="font-size: large;">
-          <center><h3 class="h5 card-title mt-3"> Crime News</h3></center>
+            <center>
+              <h3 class="h5 card-title mt-3"> Crime News</h3>
+            </center>
+          </div>
+          <!--crime news card-->
+          <rssapp-wall id="dp3vbkxzcikvFRqZ"></rssapp-wall>
+          <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
         </div>
-        <!--crime news card-->
-<rssapp-wall id="dp3vbkxzcikvFRqZ"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
-      </div>
       </div>
       <div class="col">
         <!--Live news feed-->
-        <div class="card bg-primary border-light shadow-soft pl-2 pr-2" >
-        <h3 class="h5 card-title mt-3">News Feed<p style="color:red">Live</p> </h3>
+        <div class="card bg-primary border-light shadow-soft pl-2 pr-2 pt-2">
+          <!-- <h3 class="h5 card-title mt-3">News Feed<p style="color:red">Live</p>
+          </h3> -->
 
-        <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Loading"
-          data-fw-param="146690/"></script>
-        <div class="fw-block" style="position: relative; width: 90%; height: 50px;">
-          <iframe id="fw-iframe8886476202" name="fw-iframe8886476202" title="fw-iframe"
-            style="position: relative; min-width: 120px; min-height: 20px; width: 100%; height: 20px;" class="fw-iframe"
-            scrolling="no" frameborder="0" preloader-text="Loading" "="" data-src="
-            http://feed.mikle.com/widget/v2/146690/?id=fw-iframe8886476202&amp;preloader-text=Loading"></iframe>
-          <div id="preview-back" style="position:absolute;top:0px;left:0px;"> <img id="preview-back-image"
-              class="fw-preview-button" onclick="onClickBack(this, 'fw-iframe8886476202', '146690/')"> </div>
+         <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Loading" data-fw-param="147160/"></script> <!-- end feedwind code -->
 
-          <script> function onClickBack(self, iframeid, id) { var iframe = this.document.getElementById(iframeid); if (iframe) { iframe.src = ('https:' == location.protocol ? 'https:' : 'http:') + '//feed.mikle.com/widget/v2/' + id + '?id=' + iframeid; } self.setAttribute("class", "fw-preview-button"); }</script>
+          <div class="fw-block" style="position: relative; width: 90%; height: 50px;">
+            <iframe id="fw-iframe8886476202" name="fw-iframe8886476202" title="fw-iframe"
+              style="position: relative; min-width: 120px; min-height: 20px; width: 100%; height: 20px;"
+              class="fw-iframe" scrolling="no" frameborder="0" preloader-text="Loading" "="" data-src="
+              http://feed.mikle.com/widget/v2/146690/?id=fw-iframe8886476202&amp;preloader-text=Loading"> </iframe> <div
+              id="preview-back" style="position:absolute;top:0px;left:0px;"> <img id="preview-back-image"
+                class="fw-preview-button" onclick="onClickBack(this, 'fw-iframe8886476202', '146690/')"> </div>
+
+
+
+
+
+          <script>
+            function onClickBack(self, iframeid, id) {
+              var iframe = this.document.getElementById(iframeid);
+              if (iframe) {
+                iframe.src = ('https:' == location.protocol ? 'https:' : 'http:') + '//feed.mikle.com/widget/v2/' + id +
+                  '?id=' + iframeid;
+              }
+              self.setAttribute("class", "fw-preview-button");
+            }
+          </script>
         </div>
-        </div>
-        <div class="pt-5">
+      </div>
+      <div class="pt-5">
         <div class="card bg-primary border-light shadow-soft">
           <div class="ml-2 text-dark" style="font-size: large;">
-          <center><h3 class="h5 card-title mt-3"> Top Stories </h3></center></div>
+            <center>
+              <h3 class="h5 card-title mt-3"> Top Stories </h3>
+            </center>
+          </div>
           <!--Top stories-->
-          <rssapp-wall id="mtvFtqtfBsL1k4DH"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
-      </div>
+          <rssapp-wall id="mtvFtqtfBsL1k4DH"></rssapp-wall>
+          <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+        </div>
       </div>
 
 
@@ -87,7 +109,7 @@
       <my-footer></my-footer>
     </div>
   </div>
-  
+
 </body>
 
 </html>
