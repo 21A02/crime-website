@@ -177,6 +177,8 @@
 
                     arr=[]
 
+        var st;
+
 for (i = 0; i < data.length; i++) {
     if (data[i].DISTRICT == district.toUpperCase()) {
         //console.log("yeh bhi chal gya");
@@ -185,6 +187,7 @@ for (i = 0; i < data.length; i++) {
 
 
                     d = outdata;
+                    st=d.STATE_UT;
 
                     tableBody += '<tr><th scope="row">' + d.DISTRICT;
 
@@ -244,6 +247,8 @@ for (i = 0; i < data.length; i++) {
                 }
                     }
 
+                    console.log(st,"state value");
+
 
                     data.forEach(function (d) {
 
@@ -253,7 +258,7 @@ for (i = 0; i < data.length; i++) {
 
                     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
                         
-                    var source="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q="+district+"+(Map)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
+                    var source="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRV8kCEFnXyNHjpTevtrr_pb-kb7eqYY&q="+String(district).split(" ").join("")+String(st).split(" ").join("");
 
 
                     console.log(source);
@@ -273,6 +278,19 @@ for (i = 0; i < data.length; i++) {
 
 <body onload="startTime()">
     <my-header></my-header>
+
+
+
+
+    <!-- <iframe
+    width="600"
+    height="450"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    src=kanpurnagar+Uttarpradesh">
+  </iframe> -->
+
 
     <div class="row" style="display: flex;
     flex-wrap: nowrap;
