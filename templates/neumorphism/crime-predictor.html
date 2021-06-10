@@ -39,7 +39,6 @@
 
     <!-- table creation scrippt-->
     <script>
-
         function datafillfun(n) {
 
             //console.log("testing run...");
@@ -67,7 +66,8 @@
                 console.log(data);
 
 
-                var tableBody = '<h5>Input Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">ID</th>';
+                var tableBody =
+                    '<h5>Input Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">ID</th>';
 
 
                 // if (document.getElementById('total-check').checked == true) {
@@ -115,7 +115,6 @@
 
     <!-- table creation scrippt-->
     <script>
-
         function datafillfun1(n) {
 
             //console.log("testing run...");
@@ -143,7 +142,8 @@
                 console.log(data);
 
 
-                var tableBody = '<h5>Output Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">ds</th>';
+                var tableBody =
+                    '<h5>Output Table</h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">ds</th>';
 
 
                 // if (document.getElementById('total-check').checked == true) {
@@ -215,15 +215,16 @@
                         <div class="card-body">
                             <h3 class="h5 card-title mt-3">Metadata</h3>
                             <p class="card-text">Dataset contains the following columns:
-                            <ul>
-                                <li>ID: Unique identifier for the record.</li>
-                                <li>Date: Date when the incident occurred.</li>
-                                <li>Primary Type: The primary description of the crime.</li>
-                                <li>Location: The location where the incident occurred in a format that allows for
-                                    creation of maps and other geographic operations on this data portal. This location
-                                    is shifted from the actual location for partial redaction but falls on the same
-                                    block.</li>
-                            </ul>
+                                <ul>
+                                    <li>ID: Unique identifier for the record.</li>
+                                    <li>Date: Date when the incident occurred.</li>
+                                    <li>Primary Type: The primary description of the crime.</li>
+                                    <li>Location: The location where the incident occurred in a format that allows for
+                                        creation of maps and other geographic operations on this data portal. This
+                                        location
+                                        is shifted from the actual location for partial redaction but falls on the same
+                                        block.</li>
+                                </ul>
                             </p>
 
 
@@ -253,12 +254,16 @@
         <div class="col-12">
             <div class="card bg-primary border-light shadow-soft">
                 <div class="card-body">
-                    <h3 class="h5 card-title mt-3">Output chart-2</h3>
-                    <h2>Enter something about the process</h2>
+                    <h3 class="h3 card-title mt-3">Prediction Methodology</h3>
+                    <!-- <h2>Enter something about the process</h2> -->
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta quibusdam numquam aperiam
-                        consequuntur repellendus. Hic provident ducimus ratione in possimus, quos minus quidem
-                        doloribus. Eaque ea in quia maxime placeat!
+                        Prediction task was done using fbprophet forecasting. fbprophet’s default settings produce
+                        forecasts that are often accurate as those produced by skilled forecasters, with much less
+                        effort. With Prophet, we are not stuck with the results of a completely automatic procedure if
+                        the forecast is not satisfactory as an analyst with no training in time series methods can
+                        improve or tweak forecasts using a variety of easily-interpretable parameters.The Prophet uses a
+                        decomposable time series model with three main model components: trend, seasonality, and
+                        holidays.
                     </p>
                 </div>
             </div>
@@ -278,7 +283,7 @@
             <div id="table">
                 <div class="card bg-primary border-light shadow-soft" style="height:900px;">
                     <div class="card-body" id="myGrid1">
-                       
+
                     </div>
                 </div>
 
