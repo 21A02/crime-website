@@ -138,22 +138,13 @@ box-shadow:  12px 12px 25px #a8a8a8,
 
 .container {
   overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+ 
 }
-.container::-webkit-scrollbar { /* WebKit */
-  width: 0;
-  height: 0;
-}
-
 html {
   overflow: scroll;
-  overflow-x: hidden;
+ 
 }
-::-webkit-scrollbar {
-  width: 0;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
-}
+
 
 /* emoji-button-css-that makes sound */
 
@@ -266,9 +257,6 @@ padding-bottom: 10px;
   align-content: center;
   justify-content: center;
   align-items: center;
-}
-::-webkit-scrollbar {
-  display: none;
 }
 
 
