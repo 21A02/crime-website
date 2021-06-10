@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrimePredictor</title>
-    <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
-    <link rel="stylesheet" href="/templates/neumorphism/assets/css/crime-predictor.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/neumorphism.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/crime-predictor.css')}}">
     <!-- header footer script -->
 
     <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
 
-    <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
+    
+  <script type="module" src="{{url_for('static',filename='assets/javascript/header-footer.js')}}"></script>
 
 
 
@@ -31,18 +32,17 @@
     <!-- sound script -->
     <script>
         function audio() {
-            var audio = new Audio("/templates/neumorphism/assets/sound/click-sound.mp3");
+            var audio = new Audio("{{url_for('static',filename='assets/sound/click-sound.mp3')}}");
             audio.play();
 
         }
     </script>
-
     <!-- table creation scrippt-->
     <script>
         function datafillfun(n) {
 
             //console.log("testing run...");
-            var s = "/templates/neumorphism/assets/data/predictinput.json";
+            var s = "{{url_for('static',filename='assets/data/predictinput.json')}}";
 
 
             document.getElementById('myGrid').innerHTML = '';
@@ -118,7 +118,8 @@
         function datafillfun1(n) {
 
             //console.log("testing run...");
-            var s = "/templates/neumorphism/assets/data/predictoutput.json";
+            var s = "{{url_for('static',filename='assets/data/predictinput.json')}}";
+            
 
 
             document.getElementById('myGrid1').innerHTML = '';
@@ -295,7 +296,7 @@
                 <div class="card bg-primary border-light shadow-soft">
                     <div class="card-body">
                         <h3 class="h5 card-title mt-3">Visualizing future results</h3>
-                        <img src="/templates/neumorphism/assets/images/output1.png" alt="">
+                        <img src="{{url_for('static',filename='assets/images/output1.png')}}">
                     </div>
                 </div>
             </div>
@@ -304,7 +305,7 @@
                 <div class="card bg-primary border-light shadow-soft">
                     <div class="card-body">
                         <h3 class="h5 card-title mt-3">Expected trend in the future</h3>
-                        <img src="/templates/neumorphism/assets/images/output2.png" alt="">
+                        <img src="{{url_for('static',filename='assets/images/output2.png')}}">
                     </div>
                 </div>
             </div>

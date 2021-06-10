@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="/templates/neumorphism/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/templates/neumorphism/assets/css/about.css">
-    <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/about.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/neumorphism.css')}}">
 
     <!-- header footer  script -->
-    <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
+    <script type="module" src="{{url_for('static',filename='assets/javascript/header-footer.js')}}"></script>
 
 
     <script src="https://kit.fontawesome.com/07e47d8e81.js" crossorigin="anonymous"></script>
@@ -45,7 +45,7 @@
     <!-- sound script -->
     <script>
         function audio() {
-            var audio = new Audio("/templates/neumorphism/assets/sound/click-sound.mp3");
+            var audio = new Audio("{{url_for('static',filename='assets/sound/click-sound.mp3')}}");
             audio.play();
 
         }
@@ -195,7 +195,7 @@
                         <div class="card-header">
                             <div
                                 class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
-                                <img src="/templates/neumorphism/assets/images/Rv_profile.jpeg"
+                                <img src="{{url_for('static',filename='assets/images/Rv_profile.jpeg')}}"
                                     class="card-img-top rounded" alt="Profile photo">
                             </div>
                         </div>
@@ -246,7 +246,7 @@
                         <div class="card-header">
                             <div
                                 class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
-                                <img src="/templates/neumorphism/assets/images/Arpita_profile.jpeg"
+                                <img src="{{url_for('static',filename='assets/images/Arpita_profile.jpeg')}}"
                                     class="card-img-top rounded" alt="Profile photo">
                             </div>
                         </div>
@@ -298,7 +298,7 @@
                         <div class="card-header">
                             <div
                                 class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
-                                <img src="/templates/neumorphism/assets/images/Ashu_profile.jpeg"
+                                <img src="{{url_for('static',filename='assets/images/Ashu_profile.jpeg')}}"
                                     class="card-img-top rounded" alt="Profile photo">
                             </div>
                         </div>
@@ -349,7 +349,7 @@
                         <div class="card-header">
                             <div
                                 class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
-                                <img src="/templates/neumorphism/assets/images/Ayushi_profile.jpeg"
+                                <img src="{{url_for('static',filename='assets/images/Ayushi_profile.jpeg')}}"
                                     class="card-img-top rounded" alt="Profile photo">
                             </div>
                         </div>
