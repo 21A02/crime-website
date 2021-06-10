@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
+   
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrimeCharts</title>
-    <link rel="stylesheet" href="/templates/neumorphism/assets/css/crime-charts.css">
-    <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/crime-charts.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/neumorphism.css')}}">
 
-    <script src="/templates/neumorphism/assets/javascript/crime-charts.js"></script>
+    <script src="{{url_for('static',filename='assetsassets/javascript/crime-charts.js')}}"></script>
 
     <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
@@ -46,18 +46,17 @@
 
 
 
-    <!-- sound script -->
-    <script>
-        function audio() {
-            var audio = new Audio("/templates/neumorphism//assets/sound/click-sound.mp3");
-            audio.play();
+     <!-- sound script -->
+  <script>
+    function audio() {
+        var audio = new Audio("{{url_for('static',filename='assets/sound/click-sound.mp3')}}");
+        audio.play();
 
-        }
-    </script>
+    }
+</script>
 
     <!-- header footer script -->
-
-    <script type="module" src="/templates/neumorphism/assets/javascript/header-footer.js"></script>
+  <script type="module" src="{{url_for('static',filename='assets/javascript/header-footer.js')}}"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 
@@ -344,8 +343,9 @@ console.log('retrievedObject: ', JSON.parse(retrievedObject),"in crime chart fil
         align-items: center;
         justify-content: flex-start;
     ">
+   
             <div class="btn table-buttons-item">Select Charts &nbsp <img
-                    src="/templates/neumorphism/assets/images/scroll-gif.gif" alt="scroll-down-animation"
+                    src="{{url_for('static',filename='assets/images/scroll-gif.gif')}}" alt="scroll-down-animation"
                     style="width: 30px; height: 30px;">
             </div>
             <div class="table-buttons-item">
@@ -931,10 +931,10 @@ console.log('retrievedObject: ', JSON.parse(retrievedObject),"in crime chart fil
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-area-chart" role="tabpanel"
                     aria-labelledby="v-pills-area-chart-tab">
-                    <!-- <embed type="text/html" src="/templates/neumorphism/assets/Charts/area-chart.html" width="1200"
+                    <!-- <embed type="text/html" src="{{url_for('static',filename='assets/Charts/area-chart.html')}}" width="1200"
                         height="600"> -->
 
-                        <iframe src="/templates/neumorphism/assets/Charts/area-chart.html" frameborder="0" width="1200" height="600" id="iframeID3"></iframe>
+                        <iframe src="{{url_for('static',filename='assets/Charts/area-chart.html')}}" frameborder="0" width="1200" height="600" id="iframeID3"></iframe>
                 
 
 
@@ -942,10 +942,10 @@ console.log('retrievedObject: ', JSON.parse(retrievedObject),"in crime chart fil
                 </div>
                 <div class="tab-pane fade" id="v-pills-bubblechart" role="tabpanel"
                     aria-labelledby="v-pills-bubblechart-tab">
-                    <!-- <embed type="text/html" src="/templates/neumorphism/assets/Charts/bubble-chart.html" width="1200"
+                    <!-- <embed type="text/html" src="{{url_for('static',filename='assets/Charts/bubble-chart.html')}}" width="1200"
                         height="600"> -->
 
-                        <iframe src="/templates/neumorphism/assets/Charts/bubble-chart.html" frameborder="0" width="1200" height="600" id="iframeID4"></iframe>
+                        <iframe src="{{url_for('static',filename='assets/Charts/bubble-chart.html')}}" frameborder="0" width="1200" height="600" id="iframeID4"></iframe>
               
 
 
@@ -953,53 +953,53 @@ console.log('retrievedObject: ', JSON.parse(retrievedObject),"in crime chart fil
                 </div>
                 <div class="tab-pane fade" id="v-pills-heat-chart" role="tabpanel"
                     aria-labelledby="v-pills-heat-chart-tab">
-                    <embed type="text/html" src="/templates/neumorphism/assets/Charts/heat-chart.html" width="1200"
+                    <embed type="text/html" src="{{url_for('static',filename='assets/Charts/heat-chart.html')}}" width="1200"
                         height="600">
                 </div>
                 <div class="tab-pane fade" id="v-pills-barchart" role="tabpanel" aria-labelledby="v-pills-barchart-tab">
-                    <!-- <embed type="text/html" src="/templates/neumorphism/assets/Charts/bar-chart.html" width="1200"
+                    <!-- <embed type="text/html" src="{{url_for('static',filename='assets/Charts/bar-chart.html')}}" width="1200"
                         height="600"> -->
-                    <iframe src="/templates/neumorphism/assets/Charts/bar-chart.html" frameborder="0" width="1200" height="600" id="iframeID"></iframe>
+                    <iframe src="{{url_for('static',filename='assets/Charts/bar-chart.html')}}" frameborder="0" width="1200" height="600" id="iframeID"></iframe>
                 </div>
                 <div class="tab-pane fade" id="v-pills-line-chart" role="tabpanel"
                     aria-labelledby="v-pills-line-chart-tab">
-                    <embed type="text/html" src="/templates/neumorphism/assets/Charts/line-chart.html" width="1200"
+                    <embed type="text/html" src="{{url_for('static',filename='assets/Charts/line-chart.html')}}" width="1200"
                         height="600">
                 </div>
                 <div class="tab-pane fade" id="v-pills-nested-pie-chart" role="tabpanel"
                     aria-labelledby="v-pills-nested-pie-chart-tab">
-                    <!-- <embed type="text/html" src="/templates/neumorphism/assets/Charts/nested-pie-chart.html"
+                    <!-- <embed type="text/html" src="{{url_for('static',filename='assets/Charts/nested-pie-chart.html')}}"
                         width="1200" height="600"> -->
 
-                        <iframe src="/templates/neumorphism/assets/Charts/nested-pie-chart.html" frameborder="0" width="1200" height="600" id="iframeID2"></iframe>
+                        <iframe src="{{url_for('static',filename='assets/Charts/nested-pie-chart.html')}}" frameborder="0" width="1200" height="600" id="iframeID2"></iframe>
                 
 <!-- 
-                        <iframe src="/templates/neumorphism/assets/Charts/nested-pie-chart.html" frameborder="0"></iframe> -->
+                        <iframe src="{{url_for('static',filename='assets/Charts/nested-pie-chart.html')}}" frameborder="0"></iframe> -->
                 </div>
                 <div class="tab-pane fade" id="v-pills-pie-chart" role="tabpanel"
                     aria-labelledby="v-pills-pie-chart-tab">
-                    <!-- <embed type="text/html" src="/templates/neumorphism/assets/Charts/pie-chart.html" width="1200"
+                    <!-- <embed type="text/html" src="{{url_for('static',filename='assets/Charts/pie-chart.html')}}" width="1200"
                         height="600">
                  -->
 
-                 <iframe src="/templates/neumorphism/assets/Charts/pie-chart.html" frameborder="0" width="1200" height="600" id="iframeID1"></iframe>
+                 <iframe src="{{url_for('static',filename='assets/Charts/pie-chart.html')}}" frameborder="0" width="1200" height="600" id="iframeID1"></iframe>
                 
                 
                 
                     </div>
                 <div class="tab-pane fade" id="v-pills-radar-chart" role="tabpanel"
                     aria-labelledby="v-pills-radar-chart-tab">
-                    <embed type="text/html" src="/templates/neumorphism/assets/Charts/radar-chart.html" width="1200"
+                    <embed type="text/html" src="{{url_for('static',filename='assets/Charts/radar-chart.html')}}" width="1200"
                         height="600">
                 </div>
                 <div class="tab-pane fade" id="v-pills-rank-flow-chart" role="tabpanel"
                     aria-labelledby="v-pills-rank-flow-chart-tab">
-                    <embed type="text/html" src="/templates/neumorphism/assets/Charts/rank-flow-chart.html" width="1200"
+                    <embed type="text/html" src="{{url_for('static',filename='assets/Charts/rank-flow-chart.html')}}" width="1200"
                         height="600">
                 </div>
                 <div class="tab-pane fade" id="v-pills-tile-chart" role="tabpanel"
                     aria-labelledby="v-pills-tile-chart-tab">
-                    <embed type="text/html" src="/templates/neumorphism/assets/Charts/tile-chart.html" width="1200"
+                    <embed type="text/html" src="{{url_for('static',filename='assets/Charts/tile-chart.html')}}" width="1200"
                         height="600">
                 </div>
             </div>
