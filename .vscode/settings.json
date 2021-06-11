@@ -1,4 +1,5 @@
 {
     "compile-hero.disable-compile-files-on-did-save-code": false,
-    "liveServer.settings.port": 5503
+    "liveServer.settings.port": 5503,
+    "python.formatting.provider": "yapf"
 }

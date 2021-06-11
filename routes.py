@@ -42,7 +42,13 @@ def feed():
 def about():
     return render_template('about.html')
 
+@app.route('/templates/neumorphism/help-page.html')
+def helppage():
+    return render_template('help-page.html')
 
+# @app.route('/templates/neumorphism/helppage.html')
+# def helppage():
+#     return render_template('helppage.html')
 
 # @app.route('/feed.html')
 # def feed():

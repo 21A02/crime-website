@@ -1,0 +1,21 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+.item{
+    padding-left: 90px;
+    padding-right: 20px;
+}
+ h2{
+    font-family: monospace;
+ }
+p{
+    font-size: 18px;
+    font-family: monospace;
+}
+body{
+   margin-top: auto;
+}

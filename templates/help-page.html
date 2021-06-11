@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/neumorphism.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/crime-locator.css')}}">
+       <!-- header footer script -->
+    <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/help.css')}}">
+    <script type="module" src="{{url_for('static',filename='assets/javascript/header-footer.js')}}"></script>
+    
+    
+     <!-- live time -->
+     <script>
+        function startTime() {
+            var time = new Date();
+            document.getElementById('txt').innerHTML = time.toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            });
+        }
+    </script>
+    <!-- sound script -->
+    <script>
+        function audio() {
+            var audio = new Audio("{{url_for('static',filename='assets/sound/click-sound.mp3')}}");
+            audio.play();
+
+        }
+    </script>
+
+    
+</head>
+
+<body onload="startTime()">
+    <my-header></my-header>
+    <div class="row pt-6">
+        <div class="item col-6">
+            <h2>Know your website!</h2>
+            <p>
+                This website is an attempt to visulaze the Crime data in a simple and easy manner.
+                Whenever you will visit this website you can easily go through the crime statistics
+                and understand the data that is fetched from various news websites.
+                <br>
+                The analysis of crime rates for Indian states or union territories is very useful in studying if the
+                crime
+                rate is increasing or decreasing in a particular region. If the crime has increased, necessary measures
+                can be taken by the officials to study why the crime has increased and also how to reduce the crime rate
+                in that region.
+            </p>
+        </div>
+        <div class="item col-6 ">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_oncmdjpg.json" background="transparent"
+                speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="item col-6 pl-8 pr-10 pb-10 pt-5">
+            <img src="/templates/neumorphism/assets/images/image.jpeg">
+        </div>
+        <div class="item col-6">
+            <h2> Know your data sources! </h2>
+            <br>
+            <p>
+                We have collected the crime data from various resources.
+                <li>The historic data used for training the model has been taken from <b>Kaggle</b>.</li>
+                <li> We have used web scraping to fetch crime data from news websites. </li>
+            </p>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="item col-6">
+            <h2> Chart Library</h2>
+            <p>
+                <h5>Zing Charts</h5>
+                Zing Chart is a JavaScript charting library that lets users create interactive charts & graphs for web
+                applications.
+                <br>
+                We have used the following charts -
+                <li>Area Chart</li>
+                <li>Bar Chart</li>
+                <li>Bubblepack Chart</li>
+                <li>Line Chart</li>
+                <li>Nested pie Chart</li>
+                <li>Pie Chart</li>
+                <li>Radar Chart </li>
+                <br>
+                <a href="https://www.zingchart.com/docs/tutorials/loading-data" target="_blank"> <button
+                        class="btn btn-primary text-dark mr-2 mb-2" type="button"> Learn More </button></a>
+            </p>
+        </div>
+        <div class="item col-6 ">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_q5qeoo3q.json" background="transparent"
+                speed="1" style="width: 600px; height: 600px;" loop autoplay></lottie-player>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="item col-6">
+            <h2> Lorem ipsum dolor sit amet consectetur</h2>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolores unde praesentium veniam adipisci
+                laborum eos recusandae vitae, provident totam, earum nulla quis quae cum ex fuga. Atque distinctio,
+                consectetur porro quidem vero quod perferendis officiis impedit, quo itaque voluptates nisi quisquam
+                dolorum a illo culpa repellat velit iusto odio? Soluta perspiciatis, dolor nisi accusamus possimus
+                architecto autem officiis doloribus minima nihil cum amet? Sed deserunt, nulla eum architecto aut
+                inventore totam culpa? Consectetur numquam nihil ratione optio qui voluptatibus delectus vitae,
+                inventore incidunt repellat possimus asperiores natus nobis rem adipisci, iste sunt?
+            </p>
+        </div>
+        <div class="item col-6 ">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_bkyg3cnl.json"
+                background="transparent" speed="1" style="width: 600px; height: 600px;" loop autoplay></lottie-player>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" style="display: flex; justify-content: center;">
+            <iframe
+                src="https://onedrive.live.com/embed?cid=B834808A69FDA1A1&amp;resid=B834808A69FDA1A1%213437&amp;authkey=AHcw6rPdpPy6Wrk&amp;em=2&amp;wdAr=1.7777777777777777"
+                width="709px" height="424px" frameborder="0"> <a target="_blank" href="https://office.com"></a> <a
+                    target="_blank" href="https://office.com/webapps"></a>.</iframe>
+            <div class="row pt-6">
+            </div>
+        </div>
+        <my-footer></my-footer>
+</body>
+
+</html>
