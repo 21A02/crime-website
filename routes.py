@@ -19,26 +19,26 @@ def tabletest():
     return render_template('test.html')
 
 
-@app.route('/crime-charts.html')
+@app.route('/templates/neumorphism/crime-charts.html')
 def crime_charts():
     return render_template('crime-charts.html')
 
 
-@app.route('/crime-locator.html')
+@app.route('/templates/neumorphism/crime-locator.html')
 def crime_locator():
     return render_template('crime-locator.html')
 
 
-@app.route('/crime-predictor.html')
+@app.route('/templates/neumorphism/crime-predictor.html')
 def crime_predictor():
     return render_template('crime-predictor.html')
 
-@app.route('/feed.html')
+@app.route('/templates/neumorphism/feed.html')
 def feed():
     return render_template('feed.html')
 
 
-@app.route('/about.html')
+@app.route('/templates/neumorphism/about.html')
 def about():
     return render_template('about.html')
 
@@ -55,7 +55,7 @@ def about():
 
 
 @app.route('/')
-@app.route('/index')
+@app.route('/templates/neumorphism/index.html')
 def index():
     #return render_template('mapper.html')
     return render_template('index.html')
