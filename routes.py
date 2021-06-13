@@ -1,5 +1,6 @@
 from app import app,gsheet
 from flask import jsonify, request, abort,render_template, url_for,json
+import flask
 import os
 import re
 import json
@@ -12,11 +13,11 @@ import json
 #     return render_template('test1.html',dataz=z)
 
 
-@app.route('/test.html')
-def tabletest():
-    #x=str(gsheet.get_all_records())
-    #z=gsheet.get_all_records()
-    return render_template('test.html')
+
+@app.route('/hello/<user>')
+def hello_name(user):
+    
+    return render_template('hello.html', name = user)
 
 
 @app.route('/crime-charts.html')
@@ -58,6 +59,29 @@ def helppage():
 #     json_url = os.path.join(SITE_ROOT, "static/data", "Names1.json")
 #     data = json.load(open(json_url))
 #     return render_template('feed.html', dataz=data)
+
+
+
+# @app.route('/my-link/')
+# def my_link():
+#   print ('I got clicked!')
+
+#   return 'Click.'
+
+
+
+# @app.route('/route_name')
+# def script_output():
+#     output = execute('./script')
+#     return render_template('template_name.html',output=output)
+
+@app.route('/yield')
+def index1():
+    def inner():
+        for x in range(100):
+            time.sleep(1)
+            yield '%s<br/>\n' % x
+    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show the partial page immediately
 
 
 @app.route('/')

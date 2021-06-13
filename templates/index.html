@@ -171,13 +171,13 @@
   </script>
 
 
-
-  <!-- running python script -->
+<!-- 
+  
   <script>
     function postData(input) {
       $.ajax({
         type: "POST",
-        url: "/templates/neumorphism/python-test.py",
+        url: "{{url_for('static',filename='assets/python_codes/python_test.py')}}",
         data: {
           param: input
         },
@@ -189,7 +189,7 @@
       // do something with the response
       console.log(response, "oyee hoyee");
     }
-  </script>
+  </script> -->
 
 
 
@@ -198,6 +198,19 @@
 </head>
 
 <body onload="startTime();datafillfun(1);postData('data to process');">
+
+<!-- 
+  <h1>My Website</h1>
+  <form action="/my-link/">
+      <input type="submit" value="Click me" />
+  </form>
+  
+  <button> <a href="/my-link/">Click me</a></button>
+ -->
+
+ <p>{{ output }}</p>
+
+
 
   <my-header></my-header>
 
