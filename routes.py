@@ -47,42 +47,6 @@ def about():
 def helppage():
     return render_template('help-page.html')
 
-# @app.route('/helppage.html')
-# def helppage():
-#     return render_template('helppage.html')
-
-# @app.route('/feed.html')
-# def feed():
-#     #return render_template('feed.html')
-
-#     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-#     json_url = os.path.join(SITE_ROOT, "static/data", "Names1.json")
-#     data = json.load(open(json_url))
-#     return render_template('feed.html', dataz=data)
-
-
-
-# @app.route('/my-link/')
-# def my_link():
-#   print ('I got clicked!')
-
-#   return 'Click.'
-
-
-
-# @app.route('/route_name')
-# def script_output():
-#     output = execute('./script')
-#     return render_template('template_name.html',output=output)
-
-@app.route('/yield')
-def index1():
-    def inner():
-        for x in range(100):
-            time.sleep(1)
-            yield '%s<br/>\n' % x
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show the partial page immediately
-
 
 @app.route('/')
 @app.route('/index.html')
