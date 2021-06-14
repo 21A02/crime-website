@@ -205,12 +205,19 @@
                             the relevant dataset upladed.</p>
                     </div>
                 </div>
-                <div id="upload-file" class="upload_items pt-4">
+
+                <div id="upload-file" class="upload_items pt-4 " style="display: flex;align-items: center;flex-wrap: nowrap;">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile">
                         <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
+                    <br>
+                    <div class="btn btn-primary text-success" style="margin-left: 10px;
+                    width: 172px;
+                "> Load Data <i class="fas fa-chevron-right"></i></div>
+    
                 </div>
+                
                 <div id="upload-metadata" class="upload_items pt-4">
                     <div class="card bg-primary border-light shadow-soft">
                         <div class="card-body">
@@ -252,7 +259,7 @@
     <!-- ----------------------------middle panel----------------------------------->
 
     <div id="middle-panel" class="row pt-5 pl-6 pr-6">
-        <div class="col-12">
+        <div class="col-6">
             <div class="card bg-primary border-light shadow-soft">
                 <div class="card-body">
                     <h3 class="h3 card-title mt-3">Prediction Methodology</h3>
@@ -268,6 +275,15 @@
                     </p>
                 </div>
             </div>
+        </div>
+
+        <div class="col-4" style="display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;">
+            <h4>Press the button to run.</h4>
+            <div class="btn btn-primary btn-pill text-success">Run <i class="fas fa-chevron-right"></i></div>
+    
         </div>
     </div>
 
