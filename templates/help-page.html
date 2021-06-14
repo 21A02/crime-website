@@ -8,14 +8,14 @@
     <title>Help</title>
     <link rel="stylesheet" href="{{url_for('static',filename='assets/css/neumorphism.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='assets/css/crime-locator.css')}}">
-       <!-- header footer script -->
+    <!-- header footer script -->
     <script src="https://kit.fontawesome.com/7bdcd846e8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{url_for('static',filename='assets/css/help.css')}}">
     <script type="module" src="{{url_for('static',filename='assets/javascript/header-footer.js')}}"></script>
-    
-    
-     <!-- live time -->
-     <script>
+
+
+    <!-- live time -->
+    <script>
         function startTime() {
             var time = new Date();
             document.getElementById('txt').innerHTML = time.toLocaleString('en-US', {
@@ -34,7 +34,7 @@
         }
     </script>
 
-    
+
 </head>
 
 <body onload="startTime()">
@@ -78,21 +78,21 @@
         <div class="item col-6">
             <h2> Chart Library</h2>
             <p>
-                <h5>Zing Charts</h5>
-                Zing Chart is a JavaScript charting library that lets users create interactive charts & graphs for web
-                applications.
-                <br>
-                We have used the following charts -
-                <li>Area Chart</li>
-                <li>Bar Chart</li>
-                <li>Bubblepack Chart</li>
-                <li>Line Chart</li>
-                <li>Nested pie Chart</li>
-                <li>Pie Chart</li>
-                <li>Radar Chart </li>
-                <br>
-                <a href="https://www.zingchart.com/docs/tutorials/loading-data" target="_blank"> <button
-                        class="btn btn-primary text-dark mr-2 mb-2" type="button"> Learn More </button></a>
+            <h5>Zing Charts</h5>
+            Zing Chart is a JavaScript charting library that lets users create interactive charts & graphs for web
+            applications.
+            <br>
+            We have used the following charts -
+            <li>Area Chart</li>
+            <li>Bar Chart</li>
+            <li>Bubblepack Chart</li>
+            <li>Line Chart</li>
+            <li>Nested pie Chart</li>
+            <li>Pie Chart</li>
+            <li>Radar Chart </li>
+            <br>
+            <a href="https://www.zingchart.com/docs/tutorials/loading-data" target="_blank"> <button
+                    class="btn btn-primary text-dark mr-2 mb-2" type="button"> Learn More </button></a>
             </p>
         </div>
         <div class="item col-6 ">
@@ -101,7 +101,7 @@
                 speed="1" style="width: 600px; height: 600px;" loop autoplay></lottie-player>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col" style="display: flex; justify-content: center;">
             <iframe
@@ -111,7 +111,18 @@
             <div class="row pt-6">
             </div>
         </div>
-        <my-footer></my-footer>
+
+    </div>
+
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <br>
+        </div>
+        <div class="col-3"></div>
+    </div>
+
+    <my-footer></my-footer>
 </body>
 
 </html>
