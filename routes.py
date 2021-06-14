@@ -33,10 +33,25 @@ def crime_charts():
 def crime_locator():
     return render_template('crime-locator.html')
 
-
-@app.route('/crime-predictor.html')
+from werkzeug import secure_filename
+@app.route('/crime-predictor.html', methods = ['GET', 'POST'])
 def crime_predictor():
+    if request.method == 'POST':
+        f = request.files['file']
+        f.save(secure_filename(f.filename))
+        print('file uploaded successfully')
     return render_template('crime-predictor.html')
+
+
+
+@app.route('/uploader', methods = ['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+      f = request.files['file']
+      f.save(secure_filename(f.filename))
+      #return 'file uploaded successfully'
+    return render_template('crime-predictor.html')
+      
 
 @app.route('/feed.html')
 def feed():

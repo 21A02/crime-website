@@ -83,6 +83,10 @@
                 //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">ROBBERY</th>';
                 // }
 
+
+
+                
+
                 tableBody += '</tr>';
 
 
@@ -148,7 +152,7 @@
 
 
                 // if (document.getElementById('total-check').checked == true) {
-                tableBody += '<th class="border-0" scope="col" id="total-table-heading">trend</th>';
+                // tableBody += '<th class="border-0" scope="col" id="total-table-heading">trend</th>';
                 // }
                 // if (document.getElementById('murder-check').checked == true) {
                 //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">PRIMARY TYPE</th>';
@@ -159,6 +163,27 @@
                 // if (document.getElementById('robbery-check').checked == true) {
                 //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">ROBBERY</th>';
                 // }
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Case Number</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Date</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Block</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">IUCR</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Primary Type</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Description</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Location Description</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Arrest</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Domestic</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Beat</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">District</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Ward</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Community Area</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">FBI Code</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">X Coordinate</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Y Coordinate</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Year</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Updated On</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Latitude</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Longitude</th>';
+                tableBody += '<th class="border-0" scope="col" id="total-table-heading">Location</th>';
 
                 tableBody += '</tr>';
 
@@ -208,8 +233,13 @@
 
                 <div id="upload-file" class="upload_items pt-4 " style="display: flex;align-items: center;flex-wrap: nowrap;">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
+                    <form action = "http://localhost:5000/uploader" method = "POST" 
+                        enctype = "multipart/form-data">
+                        <input type="file" class="custom-file-input" id="customFile" name="file">
                         <label class="custom-file-label" for="customFile">Choose file</label>
+                        <input type = "submit"/>
+                        
+                    </form> 
                     </div>
                     <br>
                     <div class="btn btn-primary text-success" style="margin-left: 10px;
