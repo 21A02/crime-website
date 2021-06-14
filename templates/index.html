@@ -198,7 +198,14 @@
       console.log(response, "oyee hoyee");
     }
   </script> -->
-
+  <script>
+    // On mouse-over, execute myFunction
+    function buttonfunction() {
+      document.getElementById("testrun").click(); // Click on the checkbox
+    console.log("button chal rhi");
+    
+    }
+    </script>
 
 
 
@@ -781,7 +788,10 @@
           </div>
         </div>
         <div><i class="fas fa-code"></i></div>
-        <div class="btn btn-primary btn-pill text-success">Run <i class="fas fa-chevron-right"></i></div>
+        <form method="POST" action="/">
+        <div class="btn btn-primary btn-pill text-success" onclick="buttonfunction();">Run <i class="fas fa-chevron-right"></i></div>
+        <input type="submit" name="testrun" id="testrun" style="visibility: hidden;">          
+      </form>
       </div>
 
       <div id="web-scrapping-terminal" class="card bg-primary border-light shadow-soft"
