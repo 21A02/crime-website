@@ -28,7 +28,7 @@ def search_loc(search_link):
     except (AttributeError , IndexError, TypeError):
         pass
 
-def search_latitude_longitude(city):
+def search_latitude_longitude(city,link):
 
     try:
         
@@ -46,12 +46,13 @@ def search_latitude_longitude(city):
             location = geolocator.geocode(cityname)
             
             
-            return (location.latitude, location.longitude)
+            return City_name,(location.latitude, location.longitude),link
         else:
             return 0
         
     except(AttributeError , IndexError ,TypeError):
         pass
+
 
 def webscrappingfun():
     result=[]

@@ -33,7 +33,7 @@ def crime_charts():
 def crime_locator():
     return render_template('crime-locator.html')
 
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 @app.route('/crime-predictor.html', methods = ['GET', 'POST'])
 def crime_predictor():
     if request.method == 'POST':
