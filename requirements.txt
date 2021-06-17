@@ -1,5 +1,4 @@
 beautifulsoup4==4.8.2
-fbprophet==0.6
 Flask==1.0.2
 Flask-SocketIO==3.3.1
 geopy==2.1.0
@@ -23,7 +22,6 @@ pandas==1.2.4
 pandasql==0.7.3
 pep8==1.7.1
 plotly==4.14.3
-pystan==2.19.1.1
 psutil==5.6.7
 py==1.8.1
 requests==2.22.0
