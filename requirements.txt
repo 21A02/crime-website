@@ -34,6 +34,7 @@ pickleshare==0.7.5
 Pillow==7.0.0
 pkginfo==1.5.0.1
 plotly==4.14.3
+pystan==2.19.1.1
 pluggy==0.13.1
 ply==3.11
 psutil==5.6.7
