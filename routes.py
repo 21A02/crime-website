@@ -1,4 +1,5 @@
-from app import app,gsheet
+from app import app
+#,gsheet
 from flask import jsonify, request, abort,render_template, url_for,json
 import flask
 import os
@@ -18,10 +19,10 @@ import json
 
 
 
-@app.route('/hello/<user>')
-def hello_name(user):
+# @app.route('/hello/<user>')
+# def hello_name(user):
     
-    return render_template('hello.html', name = user)
+#     return render_template('hello.html', name = user)
 
 
 @app.route('/crime-charts.html')

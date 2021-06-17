@@ -46,7 +46,7 @@ def search_latitude_longitude(city,link):
             location = geolocator.geocode(cityname)
             
             
-            return City_name,(location.latitude, location.longitude),link
+            return (location.latitude, location.longitude)
         else:
             return 0
         
