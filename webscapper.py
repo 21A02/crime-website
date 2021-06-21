@@ -28,7 +28,7 @@ def search_loc(search_link):
     except (AttributeError , IndexError, TypeError):
         pass
 
-def search_latitude_longitude(city,link):
+def search_latitude_longitude(city):
 
     try:
         
@@ -53,11 +53,10 @@ def search_latitude_longitude(city,link):
     except(AttributeError , IndexError ,TypeError):
         pass
 
-
 def webscrappingfun():
     result=[]
 
-    for page in range(10):
+    for page in range(2):
         
         search_string="https://www.indiatoday.in/crime?page="+str(page)
         print("\n","--------- Page:",page,":",search_string,"\n")
