@@ -56,7 +56,7 @@ def search_latitude_longitude(city):
 def webscrappingfun():
     result=[]
 
-    for page in range(2):
+    for page in range(1):
         
         search_string="https://www.indiatoday.in/crime?page="+str(page)
         print("\n","--------- Page:",page,":",search_string,"\n")
@@ -102,9 +102,45 @@ def webscrappingfun():
             
             
 
-    #df = pd.DataFrame(result, columns=['news', 'link', 'city','lat'])  
+    df = pd.DataFrame(result, columns=['news', 'link', 'city','lat'])  
 
-    #df.to_csv('newsfile2.csv', index=False, encoding='utf-8')
+    df.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
+
+    mydata=df
+
+    print(len(mydata))
+
+    X=mydata["lat"]
+
+    X_array=X.values.reshape(len(mydata))
+    X_array=list(X_array)
+
+    print("Data Collected:",X_array)
+
+
+    data=[]
+
+    for i in X_array:
+        i=str(i)
+        if (type(i) == str):
+            print("testinggggggggg")
+            i=str(i[1:-1])
+            val=i.split(", ")
+            if(val[0] or val[1] != None ):
+                data.append([float(val[0]),float(val[1])])
+
+    print("Final Data Extracted: /n",data)
+
+
+    import folium
+    from folium import plugins
+
+    heatmap_map = folium.Map(location=[20.5937, 78.9629], zoom_start=4.5) #Map set to India using co-orodinates
+
+    hm = plugins.HeatMap(data)
+    heatmap_map.add_child(hm)
+
+    heatmap_map.save("heatmap_final.html")
 
     print("*******Done*******")
 
