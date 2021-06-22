@@ -1,5 +1,3 @@
-from os import X_OK
-import pandas as pd
 import requests  
 from bs4 import BeautifulSoup
 from geopy.geocoders import Nominatim #we are using GeoPy to get latitude and longitude of any city
