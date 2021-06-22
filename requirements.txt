@@ -4,7 +4,6 @@ bs4==0.0.1
 certifi==2020.6.20
 chardet==4.0.0
 click==7.1.2
-Cython==0.29.23
 Flask==1.1.4
 folium==0.12.1
 geographiclib==1.50
