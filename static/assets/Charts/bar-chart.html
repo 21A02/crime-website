@@ -7,7 +7,9 @@
   
  
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+<!--   
   <link rel="stylesheet" href="/templates/neumorphism/assets/css/neumorphism.css">
+   -->
   <style>
     html,
     body,
@@ -48,7 +50,7 @@ function readTextFile(file, callback) {
 
 readTextFile(s, function (text) {
   var data = JSON.parse(text);
-  console.log(data);
+  //console.log(data);
 
   
   var retrievedObject = localStorage.getItem('testObject');
@@ -65,7 +67,7 @@ var state_arr=obj.state;
 
  //console.log(obj.crime_type,"crime");
 var crime=obj.crime_type[obj.crime_type.length-1];
-console.log(data[0][crime],"crime-type");
+//console.log(data[0][crime],"crime-type");
 
 
 
@@ -78,9 +80,9 @@ console.log(data[0][crime],"crime-type");
 
   var i;
   for (i = 0; i < state_arr.length; i++) {
-    console.log(state_arr[i]);
+    //console.log(state_arr[i]);
     for (j = 0; j < year_arr.length; j++) {
-      console.log(year_arr[j]);
+      //console.log(year_arr[j]);
       var brr = []
       for (k = 0; k < data.length; k++) {
         if (data[k].YEAR == year_arr[j] && data[k].STATE_UT == state_arr[i]) {
@@ -114,7 +116,7 @@ console.log(data[0][crime],"crime-type");
     c = c + year_arr.length;
   }
 
-  console.log(series_new);
+  //console.log(series_new);
 
 
   console.log("bar-chart file running");

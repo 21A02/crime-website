@@ -30,11 +30,11 @@
 <body>
   <div id='myChart'><a class="zc-ref" href="https://www.zingchart.com/"></a></div>
   <script>
-    console.log("hi this is area chart 1");
+    //console.log("hi this is area chart 1");
 
     s = "/static/assets/data/fulljsondata2012.json";
     
-    console.log(s,"hi i'm in area chart");
+    //console.log(s,"hi i'm in area chart");
 
     //  console.log(n, s);
 
@@ -79,7 +79,7 @@
 
 
       var crime=obj.crime_type[obj.crime_type.length-1];
-      console.log(data[0][crime],"crime-type");
+      //console.log(data[0][crime],"crime-type");
 
       // console.log(data, "area-chart");
 
@@ -89,9 +89,9 @@
     
       var i;
       for (i = 0; i < state_arr.length; i++) {
-        console.log(state_arr[i]);
+       // console.log(state_arr[i]);
         for (j = 0; j < year_arr.length; j++) {
-          console.log(year_arr[j]);
+         // console.log(year_arr[j]);
           var brr = []
           for (k = 0; k < data.length; k++) {
             if (data[k].YEAR == year_arr[j] && data[k].STATE_UT == state_arr[i]) {
@@ -108,7 +108,7 @@
       }
 
       
-      console.log(arr);
+     // console.log(arr);
 
       
       var series_new = [];
@@ -125,7 +125,7 @@
       c=c+year_arr.length;
     }
 
-    console.log(series_new);
+    //console.log(series_new);
       
 
       console.log("area-chart file running");

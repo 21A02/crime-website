@@ -114,7 +114,7 @@
 
 
       var crime=obj.crime_type[obj.crime_type.length-1];
-console.log(data[0][crime],"crime-type");
+//console.log(data[0][crime],"crime-type");
 
 
 
@@ -159,9 +159,9 @@ console.log(data[0][crime],"crime-type");
           for (k = 0; k < data.length; k++) {
 
             if (data[k].YEAR == year_arr[i] && data[k].STATE_UT == state_arr[j]) {
-              console.log(data[k][crime], year_arr[i], state_arr[j], "test");
+             // console.log(data[k][crime], year_arr[i], state_arr[j], "test");
               brr.push(data[k][crime]);
-              console.log(brr, "brr");
+             // console.log(brr, "brr");
             }
 
 
@@ -221,7 +221,7 @@ console.log(data[0][crime],"crime-type");
       // element.values = arr.slice(20,25);
       // series_new.push(element);
 
-      console.log(series_new, "nested pie waali file")
+      console.log("nested pie waali file")
 
 
 
