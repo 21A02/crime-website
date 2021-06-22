@@ -115,7 +115,7 @@ def webscrappingfun():
     X_array=X.values.reshape(len(mydata))
     X_array=list(X_array)
 
-    print("Data Collected:",X_array)
+    #print("Data Collected:",X_array)
 
 
     data=[]
@@ -123,13 +123,13 @@ def webscrappingfun():
     for i in X_array:
         i=str(i)
         if (type(i) == str):
-            print("testinggggggggg")
+            #print("testinggggggggg")
             i=str(i[1:-1])
             val=i.split(", ")
             if(val[0] or val[1] != None ):
                 data.append([float(val[0]),float(val[1])])
 
-    print("Final Data Extracted: /n",data)
+    #print("Final Data Extracted: /n",data)
 
 
     import folium
