@@ -104,7 +104,7 @@ def webscrappingfun():
 
     df = pd.DataFrame(result, columns=['news', 'link', 'city','lat'])  
 
-    df.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
+    #df.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
 
     mydata=df
 
@@ -140,7 +140,7 @@ def webscrappingfun():
     hm = plugins.HeatMap(data)
     heatmap_map.add_child(hm)
 
-    heatmap_map.save("heatmap_final.html")
+    heatmap_map.save("static/assets/heatmap_final.html")
 
     print("*******Done*******")
 
