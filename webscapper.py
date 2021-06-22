@@ -1,3 +1,4 @@
+from os import X_OK
 import pandas as pd
 import requests  
 from bs4 import BeautifulSoup
@@ -56,6 +57,8 @@ def search_latitude_longitude(city):
 def webscrappingfun():
     result=[]
 
+    X_array=[]
+
     for page in range(1):
         
         search_string="https://www.indiatoday.in/crime?page="+str(page)
@@ -93,6 +96,7 @@ def webscrappingfun():
             if city!=None:
                 tup.append(city)
                 tup.append(search_latitude_longitude(city))
+                X_array.append(search_latitude_longitude(city))
                 print("Coordinates:",(search_latitude_longitude(city)),"\n\n")
                 result.append(tup)
                 
@@ -100,22 +104,22 @@ def webscrappingfun():
                 pass
             
             
-            
+    #print(X_array)
+    
+    # df = pd.DataFrame(result, columns=['news', 'link', 'city','lat'])  
 
-    df = pd.DataFrame(result, columns=['news', 'link', 'city','lat'])  
+    # #df.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
 
-    #df.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
+    # mydata=df
 
-    mydata=df
+    # print(len(mydata))
 
-    print(len(mydata))
+    # X=mydata["lat"]
 
-    X=mydata["lat"]
+    # X_array=X.values.reshape(len(mydata))
+    # X_array=list(X_array)
 
-    X_array=X.values.reshape(len(mydata))
-    X_array=list(X_array)
-
-    #print("Data Collected:",X_array)
+    # #print("Data Collected:",X_array)
 
 
     data=[]
