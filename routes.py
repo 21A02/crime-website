@@ -34,6 +34,9 @@ def crime_charts():
 def crime_locator():
     return render_template('crime-locator.html')
 
+
+
+from prediction import *
 from werkzeug.utils import secure_filename
 @app.route('/crime-predictor.html', methods = ['GET', 'POST'])
 def crime_predictor():
@@ -43,14 +46,13 @@ def crime_predictor():
         print('file uploaded successfully')
     return render_template('crime-predictor.html')
 
-
-
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
       f = request.files['file']
       f.save(secure_filename(f.filename))
       #return 'file uploaded successfully'
+      predictfun()
     return render_template('crime-predictor.html')
       
 
