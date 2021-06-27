@@ -96,38 +96,10 @@
                     }
 
 
-                    // arr=[]
-
-                    // for (i = 0; i < data.length; i++) {
-                    //     if (data[i].DISTRICT == district.toUpperCase()) {
-                    //         //console.log("yeh bhi chal gya");
-                    //         outdata = data[i];
-
-                    //         arr.push(data[i]);
-                    //         break;
-                    //     }
-                    // }
-
-
-                    // console.log(outdata);
-
-                    // console.log(arr);
-
                     var tableBody = '<h5></h5><table class="table table-hover" ><tr><th class="border-0" scope="col" id="state-table-heading">DISTRICT</th>';
 
-                    // tableBody += '<th class="border-0" scope="col" id="total-table-heading">STATE/UT</th>';
-                    // tableBody += '<th class="border-0" scope="col" id="total-table-heading">YEAR</th>';
-                    // tableBody += '<th class="border-0" scope="col" id="total-table-heading">MURDER</th>';
-                    // tableBody += '<th class="border-0" scope="col" id="total-table-heading">RAPE</th>';
-                    // tableBody += '<th class="border-0" scope="col" id="total-table-heading">THEFT</th>';
-                    // tableBody += '<th class="border-0" scope="col" id="total-table-heading">RIOTS</th>';
-                    // tableBody += '<th class="border-0" scope="col" id="total-table-heading">KIDNAPPING</th>';
-                    // tableBody += '<th class="border-0" scope="col" id="total-table-heading">OTHERS</th>';
-                    // tableBody += '<th class="border-0" scope="col" id="total-table-heading">CRIME_AGAINST_WOMEN</th>';
-                    // tableBody += '<th class="border-0" scope="col" id="total-table-heading">TOTAL</th>'
 
                     tableBody += '<th class="border-0" scope="col" id="total-table-heading">STATE_UT</th>';
-                 //   tableBody += '<th class="border-0" scope="col" id="total-table-heading">DISTRICT</th>';
                     tableBody += '<th class="border-0" scope="col" id="total-table-heading">YEAR</th>';
                     tableBody += '<th class="border-0" scope="col" id="total-table-heading">MURDER</th>';
                     tableBody += '<th class="border-0" scope="col" id="total-table-heading">ATTEMPT_TO_MURDER</th>';
@@ -159,93 +131,59 @@
                     tableBody += '<th class="border-0" scope="col" id="total-table-heading">CAUSING_DEATH_BY_NEGLIGENCE</th>';
                     tableBody += '<th class="border-0" scope="col" id="total-table-heading">OTHER_IPC_CRIMES</th>';
                     tableBody += '<th class="border-0" scope="col" id="total-table-heading">TOTAL_IPC_CRIMES</th>';
-
-
-
-
-
-
-
-
-
-
-
                     tableBody += '</tr>';
+                    arr = []
 
+                    var st;
 
-                    arr=[]
-
-        var st;
-
-for (i = 0; i < data.length; i++) {
-    if (data[i].DISTRICT == district.toUpperCase()) {
-        //console.log("yeh bhi chal gya");
-        outdata = data[i];
-
-
-
-                    d = outdata;
-                    st=d.STATE_UT;
-
-                    tableBody += '<tr><th scope="row">' + d.DISTRICT;
-
-                    // tableBody += '</th><td>' + d.STATE_UT;
-                    // tableBody += '</th><td>' + d.YEAR;
-                    // tableBody += '</th><td>' + d.MURDER;
-                    // tableBody += '</th><td>' + d.RAPE;
-                    // tableBody += '</th><td>' + d.THEFT;
-                    // tableBody += '</th><td>' + d.RIOTS;
-                    // tableBody += '</th><td>' + d.KIDNAPPING;
-                    // tableBody += '</th><td>' + d.OTHERS;
-                    // tableBody += '</th><td>' + d.CRIME_AGAINST_WOMEN;
-                    // tableBody += '</th><td>' + d.TOTAL;
-
-
-                    tableBody += '</th><td>' + d.STATE_UT;
-                    tableBody += '</th><td>' + d.YEAR;
-                    tableBody += '</th><td>' + d.MURDER;
-                    tableBody += '</th><td>' + d.ATTEMPT_TO_MURDER;
-                    tableBody += '</th><td>' + d.CULPABLE_HOMICIDE_NOT_AMOUNTING_TO_MURDER;
-                    tableBody += '</th><td>' + d.RAPE;
-                    tableBody += '</th><td>' + d.CUSTODIAL_RAPE;
-                    tableBody += '</th><td>' + d.OTHER_RAPE;
-                    tableBody += '</th><td>' + d.KIDNAPPING_AND_ABDUCTION;
-                    tableBody += '</th><td>' + d.KIDNAPPING_AND_ABDUCTION_OF_WOMEN_AND_GIRLS;
-                    tableBody += '</th><td>' + d.KIDNAPPING_AND_ABDUCTION_OF_OTHERS;
-                    tableBody += '</th><td>' + d.DACOITY;
-                    tableBody += '</th><td>' + d.PREPARATION_AND_ASSEMBLY_FOR_DACOITY;
-                    tableBody += '</th><td>' + d.ROBBERY;
-                    tableBody += '</th><td>' + d.BURGLARY;
-                    tableBody += '</th><td>' + d.THEFT;
-                    tableBody += '</th><td>' + d.AUTO_THEFT;
-                    tableBody += '</th><td>' + d.OTHER_THEFT;
-                    tableBody += '</th><td>' + d.RIOTS;
-                    tableBody += '</th><td>' + d.CRIMINAL_BREACH_OF_TRUST;
-                    tableBody += '</th><td>' + d.CHEATING;
-                    tableBody += '</th><td>' + d.COUNTERFIETING;
-                    tableBody += '</th><td>' + d.ARSON;
-                    tableBody += '</th><td>' + d.HURT_GREVIOUS_HURT;
-                    tableBody += '</th><td>' + d.DOWRY_DEATHS;
-                    tableBody += '</th><td>' + d.ASSAULT_ON_WOMEN_WITH_INTENT_TO_OUTRAGE_HER_MODESTY;
-                    tableBody += '</th><td>' + d.INSULT_TO_MODESTY_OF_WOMEN;
-                    tableBody += '</th><td>' + d.CRUELTY_BY_HUSBAND_OR_HIS_RELATIVES;
-                    tableBody += '</th><td>' + d.IMPORTATION_OF_GIRLS_FROM_FOREIGN_COUNTRIES;
-                    tableBody += '</th><td>' + d.CAUSING_DEATH_BY_NEGLIGENCE;
-                    tableBody += '</th><td>' + d.OTHER_IPC_CRIMES;
-                    tableBody += '</th><td>' + d.TOTAL_IPC_CRIMES;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].DISTRICT == district.toUpperCase()) {
+                            //console.log("yeh bhi chal gya");
+                            outdata = data[i];
 
 
 
+                            d = outdata;
+                            st = d.STATE_UT;
 
-                        tableBody += '</td></tr>';
-
-                    
-
-
-                }
+                            tableBody += '<tr><th scope="row">' + d.DISTRICT;
+                            tableBody += '</th><td>' + d.STATE_UT;
+                            tableBody += '</th><td>' + d.YEAR;
+                            tableBody += '</th><td>' + d.MURDER;
+                            tableBody += '</th><td>' + d.ATTEMPT_TO_MURDER;
+                            tableBody += '</th><td>' + d.CULPABLE_HOMICIDE_NOT_AMOUNTING_TO_MURDER;
+                            tableBody += '</th><td>' + d.RAPE;
+                            tableBody += '</th><td>' + d.CUSTODIAL_RAPE;
+                            tableBody += '</th><td>' + d.OTHER_RAPE;
+                            tableBody += '</th><td>' + d.KIDNAPPING_AND_ABDUCTION;
+                            tableBody += '</th><td>' + d.KIDNAPPING_AND_ABDUCTION_OF_WOMEN_AND_GIRLS;
+                            tableBody += '</th><td>' + d.KIDNAPPING_AND_ABDUCTION_OF_OTHERS;
+                            tableBody += '</th><td>' + d.DACOITY;
+                            tableBody += '</th><td>' + d.PREPARATION_AND_ASSEMBLY_FOR_DACOITY;
+                            tableBody += '</th><td>' + d.ROBBERY;
+                            tableBody += '</th><td>' + d.BURGLARY;
+                            tableBody += '</th><td>' + d.THEFT;
+                            tableBody += '</th><td>' + d.AUTO_THEFT;
+                            tableBody += '</th><td>' + d.OTHER_THEFT;
+                            tableBody += '</th><td>' + d.RIOTS;
+                            tableBody += '</th><td>' + d.CRIMINAL_BREACH_OF_TRUST;
+                            tableBody += '</th><td>' + d.CHEATING;
+                            tableBody += '</th><td>' + d.COUNTERFIETING;
+                            tableBody += '</th><td>' + d.ARSON;
+                            tableBody += '</th><td>' + d.HURT_GREVIOUS_HURT;
+                            tableBody += '</th><td>' + d.DOWRY_DEATHS;
+                            tableBody += '</th><td>' + d.ASSAULT_ON_WOMEN_WITH_INTENT_TO_OUTRAGE_HER_MODESTY;
+                            tableBody += '</th><td>' + d.INSULT_TO_MODESTY_OF_WOMEN;
+                            tableBody += '</th><td>' + d.CRUELTY_BY_HUSBAND_OR_HIS_RELATIVES;
+                            tableBody += '</th><td>' + d.IMPORTATION_OF_GIRLS_FROM_FOREIGN_COUNTRIES;
+                            tableBody += '</th><td>' + d.CAUSING_DEATH_BY_NEGLIGENCE;
+                            tableBody += '</th><td>' + d.OTHER_IPC_CRIMES;
+                            tableBody += '</th><td>' + d.TOTAL_IPC_CRIMES;
+                            tableBody += '</td></tr>';
+                        }
                     }
 
-                    console.log(st,"state value");
+                    console.log(st, "state value");
 
 
                     data.forEach(function (d) {
@@ -255,12 +193,12 @@ for (i = 0; i < data.length; i++) {
                     tableBody += '<table>';
 
                     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-                        
-                    var source="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRV8kCEFnXyNHjpTevtrr_pb-kb7eqYY&q="+String(district).split(" ").join("")+String(st).split(" ").join("");
+
+                    var source = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBMRV8kCEFnXyNHjpTevtrr_pb-kb7eqYY&q=" + String(district).split(" ").join("") + String(st).split(" ").join("");
 
 
                     console.log(source);
-                    document.getElementById('districtmap').src=source;
+                    document.getElementById('districtmap').src = source;
 
                     var divContainer = document.getElementById("myGrid1");
                     divContainer.innerHTML = tableBody;
@@ -343,10 +281,12 @@ for (i = 0; i < data.length; i++) {
                                 <li class="list-group-item border-primary pb-1"><span
                                         class="fas fa-university"></span>State:
                                 </li>
-                                <li class="list-group-item border-primary pb-1"><i class="fas fa-city"></i> &nbsp District:
+                                <li class="list-group-item border-primary pb-1"><i class="fas fa-city"></i> &nbsp
+                                    District:
                                 </li>
-                                <li class="list-group-item border-primary pb-1"><span class="far fa-building"></span> Rank:
-                                    
+                                <li class="list-group-item border-primary pb-1"><span class="far fa-building"></span>
+                                    Rank:
+
                                 </li>
                                 <li class="list-group-item border-primary pb-1"><i class="fas fa-map-marker"></i> &nbsp
                                     Coordinates:</li>
@@ -426,8 +366,9 @@ for (i = 0; i < data.length; i++) {
                         <div class="card-body shadow-soft border border-light rounded p-2 mb-2">
                             <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no"
                                     marginheight="0" marginwidth="0"
-                                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=kanpur+(Map)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" id="districtmap"></iframe><a
-                                    href="https://www.maps.ie/draw-radius-circle-map/"></a></div>
+                                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=kanpur+(Map)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                                    id="districtmap"></iframe><a href="https://www.maps.ie/draw-radius-circle-map/"></a>
+                            </div>
                         </div>
                     </div>
                 </div>

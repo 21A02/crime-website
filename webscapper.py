@@ -1,4 +1,5 @@
 import requests  
+import pandas as pd
 from bs4 import BeautifulSoup
 from geopy.geocoders import Nominatim #we are using GeoPy to get latitude and longitude of any city
         
@@ -94,7 +95,7 @@ def webscrappingfun():
             if city!=None:
                 tup.append(city)
                 tup.append(search_latitude_longitude(city))
-                X_array.append(search_latitude_longitude(city))
+               # X_array.append(search_latitude_longitude(city))
                 print("Coordinates:",(search_latitude_longitude(city)),"\n\n")
                 result.append(tup)
                 
@@ -102,22 +103,22 @@ def webscrappingfun():
                 pass
             
             
-    #print(X_array)
+   # print(X_array)
     
-    # df = pd.DataFrame(result, columns=['news', 'link', 'city','lat'])  
+    df = pd.DataFrame(result, columns=['news', 'link', 'city','lat'])  
 
-    # #df.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
+    df.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
 
-    # mydata=df
+    mydata=df
 
-    # print(len(mydata))
+    print(len(mydata))
 
-    # X=mydata["lat"]
+    X=mydata["lat"]
 
-    # X_array=X.values.reshape(len(mydata))
-    # X_array=list(X_array)
+    X_array=X.values.reshape(len(mydata))
+    X_array=list(X_array)
 
-    # #print("Data Collected:",X_array)
+    print("Data Collected:",X_array)
 
 
     data=[]
@@ -145,4 +146,3 @@ def webscrappingfun():
     heatmap_map.save("static/assets/heatmap_final.html")
 
     print("*******Done*******")
-

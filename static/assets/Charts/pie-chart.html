@@ -13,9 +13,6 @@
   <div id='myChart'></div>
   <script>
     s = "/static/assets/data/fulljsondata2012.json";
-
-
-
     function readTextFile(file, callback) {
       var rawFile = new XMLHttpRequest();
       rawFile.overrideMimeType("application/json");
@@ -30,28 +27,16 @@
 
     readTextFile(s, function (text) {
       var data = JSON.parse(text);
-    //  console.log(data);
-
 
       var retrievedObject = localStorage.getItem('testObject');
 
       obj = JSON.parse(retrievedObject)
 
-//      console.log('retrievedObject: ', obj, "in pie chart file");
-
-
       var state_arr = obj.state;
 
-      var year = obj.year[obj.year.length-1];
+      var year = obj.year[obj.year.length - 1];
 
-      var crime=obj.crime_type[obj.crime_type.length-1];
-      console.log(data[0][crime],"crime-type");
-
-
-
-
-
-//console.log(state_arr, year, "testing");
+      var crime = obj.crime_type[obj.crime_type.length - 1];
 
       var series_new = [];
       var i;
@@ -60,7 +45,6 @@
         for (j = 0; j < data.length; j++) {
 
           if (String(data[j].YEAR) == year && data[j].STATE_UT == state_arr[i]) {
-    //        console.log(state_arr[i], data[j].MURDER, "testing2");
             var element = {};
             element.text = state_arr[i];
             element.values = [data[j][crime]];
@@ -69,14 +53,6 @@
 
         }
       }
-
-
-
-     // console.log(series_new, "series_new");
-
-
-    //  console.log("pie-chart file running");
-
 
       ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
       var myConfig = {
