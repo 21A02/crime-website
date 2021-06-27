@@ -36,5 +36,3 @@ def predictfun():
     figure3.savefig('static/assets/images/predictiontrend.png')
 
     #print(forecast_ouptut)
-
-predictfun()
