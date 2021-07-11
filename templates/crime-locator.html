@@ -43,6 +43,7 @@
             //console.log("testing run...");
             var s1 = "{{url_for('static',filename='assets/data/pincodes.json')}}";
             var s = "{{url_for('static',filename='assets/data/districtjsondata.json')}}";
+            var s2 = "{{url_for('static',filename='assets/data/rankdataset.json')}}";
 
 
             document.getElementById('myGrid1').innerHTML = '';
@@ -71,11 +72,14 @@
                 console.log(data1);
 
 
-                readTextFile(s, function (text) {
+                readTextFile(s2, function (text) {
+                    var data2 = JSON.parse(text);
+                    console.log(data2);
+                    
+                    readTextFile(s, function (text) {
                     var data = JSON.parse(text);
                     console.log(data);
-
-
+                    
                     var district = "none";
 
 
@@ -86,6 +90,15 @@
                             break;
                         }
                     }
+
+                    var rank='N/A'
+                    for (i = 0; i < data2.length; i++) {
+                        if (data2[i].DISTRICT.toLowerCase() == district.toLowerCase()) {
+                            rank=data2[i].level_0;
+                            break;
+                        }
+                    }
+                    console.log("rank of district",rank,district);
 
 
                     if (district == "none") {
@@ -200,10 +213,14 @@
                     console.log(source);
                     document.getElementById('districtmap').src = source;
 
+                    document.getElementById('state_info').innerHTML= st;
+                    document.getElementById('district_info').innerHTML= district;
+                    document.getElementById('rank_info').innerHTML= rank;
+
                     var divContainer = document.getElementById("myGrid1");
                     divContainer.innerHTML = tableBody;
                 });
-
+            });
             });
         }
 
@@ -279,17 +296,21 @@
                         <div class="card-body shadow-soft border border-light rounded p-2 mb-2">
                             <ul class="list-group list-group-flush price-list ">
                                 <li class="list-group-item border-primary pb-1"><span
-                                        class="fas fa-university"></span>State:
+                                        class="fas fa-university"></span>State: 
+                                        <div id="state_info"></div>
                                 </li>
                                 <li class="list-group-item border-primary pb-1"><i class="fas fa-city"></i> &nbsp
                                     District:
+                                    <div id="district_info"></div>
                                 </li>
                                 <li class="list-group-item border-primary pb-1"><span class="far fa-building"></span>
                                     Rank:
-
+                                    <div id="rank_info"></div>
                                 </li>
-                                <li class="list-group-item border-primary pb-1"><i class="fas fa-map-marker"></i> &nbsp
-                                    Coordinates:</li>
+                                <!-- <li class="list-group-item border-primary pb-1"><i class="fas fa-map-marker"></i> &nbsp
+                                    Coordinates:
+                                    <div id="coordinates_info"></div>
+                                </li> -->
 
                             </ul>
                         </div>
