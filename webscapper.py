@@ -54,11 +54,19 @@ def search_latitude_longitude(city):
         pass
 
 def webscrappingfun():
+    
+    df1=pd.read_csv(r'static/assets/data/webscrappeddata.csv') #file is being read.
+    
+    
+    linkarr=df1['link'].tolist()
+    
+    flag=0
+    
     result=[]
 
     X_array=[]
 
-    for page in range(1):
+    for page in range(2):
         
         search_string="https://www.indiatoday.in/crime?page="+str(page)
         print("\n","--------- Page:",page,":",search_string,"\n")
@@ -76,49 +84,72 @@ def webscrappingfun():
             search_link="https://www.indiatoday.in"+res[7]
             
             tup.append(news_heading)
-            
-            tup.append(search_link)
-            
-            print("Link:", search_link)
-        
-            #print("\n","  Coordinates:",(location.latitude, location.longitude))
-                
-            
-            if "video" in search_link:
-                pass
-            
+
+            if search_link in linkarr:
+                print("you already have latest data")
+                flag=1
+                break
             else:
-                city=search_loc(search_link)
-            print("City Extracted:" ,city)
-            
-            
-            if city!=None:
-                tup.append(city)
-                tup.append(search_latitude_longitude(city))
-               # X_array.append(search_latitude_longitude(city))
-                print("Coordinates:",(search_latitude_longitude(city)),"\n\n")
-                result.append(tup)
-                
-            else:
-                pass
-            
+                tup.append(search_link)
+
+                linkarr.append(search_link)
+
+                print("Link:", search_link)
+
+                #print("\n","  Coordinates:",(location.latitude, location.longitude))
+
+
+                if "video" in search_link:
+                    pass
+
+                else:
+                    city=search_loc(search_link)
+                print("City Extracted:" ,city)
+
+
+                if city!=None:
+                    tup.append(city)
+                    tup.append(search_latitude_longitude(city))
+                   # X_array.append(search_latitude_longitude(city))
+                    print("Coordinates:",(search_latitude_longitude(city)),"\n\n")
+                    result.append(tup)
+
+                else:
+                    pass
+        if flag==1:
+            break
+
             
    # print(X_array)
     
     df = pd.DataFrame(result, columns=['news', 'link', 'city','lat'])  
+    
+    df.dropna() #removing NaN values from the dataset.
+    
+    #df.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
+    
+    df1=df1.append(df)
+    
+    #print(df1)
+    
+    df1.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
+    
+    #print("test")
+    
+    
+    #mydata=pd.read_csv(r'webscrappeddata.csv') #file is being read.
+    
+    
+    mydata=df1
 
-    df.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
-
-    mydata=df
-
-    print(len(mydata))
+    #print(len(mydata))
 
     X=mydata["lat"]
 
     X_array=X.values.reshape(len(mydata))
     X_array=list(X_array)
 
-    print("Data Collected:",X_array)
+    #print("Data Collected:",X_array)
 
 
     data=[]
@@ -146,3 +177,4 @@ def webscrappingfun():
     heatmap_map.save("static/assets/heatmap_final.html")
 
     print("*******Done*******")
+    
