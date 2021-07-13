@@ -1,10 +1,10 @@
-import requests  
-import pandas as pd
-from bs4 import BeautifulSoup
-from geopy.geocoders import Nominatim #we are using GeoPy to get latitude and longitude of any city
+import requests # http requests 
+import pandas as pd # to store data in csv files
+from bs4 import BeautifulSoup # to parse html
+from geopy.geocoders import Nominatim # we are using GeoPy to get latitude and longitude of any city
         
 
-
+# to search the location of crime
 def search_loc(search_link):
     try:
         
@@ -28,6 +28,7 @@ def search_loc(search_link):
     except (AttributeError , IndexError, TypeError):
         pass
 
+# to find latitude and longitude of city
 def search_latitude_longitude(city):
 
     try:
@@ -52,6 +53,7 @@ def search_latitude_longitude(city):
         
     except(AttributeError , IndexError ,TypeError):
         pass
+
 
 def webscrappingfun():
     
@@ -96,9 +98,6 @@ def webscrappingfun():
 
                 print("Link:", search_link)
 
-                #print("\n","  Coordinates:",(location.latitude, location.longitude))
-
-
                 if "video" in search_link:
                     pass
 
@@ -119,38 +118,22 @@ def webscrappingfun():
         if flag==1:
             break
 
-            
-   # print(X_array)
     
     df = pd.DataFrame(result, columns=['news', 'link', 'city','lat'])  
     
     df.dropna() #removing NaN values from the dataset.
     
-    #df.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
-    
     df1=df1.append(df)
     
-    #print(df1)
     
     df1.to_csv('static/assets/data/webscrappeddata.csv', index=False, encoding='utf-8')
     
-    #print("test")
-    
-    
-    #mydata=pd.read_csv(r'webscrappeddata.csv') #file is being read.
-    
-    
     mydata=df1
-
-    #print(len(mydata))
 
     X=mydata["lat"]
 
     X_array=X.values.reshape(len(mydata))
     X_array=list(X_array)
-
-    #print("Data Collected:",X_array)
-
 
     data=[]
 
@@ -163,9 +146,7 @@ def webscrappingfun():
             if(val[0] or val[1] != None ):
                 data.append([float(val[0]),float(val[1])])
 
-    #print("Final Data Extracted: /n",data)
-
-
+   
     import folium
     from folium import plugins
 
