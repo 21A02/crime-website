@@ -1,14 +1,14 @@
 # Flask Setup
 import os
 from flask import Flask, request
-from flask_ngrok import run_with_ngrok
+#from flask_ngrok import run_with_ngrok
 app = Flask(__name__)
 #app = Flask(__name__, static_url_path='')
 
 # Google Sheets API Setup
 # import gspread
 # from oauth2client.service_account import ServiceAccountCredentials
-run_with_ngrok(app)   
+#run_with_ngrok(app)   
 
 print("test")
 
@@ -23,5 +23,5 @@ from routes import *
 # runs app
 if __name__ == "__main__":
     #app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
-    #app.run(debug=True)
-    app.run()
+    app.run(debug=True)
+    #app.run()
